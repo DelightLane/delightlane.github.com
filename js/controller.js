@@ -12,16 +12,16 @@ document.body.onkeydown = function( e ) {
 };
 
 
-function getMousePos(canvasDom, mouseEvent) {
+function getMouseTouchPos(canvasDom, e) {
   var rect = canvasDom.getBoundingClientRect();
   return {
-    x: mouseEvent.clientX - rect.left,
-    y: mouseEvent.clientY - rect.top
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top
   };
 }
 
 canvas.addEventListener("mouseup", function (e) {
-    var pos = getMousePos(canvas, e);
+    var pos = getMouseTouchPos(canvas, e);
     pos.x = (canvas.width / 2) - pos.x;
     pos.y = (canvas.height / 2) - pos.y;
 
@@ -50,11 +50,6 @@ canvas.addEventListener("mouseup", function (e) {
         }
     }
     render();
-}, false);
-
-canvas.addEventListener("touchend", function (e) {
-    var mouseEvent = new MouseEvent("mouseup", {});
-    canvas.dispatchEvent(mouseEvent);
 }, false);
 
 function onKeyDown( key ){
