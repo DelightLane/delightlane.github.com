@@ -28,7 +28,7 @@ Object.prototype.initAtlasData = function(atlasName){
 
 Object.prototype.calcCanvasPos = function(){
 	if(isInitCanvas &&
-		this.imgWidth > 0 && this.imaHeight > 0)
+		this.imgWidth > 0 && this.imgHeight > 0)
 	{
 		if(WIDTH_MARGIN == null)
 		{
