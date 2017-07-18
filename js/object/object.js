@@ -33,6 +33,8 @@ Object.prototype.calcCanvasPos = function(){
 		HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
 	}
 
+	console.log(WIDTH_MARGIN);
+
 	this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
 	this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
 }
