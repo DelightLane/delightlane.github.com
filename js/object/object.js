@@ -37,12 +37,19 @@ Object.prototype.calcCanvasPos = function(){
 
 		this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
 		this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
+
+		console.log("init in");
 	}
 	else
 	{
 		this.calcX = this.drawPos.x * this.imgWidth;
 		this.calcY = this.drawPos.y * this.imgHeight;
+
+		console.log("in");
 	}
+
+	console.log(this.calcX);
+	console.log(this.calcY);
 }
 
 Object.prototype.drawSprite = function(spriteName){
