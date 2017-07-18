@@ -5,6 +5,11 @@ canvas {
     background-color: #353535;
 }
 
+img {
+	display: block;
+	margin: auto;
+}
+
 body{
 	overflow: hidden;
 }
