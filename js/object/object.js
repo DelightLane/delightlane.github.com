@@ -27,16 +27,22 @@ Object.prototype.initAtlasData = function(atlasName){
 }
 
 Object.prototype.calcCanvasPos = function(){
-	if(WIDTH_MARGIN == null)
+	if(isInitCanvas)
 	{
-		WIDTH_MARGIN = (canvas.width - (this.imgWidth * COLS)) / 2;
-		HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
+		if(WIDTH_MARGIN == null)
+		{
+			WIDTH_MARGIN = (canvas.width - (this.imgWidth * COLS)) / 2;
+			HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
+		}
+
+		this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
+		this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
 	}
-
-	console.log(WIDTH_MARGIN);
-
-	this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
-	this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
+	else
+	{
+		this.calcX = this.drawPos.x * this.imgWidth;
+		this.calcY = this.drawPos.y * this.imgHeight;
+	}
 }
 
 Object.prototype.drawSprite = function(spriteName){
