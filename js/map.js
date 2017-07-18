@@ -5,7 +5,25 @@ var player;
 var isInitCanvas = false;
 
 function init() {
-    var playerPos = { x : (COLS - 1) / 2, y : (ROWS - 1) / 2 }
+    var playerPos = {};
+
+    if(COLS % 2 != 0)
+    {
+        playerPos.x = (COLS - 1) / 2;
+    }
+    else
+    {
+        playerPos.x = COLS / 2;
+    }
+
+    if(ROWS % 2 != 0)
+    {
+        playerPos.y = (ROWS - 1) / 2;
+    }
+    else
+    {
+        playerPos.y = ROWS / 2;
+    }
 
     player = new Player(playerPos.x, playerPos.y);
 

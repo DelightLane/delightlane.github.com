@@ -1,4 +1,4 @@
-var COLS = 20
+var COLS = 20;
 var ROWS = 3;
 
 var TOWN_COUNT = 3;
