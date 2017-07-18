@@ -6,8 +6,6 @@ function Tile(xPos, yPos, playerXPos, playerYPos){
 	this.img = new Image();
 
 	this.setType("tile");
-
-	this.img.src = "resource/" + tileName + ".png";
 }
 
 Tile.prototype = new PlaceObject();
@@ -19,7 +17,7 @@ Tile.prototype.setType = function(tileName){
 	}
 	else
 	{
-		tileName = type
+		tileName = tileName;
 	}
 
 	this.img.src = "resource/" + tileName + ".png";

@@ -3,12 +3,14 @@ var DRAW_SCALE = 2;
 function getJson(url, callback) {
     var request = new XMLHttpRequest();
    	request.open("GET", url, true);
-   	request.send(null)
    	request.addEventListener("readystatechange", function() {
- 		if (request.readyState === 4 && request.status === 200) {
- 			callback(JSON.parse(request.responseText));
+ 		if (request.readyState === 4){
+ 			if(request.status === 200 || request.status == 0) {
+ 				callback(JSON.parse(request.responseText));
+ 			}
   		}
 	}, false);
+	request.send(null);
 }
 
 function Object(){
