@@ -49,7 +49,7 @@ Object.prototype.drawSprite = function(spriteName){
 
 		if(this.calcCanvasPos())
 		{
-			ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.img.width * DRAW_SCALE, this.img.height * DRAW_SCALE);
+			ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
 		}
 	}
 	else
