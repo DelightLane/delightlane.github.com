@@ -93,7 +93,10 @@ Object.prototype.drawSprite = function(spriteName){
 }
 
 Object.prototype.draw = function (){
-	this.drawSprite(this.spriteName);
+	if(isInitCanvas)
+	{
+		this.drawSprite(this.spriteName);
+	}
 }
 
 Object.prototype.update = function(){}
