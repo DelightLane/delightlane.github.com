@@ -57,8 +57,11 @@ Player.prototype.draw = function (){
 
         if(!success)
         {
-            this.spriteNum = 0;
-            this.draw();
+            if(this.spriteNum != 0)
+            {
+                this.spriteNum = 0;
+                this.draw();
+            }
         }
     }
 }
