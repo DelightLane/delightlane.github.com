@@ -5,13 +5,24 @@ function Tile(xPos, yPos, playerXPos, playerYPos){
 
 	this.img = new Image();
 
-	var tileName = "tile" + tileType;
-	if(Math.floor(Math.random() > 0.75))
+	this.setType("tile");
+
+	this.img.src = "resource/" + tileName + ".png";
+}
+
+Tile.prototype = new PlaceObject();
+
+Tile.prototype.setType = function(type){
+	var tileName;
+
+	if(type == "tile")
+	{
+		tileName = "tile" + tileType;
+	}
+	else if(type == "road")
 	{
 		tileName = "road";
 	}
 
 	this.img.src = "resource/" + tileName + ".png";
 }
-
-Tile.prototype = new PlaceObject();

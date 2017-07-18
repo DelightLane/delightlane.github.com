@@ -5,6 +5,8 @@ var player;
 var isInitCanvas = false;
 
 function init() {
+
+    // 플레이어 초기화
     var playerPos = {};
 
     if(COLS % 2 != 0)
@@ -27,10 +29,15 @@ function init() {
 
     player = new Player(playerPos.x, playerPos.y);
 
+    // 맵 초기화
     for ( var y = 0; y < ROWS; ++y ) {
         tiles[y] = [];
         for ( var x = 0; x < COLS; ++x ) {
             tiles[y][x] = new Tile(x, y, playerPos.x, playerPos.y);
+            if(y == 1)
+            {
+                tiles[y][x].setType("road");
+            }
         }
     }
 
