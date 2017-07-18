@@ -38,18 +38,10 @@ Object.prototype.calcCanvasPos = function(){
 		this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
 		this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
 
-		console.log("init in");
-	}
-	else
-	{
-		this.calcX = this.drawPos.x * this.imgWidth;
-		this.calcY = this.drawPos.y * this.imgHeight;
-
-		console.log("in");
+		return true;
 	}
 
-	console.log(this.calcX);
-	console.log(this.calcY);
+	return false;
 }
 
 Object.prototype.drawSprite = function(spriteName){
@@ -58,9 +50,10 @@ Object.prototype.drawSprite = function(spriteName){
 		this.imgWidth = this.img.width * DRAW_SCALE;
 		this.imgHeight = this.img.height * DRAW_SCALE;
 
-		this.calcCanvasPos();
-
-		ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.img.width * DRAW_SCALE, this.img.height * DRAW_SCALE);
+		if(this.calcCanvasPos())
+		{
+			ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.img.width * DRAW_SCALE, this.img.height * DRAW_SCALE);
+		}
 	}
 	else
 	{
@@ -87,9 +80,10 @@ Object.prototype.drawSprite = function(spriteName){
 			this.imgWidth = scaleX * DRAW_SCALE;
 			this.imgHeight = scaleY * DRAW_SCALE;
 
-			this.calcCanvasPos();
-
-			ctx.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
+			if(this.calcCanvasPos())
+			{
+				ctx.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
+			}
 		}
 
 		return success;
