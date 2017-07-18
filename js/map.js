@@ -5,7 +5,7 @@ var player;
 var isInitCanvas = false;
 
 function init() {
-    var playerPos = { x : (COLS - 1) / 2, y : (COLS - 1) / 2 }
+    var playerPos = { x : (COLS - 1) / 2, y : (ROWS - 1) / 2 }
 
     player = new Player(playerPos.x, playerPos.y);
 
