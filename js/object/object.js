@@ -27,18 +27,13 @@ Object.prototype.initAtlasData = function(atlasName){
 }
 
 Object.prototype.calcCanvasPos = function(){
-	if(isInitCanvas)
+	if(isInitCanvas &&
+		this.imgWidth > 0 && this.imaHeight > 0)
 	{
 		if(WIDTH_MARGIN == null)
 		{
-			console.log(canvas.width);
-			console.log(canvas.height);
-			console.log(this.imgWidth);
-			console.log(this.imgHeight);
 			WIDTH_MARGIN = (canvas.width - (this.imgWidth * COLS)) / 2;
 			HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
-			console.log(WIDTH_MARGIN);
-			console.log(HEIGHT_MARGIN);
 		}
 
 		this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
