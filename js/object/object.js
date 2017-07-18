@@ -27,14 +27,10 @@ Object.prototype.initAtlasData = function(atlasName){
 }
 
 Object.prototype.calcCanvasPos = function(){
-	if(isInitCanvas &&
-		this.imgWidth > 0 && this.imgHeight > 0)
+	if(this.imgWidth > 0 && this.imgHeight > 0)
 	{
-		if(WIDTH_MARGIN == null)
-		{
-			WIDTH_MARGIN = (canvas.width - (this.imgWidth * COLS)) / 2;
-			HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
-		}
+		WIDTH_MARGIN = (canvas.width - (this.imgWidth * COLS)) / 2;
+		HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
 
 		this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
 		this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
@@ -94,10 +90,7 @@ Object.prototype.drawSprite = function(spriteName){
 }
 
 Object.prototype.draw = function (){
-	if(isInitCanvas)
-	{
-		this.drawSprite(this.spriteName);
-	}
+	this.drawSprite(this.spriteName);
 }
 
 Object.prototype.update = function(){}

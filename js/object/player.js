@@ -50,18 +50,15 @@ Player.prototype.move = function (key){
     }
 }
 
-Player.prototype.draw = function (){
-    if(isInitCanvas)
-    {
-        var success = this.drawSprite(this.spriteName + this.spriteNum);
+Player.prototype.draw = function (){   
+    var success = this.drawSprite(this.spriteName + this.spriteNum);
 
-        if(!success)
+    if(!success)
+    {
+        if(this.spriteNum != 0)
         {
-            if(this.spriteNum != 0)
-            {
-                this.spriteNum = 0;
-                this.draw();
-            }
+            this.spriteNum = 0;
+            this.draw();
         }
     }
 }

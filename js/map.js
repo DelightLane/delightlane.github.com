@@ -55,12 +55,13 @@ function init() {
 }
 
 function drawTiles(){
-    if(!isInitCanvas)
-    {
-        initCanvas(600, 300);
+    
+        var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
+
+        initCanvas(canvasWidth, 300);
 
         isInitCanvas = true;
-    }
+    
 
     if(tiles.length > 0){
         for ( var y = 0; y < tiles.length; ++y ) {
