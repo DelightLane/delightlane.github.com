@@ -1,7 +1,7 @@
 function Town(xPos, yPos, playerXPos, playerYPos, triggerEvent){
 	PlaceObject.apply(this, arguments);
 
-	var resName = "house" + Math.floor(Math.random() * 10 % 2);
+	var resName = "house" + Math.floor(Math.random() * 10 % 3);
 
 	this.img = new Image();
 	this.img.src = "resource/" + resName + ".png";
