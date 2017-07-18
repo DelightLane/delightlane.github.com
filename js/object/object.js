@@ -26,14 +26,24 @@ Object.prototype.initAtlasData = function(atlasName){
 	});
 }
 
+Object.prototype.calcCanvasPos = function(){
+	if(WIDTH_MARGIN == null)
+	{
+		WIDTH_MARGIN = (canvas.width - (this.imgWidth * COLS)) / 2;
+		HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
+	}
+
+	this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
+	this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
+}
+
 Object.prototype.drawSprite = function(spriteName){
 	if(typeof(this.atlasData) == 'undefined')
 	{
 		this.imgWidth = this.img.width * DRAW_SCALE;
 		this.imgHeight = this.img.height * DRAW_SCALE;
 
-		this.calcX = this.drawPos.x * this.imgWidth;
-		this.calcY = this.drawPos.y * this.imgHeight;
+		this.calcCanvasPos();
 
 		ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.img.width * DRAW_SCALE, this.img.height * DRAW_SCALE);
 	}
@@ -62,8 +72,7 @@ Object.prototype.drawSprite = function(spriteName){
 			this.imgWidth = scaleX * DRAW_SCALE;
 			this.imgHeight = scaleY * DRAW_SCALE;
 
-			this.calcX = this.drawPos.x * this.imgWidth;
-			this.calcY = this.drawPos.y * this.imgHeight;
+			this.calcCanvasPos();
 
 			ctx.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
 		}

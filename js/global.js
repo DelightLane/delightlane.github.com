@@ -1,4 +1,4 @@
-var COLS = 20;
+var COLS = 21;
 var ROWS = 3;
 
 var TOWN_COUNT = 3;
@@ -12,6 +12,8 @@ initScreenInfo();
 
 var W = window.innerWidth, H = window.innerHeight;
 var BLOCK_W = W / COLS, BLOCK_H = H / ROWS;
+var WIDTH_MARGIN;
+var HEIGHT_MARGIN;
 
 function initScreenInfo() {
 	W = window.innerWidth;
