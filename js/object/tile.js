@@ -12,16 +12,14 @@ function Tile(xPos, yPos, playerXPos, playerYPos){
 
 Tile.prototype = new PlaceObject();
 
-Tile.prototype.setType = function(type){
-	var tileName;
-
-	if(type == "tile")
+Tile.prototype.setType = function(tileName){
+	if(tileName == "tile")
 	{
 		tileName = "tile" + tileType;
 	}
-	else if(type == "road")
+	else
 	{
-		tileName = "road";
+		tileName = type
 	}
 
 	this.img.src = "resource/" + tileName + ".png";
