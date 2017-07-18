@@ -32,14 +32,14 @@ function init() {
 function drawTiles(){
     if(!isInitCanvas)
     {
-        /*var tileWidth = tiles[0][0].imgWidth;
+        var tileWidth = tiles[0][0].imgWidth;
         var tileHeight = tiles[0][0].imgHeight;
     
         if(typeof(tileWidth) != 'undefined' && typeof(tileHeight) != 'undefined')
-        {*/
-            initCanvas(1280, 720);
+        {
+            initCanvas(tileHeight * COLS, tileWidth * ROWS);
             isInitCanvas = true;
-        //}
+        }
     }
 
     if(tiles.length > 0){
