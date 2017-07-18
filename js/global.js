@@ -14,8 +14,6 @@ var W = window.innerWidth, H = window.innerHeight;
 var BLOCK_W = W / COLS, BLOCK_H = H / ROWS;
 var WIDTH_MARGIN;
 var HEIGHT_MARGIN;
-var CANVAS_W;
-var CANVAS_H;
 
 function initScreenInfo() {
 	W = window.innerWidth;
@@ -44,11 +42,8 @@ function initCanvas(width, height){
  		scale = window.innerWidth / width;
  	}
 
- 	CANVAS_W = width * scale;
-	CANVAS_H = height * scale;
-
-	canvas.width = CANVAS_W;
-	canvas.height = CANVAS_H;
+	canvas.width = width * scale;
+	canvas.height = height * scale;
 
 	ctx.scale(scale, scale);
 }
