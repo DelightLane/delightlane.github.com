@@ -6,6 +6,7 @@ var TOWN_COUNT = 3;
 var canvas = document.getElementsByTagName( 'canvas' )[ 0 ];
 
 var ctx = canvas.getContext( '2d' );
+
 window.addEventListener('resize', initScreenInfo, false);
 window.addEventListener('orientationchange', initScreenInfo, false);
 initScreenInfo();
@@ -56,6 +57,6 @@ include("js/object/object.js");
 include("js/object/player.js");
 include("js/object/placeObject.js");
 include("js/object/tile.js");
-include("js/object/town.js");
+include("js/object/triggerObject.js");
 
 include("js/map.js");

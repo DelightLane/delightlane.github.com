@@ -1,8 +1,6 @@
 var tiles = [];
-var towns = [];
+var placeObjects = [];
 var player;
-
-var isInitCanvas = false;
 
 function init() {
 
@@ -29,6 +27,9 @@ function init() {
 
     player = new Player(playerPos.x, playerPos.y);
 
+
+    // TODO : 맵 정보를 가져와서 처리하도록 변경해야 함. 현재는 하드 코딩.
+
     // 맵 초기화
     for ( var y = 0; y < ROWS; ++y ) {
         tiles[y] = [];
@@ -41,27 +42,31 @@ function init() {
         }
     }
 
-    towns[0] = new Town(0, 0, playerPos.x, playerPos.y, function(){
+    // 집 초기화
+    var houseImgCreator = function(){
+        var resName = "house" + Math.floor(Math.random() * 10 % 3);
+        var img = new Image();
+        img.src = "resource/" + resName + ".png";
+        return img;
+    };
+
+    placeObjects[0] = new TriggerObject(0, 0, playerPos.x, playerPos.y, townImgCreator(), function(){
         window.location.href = 'http://a306.cafe24.com/';
     });
 
-    towns[1] = new Town(1, 1, playerPos.x, playerPos.y, function(){
+    placeObjects[1] = new TriggerObject(1, 1, playerPos.x, playerPos.y, townImgCreator(), function(){
         window.location.href = 'http://a306.cafe24.com/';
     });
 
-    towns[2] = new Town(2, 2, playerPos.x, playerPos.y, function(){
+    placeObjects[2] = new TriggerObject(2, 2, playerPos.x, playerPos.y, townImgCreator(), function(){
         window.location.href = 'http://a306.cafe24.com/';
     });
 }
 
 function drawTiles(){
-    
-        var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
+    var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
 
-        initCanvas(canvasWidth, 300);
-
-        isInitCanvas = true;
-    
+    initCanvas(canvasWidth, 300);
 
     if(tiles.length > 0){
         for ( var y = 0; y < tiles.length; ++y ) {
@@ -72,11 +77,11 @@ function drawTiles(){
     }
 }
 
-function drawTowns()
+function drawPlaces()
 {
-    if(towns.length > 0){
-        for ( var i = 0; i < towns.length; ++i ) {
-            towns[i].draw();
+    if(placeObjects.length > 0){
+        for ( var i = 0; i < placeObjects.length; ++i ) {
+            placeObjects[i].draw();
         }
     }
 }
@@ -87,7 +92,7 @@ function updateMap() {
 
 function drawMap(){
     drawTiles();
-    drawTowns();
+    drawPlaces();
 
     player.draw();
 }
@@ -95,17 +100,38 @@ function drawMap(){
 function onKeyDownMap( key ) {
     player.move(key);
 
-    if(tiles.length > 0){
-        for ( var y = 0; y < tiles.length; ++y ) {
-            for ( var x = 0; x < tiles[y].length; ++x ) {
-                tiles[y][x].move(key);
-            }   
+    var isObstacleFront = false;
+
+    if(placeObjects.length > 0){
+        for ( var i = 0; i < placeObjects.length; ++i ) {
+            if(player.pos.x == placeObjects[i].pos.x && player.pos.y == placeObjects[i].pos.y)
+            {
+                if(placeObjects[i].isObstacle())
+                {
+                    placeObjects[i].move(key, true);
+
+                    player.pos = player.prevPos;
+
+                    isObstacleFront = true;
+                }
+            }
         }
     }
 
-    if(towns.length > 0){
-        for ( var i = 0; i < towns.length; ++i ) {
-            towns[i].move(key, player.pos.x == towns[i].pos.x && player.pos.y == towns[i].pos.y);
+    if(!isObstacleFront)
+    {
+        if(tiles.length > 0){
+            for ( var y = 0; y < tiles.length; ++y ) {
+                for ( var x = 0; x < tiles[y].length; ++x ) {
+                    tiles[y][x].move(key);
+                }   
+            }
+        }
+
+        if(placeObjects.length > 0){
+            for ( var i = 0; i < placeObjects.length; ++i ) {
+                placeObjects[i].move(key, player.pos.x == placeObjects[i].pos.x && player.pos.y == placeObjects[i].pos.y);
+            }
         }
     }
 }

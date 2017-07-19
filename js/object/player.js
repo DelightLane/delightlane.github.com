@@ -14,6 +14,8 @@ function Player(xPos, yPos){
 Player.prototype = new Object();
 
 Player.prototype.move = function (key){
+    this.prevPos = { x : this.pos.x, y : this.pos.y };
+
 	switch ( key ) {
         case 'left':
         	this.spriteName = "hero_walk_LEFT";

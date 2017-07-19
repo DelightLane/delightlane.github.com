@@ -12,6 +12,16 @@ function PlaceObject(xPos, yPos, playerXPos, playerYPos){
 PlaceObject.prototype = new Object();
 
 PlaceObject.prototype.move = function (key, isTrigger){
+    if(isTrigger && this.obstacle)
+    {
+        if(this.triggerEvent != null)
+        {
+            this.triggerEvent();
+        }
+        
+        return;
+    }
+
 	switch ( key ) {
         case 'left':
         	if(this.interval.x != 0){
