@@ -49,6 +49,12 @@ function initCanvas(width, height){
 	ctx.scale(scale, scale);
 }
 
+function setDecription(text)
+{
+	var textElem = document.getElementById('descText');
+    textElem.innerHTML = text;
+}
+
 function include(jsname) {
 	document.write("<script src='" + jsname + "'></script>");
 }

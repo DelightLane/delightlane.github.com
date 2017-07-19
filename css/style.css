@@ -32,6 +32,11 @@ img {
 	margin-top: 10px;
 }
 
+#descText{
+	font-size: 90%;
+	color: #4C4C4C;
+}
+
 #copyright{
 	display: block;
 	text-align: center;

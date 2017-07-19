@@ -61,6 +61,18 @@ function init() {
     placeObjects.push(new TriggerObject({x : 2, y : 2}, player, houseImgCreator(), function(){
         window.location.href = 'http://a306.cafe24.com/';
     }));
+
+
+    var signboardProfile = new TriggerObject({x : 1, y : 0}, player, function(){
+        var img = new Image();
+        img.src = "resource/signboardprofile.png";
+
+        return img;
+    }(), function(){
+        setDecription("하이욤");
+    });
+    signboardProfile.obstacle = true;
+    placeObjects.push(signboardProfile);
 }
 
 function drawTiles(){
@@ -98,6 +110,8 @@ function drawMap(){
 }
 
 function onKeyDownMap( key ) {
+    setDecription("");
+
     player.move(key);
 
     var isObstacleFront = false;
