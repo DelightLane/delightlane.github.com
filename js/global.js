@@ -55,6 +55,15 @@ function setDecription(text)
     textElem.innerHTML = text;
 }
 
+if(isMobile())
+{
+	setDecription("tip : 터치로 이동해 주세요.");
+}
+else
+{
+	setDecription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
+}
+
 function include(jsname) {
 	document.write("<script src='" + jsname + "'></script>");
 }
