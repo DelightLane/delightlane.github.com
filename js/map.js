@@ -46,7 +46,7 @@ function init() {
     var houseImgCreator = function(){
         var resName = "house" + Math.floor(Math.random() * 10 % 3);
         var img = new Image();
-        img.src = "resource/" + resName + ".png";
+        img.src = SITE_URL + "/resource/" + resName + ".png";
         return img;
     };
 
@@ -65,7 +65,7 @@ function init() {
 
     var signboardProfile = new TriggerObject({x : 1, y : 0}, player, function(){
         var img = new Image();
-        img.src = "resource/signboardprofile.png";
+        img.src = SITE_URL + "/resource/signboardprofile.png";
 
         return img;
     }(), function(){

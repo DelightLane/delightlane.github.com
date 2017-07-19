@@ -20,7 +20,7 @@ Tile.prototype.setType = function(tileName){
 		tileName = tileName;
 	}
 
-	this.img.src = "resource/" + tileName + ".png";
+	this.img.src = SITE_URL + "resource/" + tileName + ".png";
 }
 
 Tile.prototype.draw = function (){   

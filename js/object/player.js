@@ -1,11 +1,11 @@
 function Player(pos){
-    this.initAtlasData("resource/CharAtlas.json");
+    this.initAtlasData(SITE_URL + "resource/CharAtlas.json");
 
 	this.drawPos = { x : pos.x, y : pos.y };
     this.pos = { x : pos.x, y : pos.y };
 
     this.img = new Image();
-    this.img.src = 'resource/CharAtlas.png';
+    this.img.src = SITE_URL + 'resource/CharAtlas.png';
 
     this.spriteName = "hero_idle_UP";
     this.spriteNum = 0;

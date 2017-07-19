@@ -68,10 +68,10 @@ function include(jsname) {
 	document.write("<script src='" + jsname + "'></script>");
 }
 
-include("js/object/object.js");
-include("js/object/player.js");
-include("js/object/placeObject.js");
-include("js/object/tile.js");
-include("js/object/triggerObject.js");
+include(SITE_URL + "js/object/object.js");
+include(SITE_URL + "js/object/player.js");
+include(SITE_URL + "js/object/placeObject.js");
+include(SITE_URL + "js/object/tile.js");
+include(SITE_URL + "js/object/triggerObject.js");
 
-include("js/map.js");
+include(SITE_URL + "js/map.js");
