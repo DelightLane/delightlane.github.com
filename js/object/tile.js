@@ -1,6 +1,6 @@
 var tileType = Math.floor(Math.random() * 10 % 3);
 
-function Tile(xPos, yPos, playerXPos, playerYPos){
+function Tile(pos, player){
 	PlaceObject.apply(this, arguments);
 
 	this.img = new Image();

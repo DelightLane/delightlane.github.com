@@ -1,8 +1,8 @@
-function Player(xPos, yPos){
+function Player(pos){
     this.initAtlasData("resource/CharAtlas.json");
 
-	this.drawPos = { x : xPos, y : yPos }
-    this.pos = {x : xPos, y : yPos}
+	this.drawPos = { x : pos.x, y : pos.y };
+    this.pos = { x : pos.x, y : pos.y };
 
     this.img = new Image();
     this.img.src = 'resource/CharAtlas.png';

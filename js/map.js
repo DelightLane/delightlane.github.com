@@ -25,7 +25,7 @@ function init() {
         playerPos.y = ROWS / 2;
     }
 
-    player = new Player(playerPos.x, playerPos.y);
+    player = new Player(playerPos);
 
 
     // TODO : 맵 정보를 가져와서 처리하도록 변경해야 함. 현재는 하드 코딩.
@@ -34,7 +34,7 @@ function init() {
     for ( var y = 0; y < ROWS; ++y ) {
         tiles[y] = [];
         for ( var x = 0; x < COLS; ++x ) {
-            tiles[y][x] = new Tile(x, y, playerPos.x, playerPos.y);
+            tiles[y][x] = new Tile({x:x, y:y}, player);
             if(y == 1)
             {
                 tiles[y][x].setType("road");
@@ -50,17 +50,17 @@ function init() {
         return img;
     };
 
-    placeObjects[0] = new TriggerObject(0, 0, playerPos.x, playerPos.y, townImgCreator(), function(){
+    placeObjects.push(new TriggerObject({x : 0, y : 0}, player, houseImgCreator(), function(){
         window.location.href = 'http://a306.cafe24.com/';
-    });
+    }));
 
-    placeObjects[1] = new TriggerObject(1, 1, playerPos.x, playerPos.y, townImgCreator(), function(){
+    placeObjects.push(new TriggerObject({x : 1, y : 1}, player, houseImgCreator(), function(){
         window.location.href = 'http://a306.cafe24.com/';
-    });
+    }));
 
-    placeObjects[2] = new TriggerObject(2, 2, playerPos.x, playerPos.y, townImgCreator(), function(){
+    placeObjects.push(new TriggerObject({x : 2, y : 2}, player, houseImgCreator(), function(){
         window.location.href = 'http://a306.cafe24.com/';
-    });
+    }));
 }
 
 function drawTiles(){

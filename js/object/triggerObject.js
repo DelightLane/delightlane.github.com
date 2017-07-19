@@ -1,4 +1,4 @@
-function TriggerObject(xPos, yPos, playerXPos, playerYPos, img, triggerEvent){
+function TriggerObject(pos, player, img, triggerEvent){
 	PlaceObject.apply(this, arguments);
 
 	this.img = img;

@@ -1,10 +1,13 @@
 var MOVE_SPEED = 1;
 
-function PlaceObject(xPos, yPos, playerXPos, playerYPos){
-	this.drawPos = { x : xPos, y : yPos };
-	this.pos = { x : xPos, y : yPos };
+function PlaceObject(pos, player){
+    if(pos != null && player != null)
+    {
+    	this.drawPos = { x : pos.x, y : pos.y };
+    	this.pos = { x : pos.x, y : pos.y };
 
-	this.interval = { x : -playerXPos, y : -playerYPos };
+    	this.interval = { x : -player.pos.x, y : -player.pos.y };
+    }
 
     this.triggerEvent = null;
 }
@@ -18,7 +21,7 @@ PlaceObject.prototype.move = function (key, isTrigger){
         {
             this.triggerEvent();
         }
-        
+
         return;
     }
 
