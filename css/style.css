@@ -12,7 +12,7 @@ canvas {
     background-color: #353535;
 }
 
-img {
+#banner {
 	display: block;
 	margin: auto;
 	width: 100%;
@@ -21,7 +21,7 @@ img {
 	max-height: 152px;
 }
 
-#description{
+#descBorder{
 	border: solid 15px;
     border-image: url("../resource/borderImg.png") 11 11 round round;
     background-color: #fff0f0;
@@ -48,8 +48,9 @@ img {
 	margin-right: -10px;
 }
 
-body{
-	overflow: hidden;
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 div {
