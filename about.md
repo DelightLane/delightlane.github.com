@@ -4,15 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+여기는 디라이트의 개인적인 글들이 올라오는 공간 및 개인 포트폴리오를 위한 공간입니다.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+기존에 사용하던 [홈페이지][old-home]는 일단은 유지하고 데이터는 지속적으로 마이그레이션 예정입니다.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+테마는 지킬 기본 테마를 베이스로 지속적으로 추가 변경할 것입니다.
 
 
-[jekyll-organization]: https://github.com/jekyll
+[old-home]: http://a306.cafe24.com/
