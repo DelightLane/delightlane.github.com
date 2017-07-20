@@ -27,10 +27,14 @@ layout: default
         </span>
         &nbsp;
         <a class="tag-link" href="{{post.url}}">{{post.title}}</a>
-        </li>
+      </li>
     {% endfor %}
     </ul>
   {% else %}
     <p>해당 태그의 글이 없습니다.</p>
   {% endif %}
+</div>
+
+<div class="post-content">
+  {{ content }}
 </div>

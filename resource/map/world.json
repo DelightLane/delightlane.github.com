@@ -21,7 +21,7 @@
             "x" : 1,
             "y" : 0,
             "res" : "signboardprofile",
-            "event" : "setDecription('자택');",
+            "event" : "setDecription('자택(#프로필)');",
             "obstacle" : true
         },
         {
@@ -34,7 +34,7 @@
             "x" : 5,
             "y" : 0,
             "res" : "signboardbook",
-            "event" : "setDecription('도서관');",
+            "event" : "setDecription('도서관(#책)');",
             "obstacle" : true
         },
         {
@@ -47,7 +47,7 @@
             "x" : 3,
             "y" : 4,
             "res" : "signboardwork",
-            "event" : "setDecription('작업실');",
+            "event" : "setDecription('작업실(#작업)');",
             "obstacle" : true
         }
     ]

@@ -1,0 +1,54 @@
+{
+    "cols" : 5,
+    "rows" : 3,
+    "tiles" :
+    [
+        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0",
+        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0",
+        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0"
+    ],
+    "objs" :
+    [
+        {
+            "x" : 0,
+            "y" : 0,
+            "res" : "table1",
+            "obstacle" : true
+        },
+        {
+            "x" : 1,
+            "y" : 0,
+            "res" : "signboardwork",
+            "obstacle" : true
+        },
+        {
+            "x" : 2,
+            "y" : 0,
+            "res" : "fireplace1",
+            "obstacle" : true
+        },
+        {
+            "x" : 3,
+            "y" : 0,
+            "res" : "box0",
+            "obstacle" : true
+        },
+        {
+            "x" : 4,
+            "y" : 0,
+            "res" : "box0",
+            "obstacle" : true
+        },
+        {
+            "x" : 0,
+            "y" : 1,
+            "res" : "chair0"
+        },
+        {
+            "x" : 2,
+            "y" : 2,
+            "res" : "road",
+            "event" : "window.location.href = '/';"
+        }
+    ]
+}

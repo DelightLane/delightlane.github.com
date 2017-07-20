@@ -150,9 +150,26 @@ function onKeyDownMap( key ) {
     }
 }
 
-function newGame() {
-    init("world");
-}
+function newGame(mapName) {
 
-newGame();
+    if(mapName == null)
+    {
+        mapName = getCookie("lastMap");
+
+        if(mapName == null)
+        {
+            mapName = "world";
+        }
+    }
+
+    removeCookies();
+
+    console.log(document.cookie);
+
+    init(mapName);
+
+    setCookie("lastMap", mapName);
+
+    console.log(document.cookie);
+}
 

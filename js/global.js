@@ -74,6 +74,55 @@ else
 	setDecription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
 }
 
+
+function removeCookie(name)
+{
+	var date = new Date();
+	date.setTime(date.getTime() - 1);
+	var path = "path=" + '/';
+	document.cookie = name += "=; expires=" + date.toGMTString() + "; " + path;
+}
+
+ function removeCookies(){
+ 	if(document.cookie != ""){
+
+ 		var cookies = document.cookie.split("; ");
+
+	    for(var i =0; i < cookies.length; i++){
+	    	var cookieName = cookies[i].split("=")[0];
+	    	removeCookie(cookieName);
+	    }
+	}
+ }
+
+function setCookie(name, value){
+	var date = new Date();
+	date.setDate(date.getDate() + 1);
+	var expires = "expires=" + date.toGMTString();
+	var path = "path=" + '/';
+	document.cookie = name + "=" + value + "; " + expires + "; " + path;
+}
+
+function getCookie(name){
+	name += "=";
+
+	var cookie = document.cookie;
+
+    var startIdx = cookie.indexOf(name);
+    if (startIdx != -1) {
+
+        startIdx += name.length;
+        var endIdx = cookie.indexOf(";", startIdx);
+
+        if (endIdx == -1) {
+
+            endIdx = cookie.length;
+            return unescape(cookie.substring(startIdx, endIdx));
+        }
+    }
+    return null;
+}
+
 function include(jsname) {
 	document.write("<script src='" + jsname + "'></script>");
 }
