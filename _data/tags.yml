@@ -1,2 +1,5 @@
 - slug: tagTest
-  name : 태그테스트
+  name: 태그테스트
+
+- slug: book
+  name: 독후감
