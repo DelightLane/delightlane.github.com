@@ -6,9 +6,6 @@ permalink: /tags/
 
 <ul>
 	{% for tag in site.data.tags %}
-  	<li>
-    	<h2><a href="/tags/{{tag.slug}}">#{{tag.name}}</a></h2>
-    	<span class="post-meta"></span>
-  	</li>
+    	<a href="/tags/{{tag.slug}}">#{{tag.name}}</a>&nbsp
   	{% endfor %}
 </ul>
