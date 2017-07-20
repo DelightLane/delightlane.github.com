@@ -50,7 +50,7 @@
        var url = "{{page.url}}";
 
        var counter = 0;
-       for(var i = 0 ; i < url.length ; ++i)
+       for(var i = 0 ; i < url.length - 1; ++i)
        {
           if(url[i] == '/')
           {
@@ -63,7 +63,7 @@
      
      var SITE_URL = "";
 
-     for(var i = 0 ; i < counter - 1 ; ++i)
+     for(var i = 0 ; i < counter ; ++i)
      {
         SITE_URL += "../";
      }

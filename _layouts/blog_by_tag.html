@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% for data_tag in site.data.tags %}
+  {% if data_tag.slug == page.slug %}
+    {% capture tag_name %}
+      {{data_tag.name}}
+    {% endcapture %}
+  {% endif %}
+{% endfor %}
+
+
+<h2>#{{tag_name}}</h2>
+<div>
+  {% if site.tags[page.slug] %}
+    <ul class="tags">
+    {% for post in site.tags[page.slug] %}
+      <li class="tag"><a class="tag-link" href="{{post.url}}">{{post.title}}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no posts for this tag.</p>
+  {% endif %}
+</div>
