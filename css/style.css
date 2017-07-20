@@ -20,15 +20,21 @@ canvas {
 	max-height: 152px;
 }
 
+#gameDescription{
+	width: 100%;
+	height: 100%;
+	max-width: 650px;
+	margin: auto;
+	margin-top: 10px;
+}
+
 #descBorder{
 	border: solid 15px;
     border-image: url("../resource/borderImg.png") 11 11 round round;
     background-color: #fff0f0;
-    width: 100%;
-	height: 10px;
-	max-width: 550px;
+    width: 85%;
+	height: 85%;
 	margin: auto;
-	margin-top: 10px;
 }
 
 #descText{
