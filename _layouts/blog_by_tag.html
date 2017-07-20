@@ -16,7 +16,16 @@ layout: default
   {% if site.tags[page.slug] %}
     <ul class="tags">
     {% for post in site.tags[page.slug] %}
-      <li class="tag"><a class="tag-link" href="{{post.url}}">{{post.title}}</a></li>
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+      </time>
+
+      <li class="tag">
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        &nbsp;
+        <a class="tag-link" href="{{post.url}}">{{post.title}}</a>
+        </li>
     {% endfor %}
     </ul>
   {% else %}

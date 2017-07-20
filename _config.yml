@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Delight's World
+author: Delight
 email: hano881112@hanmir.com
 descname: "게임 프로그래머 디라이트"
 description: > # this means to ignore newlines until "baseurl:"

@@ -1,5 +1,8 @@
-- slug: tagTest
-  name: 태그테스트
+- slug: work
+  name: 작업
 
 - slug: book
-  name: 독후감
+  name: 책
+
+- slug: profile
+  name: 프로필

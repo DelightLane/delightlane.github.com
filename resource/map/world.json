@@ -15,7 +15,7 @@
             "x" : 2,
             "y" : 0,
             "res" : "house0",
-            "event" : "init('world');"
+            "event" : "window.location.href = '/tags/profile/';"
         },
         {
             "x" : 1,
@@ -28,12 +28,12 @@
             "x" : 6,
             "y" : 0,
             "res" : "house1",
-            "event" : "window.location.href = 'http://a306.cafe24.com/';"
+            "event" : "window.location.href = '/tags/book/';"
         },
         {
             "x" : 5,
             "y" : 0,
-            "res" : "signboardprofile",
+            "res" : "signboardbook",
             "event" : "setDecription('도서관');",
             "obstacle" : true
         },
@@ -41,12 +41,12 @@
             "x" : 4,
             "y" : 4,
             "res" : "house2",
-            "event" : "window.location.href = 'http://a306.cafe24.com/';"
+            "event" : "window.location.href = '/tags/work/';"
         },
         {
             "x" : 3,
             "y" : 4,
-            "res" : "signboardprofile",
+            "res" : "signboardwork",
             "event" : "setDecription('작업실');",
             "obstacle" : true
         }

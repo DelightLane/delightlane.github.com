@@ -1,5 +1,5 @@
 ---
 layout: blog_by_tag
 slug: book
-permalink: /tags/book
+permalink: /tags/book/
 ---
