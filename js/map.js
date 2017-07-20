@@ -33,6 +33,7 @@ function init(mapName) {
 
 
         // 맵 초기화
+        tiles = [];
         var idx = 0;
         for ( var y = 0; y < ROWS; ++y ) {
             tiles[y] = [];
@@ -54,6 +55,7 @@ function init(mapName) {
             }
         }
 
+        placeObjects = [];
         for(var i = 0 ; i < map.objs.length ; ++i){
             var objData = map.objs[i];
             placeObjects.push(new TriggerObject(objData, player, resCreator(objData.res), eventFunc));
