@@ -1,8 +1,3 @@
-var COLS = 21;
-var ROWS = 3;
-
-var TOWN_COUNT = 3;
-
 var canvas = document.getElementsByTagName( 'canvas' )[ 0 ];
 
 var ctx = canvas.getContext( '2d' );
@@ -11,17 +6,32 @@ window.addEventListener('resize', initScreenInfo, false);
 window.addEventListener('orientationchange', initScreenInfo, false);
 initScreenInfo();
 
-var W = window.innerWidth, H = window.innerHeight;
-var BLOCK_W = W / COLS, BLOCK_H = H / ROWS;
-var WIDTH_MARGIN;
-var HEIGHT_MARGIN;
+var COLS;
+var ROWS;
 
-function initScreenInfo() {
+var W;
+var H;
+
+var BLOCK_W;
+var BLOCK_H;
+
+function initGlobal(mapData)
+{
+	if(mapData != null)
+	{
+		COLS = mapData.cols;
+		ROWS = mapData.rows;
+	}
+
 	W = window.innerWidth;
 	H = window.innerHeight;
 
 	BLOCK_W = W / COLS;
 	BLOCK_H = H / ROWS;
+}
+
+function initScreenInfo() {
+	initGlobal();
 }
 
 function isMobile(){

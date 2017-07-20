@@ -1,11 +1,18 @@
 var tileType = Math.floor(Math.random() * 10 % 3);
 
-function Tile(pos, player){
+function Tile(pos, player, tileName){
 	PlaceObject.apply(this, arguments);
 
 	this.img = new Image();
 
-	this.setType("tile");
+	if(tileName != null && tileName.length > 0)
+	{
+		this.setType(tileName);
+	}
+	else
+	{
+		this.setType("tile");
+	}
 }
 
 Tile.prototype = new PlaceObject();
