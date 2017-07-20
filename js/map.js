@@ -2,10 +2,14 @@ var tiles = [];
 var placeObjects = [];
 var player;
 
+var isInit = false;
+
 function init(mapName) {
 
     getJson(SITE_URL + "resource/map/"+ mapName +".json", function(map)
     {
+        isInit = true;
+
         initGlobal(map);
 
         // 플레이어 초기화
@@ -87,17 +91,25 @@ function drawPlaces()
 }
 
 function updateMap() {
-    player.update();
+    if(isInit){
+        player.update();
+    }
 }
 
 function drawMap(){
-    drawTiles();
-    drawPlaces();
+    if(isInit){
+        drawTiles();
+        drawPlaces();
 
-    player.draw();
+        player.draw();
+    }
 }
 
 function onKeyDownMap( key ) {
+    if(!isInit){
+        return;
+    }
+
     setDecription("");
 
     player.move(key);
