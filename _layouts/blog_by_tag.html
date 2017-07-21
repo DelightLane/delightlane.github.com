@@ -16,7 +16,7 @@ layout: default
   {% if site.tags[page.slug] %}
     <ul class="post-list">
     {% for post in site.tags[page.slug] %}
-      {% assign curDate = post.date | date: "%m, %Y" %}
+      {% assign curDate = post.date | date: "%-m, %Y" %}
       {% if prevDate != curDate %}
         <br/>
         <h3>{{ curDate }}</h3>
@@ -26,7 +26,7 @@ layout: default
       <li class="tag">
         <span class="post-meta">
           <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-            {% assign date_format = site.minima.date_format | default: "%m월 %-d일" %}
+            {% assign date_format = site.minima.date_format | default: "%-m월 %-d일" %}
             {{ post.date | date: date_format }}
           </time>
         </span>

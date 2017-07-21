@@ -16,7 +16,7 @@ layout: default
     {% for post in site.posts %}
 
       <!-- 같은 년/월에 대해 헤드라인 삽입 -->
-      {% assign curDate = post.date | date: "%m, %Y" %}
+      {% assign curDate = post.date | date: "%-m, %Y" %}
       {% if prevDate != curDate %}
         <br/>
         <h3>{{ curDate }}</h3>
@@ -49,7 +49,7 @@ layout: default
           {% assign tags_content = '' %}
         {% endif %}
 
-        {% assign date_format = site.minima.date_format | default: "%m월 %-d일" %}
+        {% assign date_format = site.minima.date_format | default: "%-m월 %-d일" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <a class="post-link" href="{{ post.url | relative_url }}">&nbsp;&nbsp;{{ post.title | escape }}</a>
         <span class="post-tag-custom">&nbsp;&nbsp;&nbsp;{{ tags_content }}</span>
