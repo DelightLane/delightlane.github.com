@@ -14,7 +14,7 @@ layout: default
 <h2>#{{tag_name}}</h2>
 <div>
   {% if site.tags[page.slug] %}
-    <ul class="post-list-custom">
+    <ul class="post-list">
     {% for post in site.tags[page.slug] %}
       {% assign curDate = post.date | date: "%m, %Y" %}
       {% if prevDate != curDate %}
