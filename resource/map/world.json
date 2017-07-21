@@ -12,6 +12,35 @@
     "objs" :
     [
         {
+            "x" : 1,
+            "y" : 3,
+            "res" : "stone0",
+            "obstacle" : true
+        },
+        {
+            "x" : 8,
+            "y" : 1,
+            "res" : "stone1",
+            "obstacle" : true
+        },
+        {
+            "x" : 0,
+            "y" : 1,
+            "res" : "milestone",
+            "event" : "setDecription('고성으로(구 홈페이지)');",
+            "obstacle" : true
+        },
+        {
+            "x" : 0,
+            "y" : 2,
+            "res" : "road",
+            "event" : "window.location.href = 'http://a306.cafe24.com/';"
+        },
+
+
+
+
+        {
             "x" : 2,
             "y" : 0,
             "res" : "house0",
