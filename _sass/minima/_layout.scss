@@ -10,6 +10,11 @@
   position: relative;
 
   background-color: $head-background-color;
+  
+  background-image: url("/resource/bannerBg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $content-width + 200;
 }
 
 .site-title {
