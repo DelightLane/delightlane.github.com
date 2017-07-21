@@ -3,9 +3,9 @@
     "rows" : 3,
     "tiles" :
     [
-        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0",
-        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0",
-        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0"
+        "road1", "road1", "road1", "road1", "road1",
+        "road1", "road1", "road1", "road1", "road1",
+        "road1", "road1", "road1", "road1", "road1"
     ],
     "objs" :
     [
@@ -22,9 +22,15 @@
             "obstacle" : true
         },
         {
-            "x" : 2,
+            "x" : 4,
             "y" : 0,
             "res" : "fireplace1",
+            "obstacle" : true
+        },
+        {
+            "x" : 2,
+            "y" : 0,
+            "res" : "box0",
             "obstacle" : true
         },
         {
@@ -35,8 +41,13 @@
         },
         {
             "x" : 4,
-            "y" : 0,
-            "res" : "box0",
+            "y" : 2,
+            "res" : "chair0"
+        },
+        {
+            "x" : 4,
+            "y" : 1,
+            "res" : "anvil",
             "obstacle" : true
         },
         {

@@ -3,9 +3,9 @@
     "rows" : 3,
     "tiles" :
     [
-        "tileWood1", "tileWood1", "tileWood1", "tileWood1", "tileWood1",
-        "tileWood1", "tileWood1", "tileWood1", "tileWood1", "tileWood1",
-        "tileWood1", "tileWood1", "tileWood1", "tileWood1", "tileWood1"
+        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0",
+        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0",
+        "tileWood0", "tileWood0", "tileWood0", "tileWood0", "tileWood0"
     ],
     "objs" :
     [
