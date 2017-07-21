@@ -16,7 +16,12 @@ layout: default
   {% if site.tags[page.slug] %}
     <ul class="tags">
     {% for post in site.tags[page.slug] %}
-      
+      {% assign curDate = post.date | date: "%b, %Y" %}
+      {% if prevDate != curDate %}
+        <br/>
+        <h3>{{ curDate }}</h3>
+        {% assign prevDate = curDate %}
+      {% endif %}
 
       <li class="tag">
         <span class="post-meta">
