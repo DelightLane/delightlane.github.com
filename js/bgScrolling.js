@@ -2,7 +2,7 @@ $(function() {
 	var curPos = $('.site-header-bg').css('background-position-y');
 	curPos = new Number(curPos.replace("%", ""));
 
-	var prevValue = $(this).scrollTop();
+	var prevValue = 0;
 
 	$(window).scroll(function() {
 		var value = $(this).scrollTop();
