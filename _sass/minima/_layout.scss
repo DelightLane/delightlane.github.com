@@ -40,6 +40,7 @@
 
   .page-link {
     color: $text-color;
+    font-family: "Times New Roman";
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
@@ -214,7 +215,16 @@
   margin-bottom: $spacing-unit;
 }
 
+.post-date {
+  font-family: "Batang";
+  font-weight: bold;
+  @include relative-font-size(1.75);
+}
+
 .post-title {
+  font-family: "Batang";
+  font-weight: bold;
+
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1;

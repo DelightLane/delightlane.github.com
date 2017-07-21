@@ -19,7 +19,7 @@ layout: default
       {% assign curDate = post.date | date: "%-m, %Y" %}
       {% if prevDate != curDate %}
         <br/>
-        <h3>{{ curDate }}</h3>
+        <h3 class="post-date">{{ curDate }}</h3>
         {% assign prevDate = curDate %}
       {% endif %}
 
