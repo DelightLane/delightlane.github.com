@@ -65,12 +65,12 @@ function setDescription(text)
     textElem.innerHTML = text;
 }
 
-function setDescriptionHtml(path)
+function setDescriptionHtml(fileName)
 {
-	if(path != null && path.length > 0)
+	if(fileName != null && fileName.length > 0)
 	{
-		$("#descHtml").load(path, function() {
-			console.log("load "+path);
+		$("#descHtml").load('/descHtml/' + fileName + '.html', function() {
+			console.log("load "+ fileName);
 		});
 	}
 	else
