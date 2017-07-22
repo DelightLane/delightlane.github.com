@@ -50,6 +50,11 @@
             "obstacle" : true
         },
         {
+            "x" : 0,
+            "y" : 2,
+            "res" : "bed2"
+        },
+        {
             "x" : 2,
             "y" : 2,
             "res" : "road",
