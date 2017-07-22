@@ -39,9 +39,15 @@
             "obstacle" : true
         },
         {
+            "x" : 3,
+            "y" : 0,
+            "res" : "chair0"
+        },
+        {
             "x" : 4,
             "y" : 1,
-            "res" : "chair0"
+            "res" : "downstair0",
+            "event" : "newGame('homeDownStairs');"
         },
         {
             "x" : 4,

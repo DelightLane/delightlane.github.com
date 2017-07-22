@@ -13,27 +13,32 @@ function init(mapName) {
         initGlobal(map);
 
         // 플레이어 초기화
-        var playerPos = {};
-
+        var playerPos = map.startPos;
+        var centerPos = {};
         if(COLS % 2 != 0)
         {
-            playerPos.x = (COLS - 1) / 2;
+            centerPos.x = (COLS - 1) / 2;
         }
         else
         {
-            playerPos.x = COLS / 2;
+            centerPos.x = COLS / 2;
         }
 
         if(ROWS % 2 != 0)
         {
-            playerPos.y = (ROWS - 1) / 2;
+            centerPos.y = (ROWS - 1) / 2;
         }
         else
         {
-            playerPos.y = ROWS / 2;
+            centerPos.y = ROWS / 2;
         }
 
-        player = new Player(playerPos);
+        if(playerPos == null)
+        {
+            playerPos = centerPos;
+        }
+
+        player = new Player(playerPos, centerPos);
 
 
         // 맵 초기화

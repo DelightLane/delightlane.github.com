@@ -1,7 +1,7 @@
-function Player(pos){
+function Player(pos, drawPos){
     this.initAtlasData(SITE_URL + "resource/CharAtlas.json");
 
-	this.drawPos = { x : pos.x, y : pos.y };
+	this.drawPos = { x : drawPos.x, y : drawPos.y };
     this.pos = { x : pos.x, y : pos.y };
 
     this.img = new Image();
