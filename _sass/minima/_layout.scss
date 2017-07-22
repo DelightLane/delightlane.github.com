@@ -222,13 +222,11 @@
 }
 
 .post-date {
-  font-family: "Batang";
   font-weight: bold;
   @include relative-font-size(1.75);
 }
 
 .post-title {
-  font-family: "Batang";
   font-weight: bold;
 
   @include relative-font-size(2.625);

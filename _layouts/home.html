@@ -51,7 +51,8 @@ layout: default
 
         {% assign date_format = site.minima.date_format | default: "%-m월 %-d일" %}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <a class="post-link" href="{{ post.url | relative_url }}">&nbsp;&nbsp;{{ post.title | escape }}</a>
+        &nbsp;&nbsp;
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         <span class="post-tag-custom">&nbsp;&nbsp;&nbsp;{{ tags_content }}</span>
         
       </li>
