@@ -116,6 +116,7 @@ function onKeyDownMap( key ) {
     }
 
     setDescription("");
+    setDescriptionHtml();
 
     player.move(key);
 
