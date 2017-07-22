@@ -110,7 +110,7 @@ function onKeyDownMap( key ) {
         return;
     }
 
-    setDecription("");
+    setDescription("");
 
     player.move(key);
 

@@ -59,19 +59,33 @@ function initCanvas(width, height){
 	ctx.scale(scale, scale);
 }
 
-function setDecription(text)
+function setDescription(text)
 {
 	var textElem = document.getElementById('descText');
     textElem.innerHTML = text;
 }
 
+function setDescriptionHtml(path)
+{
+	if(path != null && path.length > 0)
+	{
+		$("#descHtml").load(path, function() {
+			console.log("load "+path);
+		});
+	}
+	else
+	{
+		$("#descHtml").empty();
+	}
+}
+
 if(isMobile())
 {
-	setDecription("tip : 터치로 이동해 주세요.");
+	setDescription("tip : 터치로 이동해 주세요.");
 }
 else
 {
-	setDecription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
+	setDescription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
 }
 
 

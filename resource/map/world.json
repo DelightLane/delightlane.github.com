@@ -27,7 +27,7 @@
             "x" : 0,
             "y" : 1,
             "res" : "milestone",
-            "event" : "setDecription('고성으로(구 홈페이지)');",
+            "event" : "setDescription('고성으로(구 홈페이지)');",
             "obstacle" : true
         },
         {
@@ -50,7 +50,7 @@
             "x" : 1,
             "y" : 0,
             "res" : "signboardprofile",
-            "event" : "setDecription('자택(#프로필)');",
+            "event" : "setDescription('자택(#프로필)');",
             "obstacle" : true
         },
         {
@@ -63,7 +63,7 @@
             "x" : 5,
             "y" : 0,
             "res" : "signboardbook",
-            "event" : "setDecription('도서관(#책)');",
+            "event" : "setDescription('도서관(#책)');",
             "obstacle" : true
         },
         {
@@ -76,7 +76,7 @@
             "x" : 3,
             "y" : 4,
             "res" : "signboardwork",
-            "event" : "setDecription('작업실(#작업)');",
+            "event" : "setDescription('작업실(#작업)');",
             "obstacle" : true
         }
     ]
