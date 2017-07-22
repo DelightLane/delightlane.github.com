@@ -169,12 +169,8 @@ function newGame(mapName) {
 
     removeCookies();
 
-    console.log(document.cookie);
-
     init(mapName);
 
     setCookie("lastMap", mapName);
-
-    console.log(document.cookie);
 }
 
