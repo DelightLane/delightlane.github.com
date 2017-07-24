@@ -137,6 +137,31 @@ function getCookie(name){
     return null;
 }
 
+function drawLineText(context, text, x, y, yMargin, fontSize){
+	var lineStr = "";
+	var count = 0;
+
+	var textLength = text.length;
+
+	for(var i = 0 ; i < textLength ; ++i)
+	{
+		var char = text[i];
+
+		if(char != '\n')
+		{
+			lineStr += char;
+		}
+
+		if(char == '\n' || i == (textLength - 1))
+		{
+			context.strokeText(lineStr, x, y + (yMargin + fontSize) * count++);
+			lineStr = "";
+		}
+	}
+
+	context.stroke();
+}
+
 function include(jsname) {
 	document.write("<script src='" + jsname + "'></script>");
 }

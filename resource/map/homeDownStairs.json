@@ -107,7 +107,7 @@
             "x" : 2,
             "y" : 2,
             "res" : "road1",
-            "event" : "setDescriptionHtml('pjBusinessCard');"
+            "event" : "setDescriptionHtml('introduce0');"
         },
 
         {
