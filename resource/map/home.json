@@ -44,6 +44,12 @@
             "res" : "chair0"
         },
         {
+            "x" : 3,
+            "y" : 1,
+            "res" : "profileDirect",
+            "obstacle" : false
+        },
+        {
             "x" : 4,
             "y" : 1,
             "res" : "downstair0",
