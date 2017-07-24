@@ -148,3 +148,7 @@ include(SITE_URL + "js/object/tile.js");
 include(SITE_URL + "js/object/triggerObject.js");
 
 include(SITE_URL + "js/map.js");
+
+include(SITE_URL + "js/controller.js");
+include(SITE_URL + "js/draw.js");
+include(SITE_URL + "js/update.js");
