@@ -1,7 +1,7 @@
 {
     "cols" : 10,
     "rows" : 3,
-    "startPos" : { "x" : 0, "y" : 2 },
+    "startPos" : { "x" : 0, "y" : 1 },
     "tiles" :
     [
         "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
@@ -13,62 +13,52 @@
         {
             "x" : 0,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 1,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 2,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 3,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 4,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 5,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 6,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 7,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 8,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
         {
             "x" : 9,
             "y" : 0,
-            "res" : "wall0",
-            "obstacle" : true
+            "res" : "wall0"
         },
 
 
@@ -81,7 +71,7 @@
         {
             "x" : 2,
             "y" : 1,
-            "res" : "milestone",
+            "res" : "fence1",
             "obstacle" : true
         },
         {
@@ -94,6 +84,15 @@
             "x" : 4,
             "y" : 1,
             "res" : "fence1",
+            "obstacle" : true
+        },
+
+
+
+        {
+            "x" : 2,
+            "y" : 0,
+            "res" : "statue0",
             "obstacle" : true
         },
 
@@ -107,7 +106,7 @@
 
         {
             "x" : 0,
-            "y" : 1,
+            "y" : 0,
             "res" : "upstair0",
             "event" : "newGame('home');"
         }
