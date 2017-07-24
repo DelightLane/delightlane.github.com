@@ -1,4 +1,4 @@
-var canvas = document.getElementsByTagName( 'canvas' )[ 0 ];
+var canvas = document.getElementById("gameScene");
 
 var ctx = canvas.getContext( '2d' );
 
