@@ -115,9 +115,6 @@ function onKeyDownMap( key ) {
         return;
     }
 
-    setDescription("");
-    setDescriptionHtml();
-
     player.move(key);
 
     var isObstacleFront = false;
@@ -153,6 +150,12 @@ function onKeyDownMap( key ) {
                 placeObjects[i].move(key, player.pos.x == placeObjects[i].pos.x && player.pos.y == placeObjects[i].pos.y);
             }
         }
+    }
+
+    if(player.prevPos.x != player.pos.x || player.prevPos.y != player.pos.y)
+    {
+        setDescription("");
+        setDescriptionHtml();
     }
 }
 

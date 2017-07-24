@@ -1,12 +1,12 @@
 {
-    "cols" : 5,
+    "cols" : 10,
     "rows" : 3,
     "startPos" : { "x" : 0, "y" : 2 },
     "tiles" :
     [
-        "road1", "road1", "road1", "road1", "road1",
-        "road1", "road1", "road1", "road1", "road1",
-        "road1", "road1", "road1", "road1", "road1"
+        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1"
     ],
     "objs" :
     [
@@ -40,12 +40,68 @@
             "res" : "wall0",
             "obstacle" : true
         },
+        {
+            "x" : 5,
+            "y" : 0,
+            "res" : "wall0",
+            "obstacle" : true
+        },
+        {
+            "x" : 6,
+            "y" : 0,
+            "res" : "wall0",
+            "obstacle" : true
+        },
+        {
+            "x" : 7,
+            "y" : 0,
+            "res" : "wall0",
+            "obstacle" : true
+        },
+        {
+            "x" : 8,
+            "y" : 0,
+            "res" : "wall0",
+            "obstacle" : true
+        },
+        {
+            "x" : 9,
+            "y" : 0,
+            "res" : "wall0",
+            "obstacle" : true
+        },
 
+
+        {
+            "x" : 1,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
         {
             "x" : 2,
             "y" : 1,
             "res" : "milestone",
-            "obstacle" : true,
+            "obstacle" : true
+        },
+        {
+            "x" : 3,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
+        {
+            "x" : 4,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
+
+
+        {
+            "x" : 2,
+            "y" : 2,
+            "res" : "road1",
             "event" : "setDescriptionHtml('pjBusinessCard');"
         },
 
