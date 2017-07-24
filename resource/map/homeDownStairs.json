@@ -92,6 +92,42 @@
             "res" : "fence1",
             "obstacle" : true
         },
+        {
+            "x" : 5,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
+        {
+            "x" : 6,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
+        {
+            "x" : 7,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
+        {
+            "x" : 8,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
+        {
+            "x" : 9,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
+        {
+            "x" : 10,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
 
 
 
@@ -107,6 +143,12 @@
             "res" : "statue0",
             "obstacle" : true
         },
+        {
+            "x" : 5,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true
+        },
 
 
         {
@@ -115,6 +157,19 @@
             "res" : "road1",
             "event" : "setDescriptionHtml('introduce0');"
         },
+        {
+            "x" : 3,
+            "y" : 2,
+            "res" : "road1",
+            "event" : "setDescriptionHtml('introduce1');"
+        },
+        {
+            "x" : 5,
+            "y" : 2,
+            "res" : "road1",
+            "event" : "setDescriptionHtml('introduce2');"
+        },
+
 
         {
             "x" : 0,

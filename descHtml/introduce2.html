@@ -1,0 +1,16 @@
+<div style="display: inline-block; margin: auto; padding:20px;">
+
+	<img id="profile1_0" style="float:left;" src="/resource/img/profile1_0.png"/>
+	<img id="profile1_1" style="float:left;" src="/resource/img/profile1_1.png"/>
+	
+</div>
+
+<script type="text/javascript">
+	$("#profile1_0").hide();
+	$("#profile1_1").hide();
+
+	$("#profile1_0").fadeIn(null, function()
+		{
+			$("#profile1_1").slideDown("slow");
+		});
+</script>
