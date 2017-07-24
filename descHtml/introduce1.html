@@ -1,6 +1,11 @@
 <img style="display:block; margin: auto;" id="profile0" src="/resource/img/profile0.png"/>
 
 <script type="text/javascript">
+	
 	$('#profile0').hide();
-	$('#profile0').fadeIn();
+	$('#profile0').load(function() {
+		if(this.complete){
+			$(this).fadeIn();
+		}
+	});
 </script>

@@ -9,8 +9,11 @@
 	$("#profile1_0").hide();
 	$("#profile1_1").hide();
 
-	$("#profile1_0").fadeIn(null, function()
-		{
-			$("#profile1_1").slideDown("slow");
-		});
+	$('#profile1_0').load(function() {
+		if(this.complete){
+		$(this).fadeIn(null, function(){
+				$("#profile1_1").slideDown("slow");
+			});
+		}
+	});
 </script>
