@@ -59,6 +59,20 @@ function initCanvas(width, height){
 	ctx.scale(scale, scale);
 }
 
+
+
+if(isMobile())
+{
+	setDescription("tip : 터치로 이동해 주세요.");
+}
+else
+{
+	setDescription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
+}
+
+
+
+// 디스크립션 관련
 function setDescription(text)
 {
 	var textElem = document.getElementById('descText');
@@ -79,16 +93,9 @@ function setDescriptionHtml(fileName)
 	}
 }
 
-if(isMobile())
-{
-	setDescription("tip : 터치로 이동해 주세요.");
-}
-else
-{
-	setDescription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
-}
 
 
+// 쿠키 관련
 function removeCookie(name)
 {
 	var date = new Date();
@@ -137,30 +144,133 @@ function getCookie(name){
     return null;
 }
 
-function drawLineText(context, text, x, y, yMargin, fontSize){
+
+// 텍스트 관련
+function getTextHeight(canvas, text, x, y, yMargin, fontSize)
+{
+	var context = c.getContext( '2d' );
+
 	var lineStr = "";
 	var count = 0;
 
 	var textLength = text.length;
+	var calcX = x;
+
+	var calcHeight = 0;
 
 	for(var i = 0 ; i < textLength ; ++i)
 	{
 		var char = text[i];
 
-		if(char != '\n')
-		{
-			lineStr += char;
-		}
+		var charWidth = context.measureText(char).width;
+		calcHeight = y + (yMargin + fontSize) * count;
 
 		if(char == '\n' || i == (textLength - 1))
 		{
-			context.strokeText(lineStr, x, y + (yMargin + fontSize) * count++);
-			lineStr = "";
+			calcX = x;
+			++count;
+		}
+		else
+		{
+			calcX += charWidth;
+		}
+
+		if(calcX > canvas.width - charWidth)
+		{
+			calcX = x;
+			++count;
 		}
 	}
 
+	calcHeight += yMargin;
+
+	return calcHeight;
+}
+
+var requestAnimId = undefined;
+function startLineText(canvas, text, x, y, yMargin, fontSize, ctxSetFunc){
+	var context = c.getContext( '2d' );
+
+	ctxSetFunc(context);
+
+	canvas.height = getTextHeight(canvas, text, x, y, yMargin, fontSize);
+
+	ctxSetFunc(context);
+
+	var lineStr = "";
+	var count = 0;
+
+	var textLength = text.length;
+	var i = 0;
+	var calcX = x;
+
+	(function loop()
+	{
+		if(i >= textLength)
+		{
+			return;
+		}
+
+		var char = text[i];
+
+		var calcHeight = y + (yMargin + fontSize) * count;
+		var charWidth = context.measureText(char).width;
+
+		context.fillText(char, calcX, calcHeight);
+		context.strokeText(char, calcX, calcHeight);
+
+		if(char == '\n' || i == (textLength - 1))
+		{
+			calcX = x;
+			++count;
+		}
+		else
+		{
+			calcX += charWidth;
+		}
+
+		if(calcX > canvas.width - charWidth)
+		{
+			calcX = x;
+			++count;
+		}
+
+		++i;
+
+		requestAnimId = requestAnimationFrame(loop);
+	})();
+
+	context.fill();
 	context.stroke();
 }
+
+function stopLineText()
+{
+	if(requestAnimId){
+		cancelAnimationFrame(requestAnimId);
+		requestAnimId = undefined;
+	}
+}
+
+
+
+// 임시로 지정하는 업데이트 기능 관련
+var settingUpdate = undefined;
+function setUpdateFunc(func)
+{
+	if(settingUpdate)
+	{
+		clearInterval(settingUpdate);
+		settingUpdate = undefined;
+	}
+
+	if(func)
+	{
+		settingUpdate = setInterval(func, 30);
+	}
+}
+
+
 
 function include(jsname) {
 	document.write("<script src='" + jsname + "'></script>");

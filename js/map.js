@@ -156,6 +156,7 @@ function onKeyDownMap( key ) {
     {
         setDescription("");
         setDescriptionHtml();
+        setUpdateFunc();
     }
 }
 
