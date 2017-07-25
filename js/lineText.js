@@ -1,7 +1,7 @@
 // 텍스트 관련
 function getTextHeight(canvas, text, x, y, yMargin, fontSize)
 {
-	var context = c.getContext( '2d' );
+	var context = canvas.getContext( '2d' );
 
 	var lineStr = "";
 	var count = 0;
@@ -42,7 +42,7 @@ function getTextHeight(canvas, text, x, y, yMargin, fontSize)
 
 var requestAnimId = undefined;
 function startLineText(canvas, text, x, y, yMargin, fontSize, ctxSetFunc){
-	var context = c.getContext( '2d' );
+	var context = canvas.getContext( '2d' );
 
 	ctxSetFunc(context);
 

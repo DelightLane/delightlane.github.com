@@ -149,6 +149,12 @@
             "res" : "photoframe0",
             "obstacle" : true
         },
+        {
+            "x" : 7,
+            "y" : 0,
+            "res" : "statue0",
+            "obstacle" : true
+        },
 
 
         {
@@ -168,6 +174,12 @@
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce2');"
+        },
+        {
+            "x" : 7,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('introduce3');"
         },
 
 

@@ -5,39 +5,41 @@
 <script type="text/javascript" src='/js/lineText.js'></script>
 
 <script type="text/javascript">
-	var c = document.getElementById("introduceMyself");
-	var c_ctx = c.getContext( '2d' );
+	(function(){
+		var c = document.getElementById("introduceMyself");
+		var c_ctx = c.getContext( '2d' );
 
-	c.width = document.getElementById("descHtml").offsetWidth;
+		c.width = document.getElementById("descHtml").offsetWidth;
 
-	var drawDesc = function(){
+		var drawDesc = function(){
 
-		var fontSize = 20;
-			
-		startLineText(c, '디라이트의 지하 프로필 갤러리입니다.\n오른쪽으로 계속 이동하며 관람해 주세요.\n즐거운 시간 되시길 바랍니다.', 0, fontSize, 10, fontSize,
-			function(ctx){
-				ctx.strokeStyle = "rgb(93, 93, 93)";
+			var fontSize = 20;
+				
+			startLineText(c, '디라이트의 지하 프로필 갤러리입니다.\n오른쪽으로 계속 이동하며 관람해 주세요.\n즐거운 시간 되시길 바랍니다.', 0, fontSize, 10, fontSize,
+				function(ctx){
+					ctx.strokeStyle = "rgb(93, 93, 93)";
 
-				ctx.font = fontSize + 'px DungGeunMo';
+					ctx.font = fontSize + 'px DungGeunMo';
 
-				var gradient = ctx.createLinearGradient(0, 0, 0, 170);
-      			gradient.addColorStop(0, "rgb(9, 9, 9)");
-      			gradient.addColorStop(1, "rgb(246, 246, 246)");
-      			ctx.fillStyle = gradient;
-			});
-	};
+					var gradient = ctx.createLinearGradient(0, 0, 0, 170);
+	      			gradient.addColorStop(0, "rgb(9, 9, 9)");
+	      			gradient.addColorStop(1, "rgb(246, 246, 246)");
+	      			ctx.fillStyle = gradient;
+				});
+		};
 
-	drawDesc();
+		drawDesc();
 
-	setUpdateFunc(function(){
-		if(c.width != document.getElementById("descHtml").offsetWidth)
-		{
-			stopLineText();
+		setUpdateFunc(function(){
+			if(c.width != document.getElementById("descHtml").offsetWidth)
+			{
+				stopLineText();
 
-			c.width = document.getElementById("descHtml").offsetWidth;
-			c_ctx.clearRect(0, 0, c.width, c.height);
-			drawDesc();
-		}
-	});
+				c.width = document.getElementById("descHtml").offsetWidth;
+				c_ctx.clearRect(0, 0, c.width, c.height);
+				drawDesc();
+			}
+		});
+	})();
 
 </script>

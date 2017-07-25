@@ -1,0 +1,41 @@
+<div>
+	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce3"></canvas>
+</div>
+
+<script type="text/javascript">
+	(function(){
+		var c = document.getElementById("introduce3");
+		var c_ctx = c.getContext('2d');
+
+		c.width = document.getElementById("descHtml").offsetWidth;
+		c.height = canvas.offsetHeight;	
+
+
+		// 버튼들
+	    c.statusBtn = new Image();
+	    c.statusBtn.src = '/resource/img/profile2_statusBtn.png';
+
+	    c.skillBtn = new Image();
+	    c.skillBtn.src = '/resource/img/profile2_skillBtn.png';
+
+	    c.inventoryBtn = new Image();
+	    c.inventoryBtn.src = '/resource/img/profile2_inventoryBtn.png';
+
+	    c.passiveBtn = new Image();
+	    c.passiveBtn.src = '/resource/img/profile2_passiveBtn.png';
+
+	    setUpdateFunc(function(){
+			if(c.width != document.getElementById("descHtml").offsetWidth)
+			{
+				c.width = document.getElementById("descHtml").offsetWidth;
+			}
+
+			var btnPivotX = c.width / 40;
+
+			c_ctx.drawImage(c.statusBtn, btnPivotX, 15);
+			c_ctx.drawImage(c.skillBtn, btnPivotX + 90, 15);
+			c_ctx.drawImage(c.inventoryBtn, btnPivotX, 120);
+			c_ctx.drawImage(c.passiveBtn, btnPivotX + 90, 120);
+		});
+	})();
+</script>
