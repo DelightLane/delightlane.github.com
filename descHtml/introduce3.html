@@ -24,18 +24,83 @@
 	    c.passiveBtn = new Image();
 	    c.passiveBtn.src = '/resource/img/profile2_passiveBtn.png';
 
+
+	    // 타이틀 이미지
+	    c.titleImg = new Image();
+	    c.titleImg.src = '/resource/img/profile2_title.png';
+
+
+	    // 캐릭터 이미지
+	    c.characterImg = new Image();
+	    c.characterImg.src = '/resource/img/profile2_0.png';
+
+
+	    // 설명란 이미지
+	    c.descriptBg = new Image();
+	    c.descriptBg.src = '/resource/img/profile2_1.png';
+
+	    var drawFunc = function(){
+	    	var margin = 15;
+
+			c_ctx.drawImage(c.statusBtn, margin, margin);
+			c_ctx.drawImage(c.skillBtn,
+				margin * 2 + c.statusBtn.width,
+				margin);
+			c_ctx.drawImage(c.inventoryBtn,
+				margin,
+				margin * 2 + c.statusBtn.height);
+			c_ctx.drawImage(c.passiveBtn,
+				margin * 2 + c.statusBtn.width,
+			 	margin * 2 + c.statusBtn.height);
+
+			c_ctx.drawImage(c.titleImg,
+				margin,
+				margin * 3 + c.statusBtn.height * 2);
+
+
+
+			var char_x = margin * 3 + c.statusBtn.width * 2;
+			var char_y = margin;
+
+			var descript_x = char_x + c.characterImg.width + 20;
+			var descript_y = margin;
+
+			var height = canvas.offsetHeight;
+
+			if(c.width < descript_x + c.descriptBg.width){
+				descript_x = margin;
+				descript_y = 250;
+
+				char_y = descript_y - c.characterImg.height / 2;
+
+				height += c.descriptBg.height;
+			}
+
+			if(c.width < char_x + c.characterImg.width){
+				char_x = margin;
+				char_y = 250;
+
+				descript_y += c.characterImg.height + margin;
+
+				height += c.characterImg.height;
+			}
+
+			c_ctx.drawImage(c.characterImg, char_x, char_y);
+			c_ctx.drawImage(c.descriptBg, descript_x, descript_y);
+
+			if(c.height != height)
+			{
+				c.height = height;
+			}
+	    }
+ 
 	    setUpdateFunc(function(){
 			if(c.width != document.getElementById("descHtml").offsetWidth)
 			{
 				c.width = document.getElementById("descHtml").offsetWidth;
 			}
 
-			var btnPivotX = c.width / 40;
-
-			c_ctx.drawImage(c.statusBtn, btnPivotX, 15);
-			c_ctx.drawImage(c.skillBtn, btnPivotX + 90, 15);
-			c_ctx.drawImage(c.inventoryBtn, btnPivotX, 120);
-			c_ctx.drawImage(c.passiveBtn, btnPivotX + 90, 120);
+			drawFunc();
 		});
 	})();
 </script>
