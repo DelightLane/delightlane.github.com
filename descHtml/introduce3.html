@@ -19,10 +19,18 @@
 		    c.charImg.setParent(c.descriptBg);
 
 		    c.careerImg = new Drawable(c, '/resource/img/careerImg.png');
-		    c.careerImg.setPosition(15, 75);
+		    c.careerImg.setPosition(15, 85);
 		    c.careerImg.setParent(c.descriptBg);
-	    })
+
+		    c.featureImg = new Drawable(c, '/resource/img/featureImg.png');
+		    c.featureImg.setPosition(15, 150);
+		    c.featureImg.setParent(c.descriptBg);
+	    });
+
 	    c.skillBtn = new Drawable(c, '/resource/img/profile2_skillBtn.png');
+		c.skillBtn.setTouchEvent(function(){
+	    	
+	    })
 	    c.inventoryBtn = new Drawable(c, '/resource/img/profile2_inventoryBtn.png');
 	    c.passiveBtn = new Drawable(c, '/resource/img/profile2_passiveBtn.png');
 
@@ -128,12 +136,18 @@
 		c.addEventListener("mouseup", function (e) {
     		var pos = getMouseTouchPos(c, e);
 
-    		removeHasParentElem();
-
     		for(var i = 0 ; i < c.drawables.length ; ++i)
     		{
     			if(c.drawables[i].isTouched(pos))
     			{
+    				if(c.drawables[i].hasTouchEvent())
+    				{
+    					if(c.drawables[i].parent == null)
+    					{
+							removeHasParentElem();
+						}
+    				}
+
     				c.drawables[i].runTouchEvent();
     			}
     		}

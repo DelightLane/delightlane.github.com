@@ -38,6 +38,10 @@ Drawable.prototype.setParent = function(parent){
 	this.parent = parent;
 }
 
+Drawable.prototype.hasTouchEvent = function(){
+	return this.touchEvent != null;
+}
+
 Drawable.prototype.setTouchEvent = function(event){
 	this.touchEvent = event;
 }
