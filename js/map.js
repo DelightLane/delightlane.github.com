@@ -117,6 +117,12 @@ function onKeyDownMap( key ) {
 
     player.move(key);
 
+    if(player.prevPos.x != player.pos.x || player.prevPos.y != player.pos.y)
+    {
+        setDescription("");
+        setDescriptionHtml();
+    }
+
     var isObstacleFront = false;
 
     if(placeObjects.length > 0){
@@ -154,8 +160,6 @@ function onKeyDownMap( key ) {
 
     if(player.prevPos.x != player.pos.x || player.prevPos.y != player.pos.y)
     {
-        setDescription("");
-        setDescriptionHtml();
         setUpdateFunc();
     }
 }

@@ -77,18 +77,22 @@ function setDescription(text)
 {
 	var textElem = document.getElementById('descText');
     textElem.innerHTML = text;
+    $("#descLoading").hide();
 }
 
 function setDescriptionHtml(fileName)
 {
 	if(fileName != null && fileName.length > 0)
 	{
+		$("#descLoading").show();
 		$("#descHtml").load('/descHtml/' + fileName + '.html', function() {
+			$("#descLoading").hide();
 			console.log("load "+ fileName);
 		});
 	}
 	else
 	{
+		$("#descLoading").hide();
 		$("#descHtml").empty();
 	}
 }
