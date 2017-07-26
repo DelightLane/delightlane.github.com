@@ -53,16 +53,16 @@
 			}
 	    });
 
-	    c.inventoryBtn = new Drawable(c, '/resource/img/profile2_inventoryBtn.png');
-	    c.inventoryBtn.setTouchEvent(function(){
-	    	c.inventoryTitle = new Drawable(c, '/resource/img/inventoryTitle.png');
-	    	c.inventoryTitle.display = 'none';
-	    	c.inventoryTitle.img.onload = function(){
-	    		c.inventoryTitle.display = 'block';
-	    		c.inventoryTitle.setPosition(25, 17);
-			    c.inventoryTitle.setParent(c.descriptBg);
-			    c.inventoryTitle.setPartialDrawSecond(0.5);
-			    c.inventoryTitle.setPartialDrawDirectReverse(true);
+	    c.toolBtn = new Drawable(c, '/resource/img/profile2_toolBtn.png');
+	    c.toolBtn.setTouchEvent(function(){
+	    	c.toolTitle = new Drawable(c, '/resource/img/toolTitle.png');
+	    	c.toolTitle.display = 'none';
+	    	c.toolTitle.img.onload = function(){
+	    		c.toolTitle.display = 'block';
+	    		c.toolTitle.setPosition(25, 17);
+			    c.toolTitle.setParent(c.descriptBg);
+			    c.toolTitle.setPartialDrawSecond(0.5);
+			    c.toolTitle.setPartialDrawDirectReverse(true);
 
 
 	    		c.androidImg = new Drawable(c, '/resource/img/androidImg.png');
@@ -175,7 +175,7 @@
 			c.statusBtn.setPosition(margin, margin);
 			c.skillBtn.setPosition(margin * 2 + btnSize.width,
 									margin);
-			c.inventoryBtn.setPosition(margin,
+			c.toolBtn.setPosition(margin,
 									margin * 2 + btnSize.height);
 			c.passiveBtn.setPosition(margin * 2 + btnSize.width,
 			 						margin * 2 + btnSize.height);
