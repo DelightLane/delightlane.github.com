@@ -18,63 +18,70 @@
 	    c.statusBtn = new Drawable(c, '/resource/img/profile2_statusBtn.png');
 	    c.statusBtn.setTouchEvent(function(){
 	    	c.charImg = new Drawable(c, '/resource/img/charImg.png');
-		    c.charImg.setPosition(15, 15);
-		    c.charImg.setParent(c.descriptBg);
-		    c.charImg.setPartialDrawSecond(0.5);
 
-		    c.careerImg = new Drawable(c, '/resource/img/careerImg.png');
-		    c.careerImg.setPosition(15, 85);
-		    c.careerImg.setParent(c.descriptBg);
-		    c.careerImg.setWaitDrawSecond(0.5);
-		    c.careerImg.setPartialDrawSecond(0.5);
+	    	c.charImg.img.onload = function(){
+			    c.charImg.setPosition(15, 15);
+			    c.charImg.setParent(c.descriptBg);
+			    c.charImg.setPartialDrawSecond(0.5);
 
-		    c.featureImg = new Drawable(c, '/resource/img/featureImg.png');
-		    c.featureImg.setPosition(15, 150);
-		    c.featureImg.setParent(c.descriptBg);
-		    c.featureImg.setWaitDrawSecond(1);
-		    c.featureImg.setPartialDrawSecond(0.5);
+			    c.careerImg = new Drawable(c, '/resource/img/careerImg.png');
+			    c.careerImg.setPosition(15, 85);
+			    c.careerImg.setParent(c.descriptBg);
+			    c.careerImg.setWaitDrawSecond(0.5);
+			    c.careerImg.setPartialDrawSecond(0.5);
+
+			    c.featureImg = new Drawable(c, '/resource/img/featureImg.png');
+			    c.featureImg.setPosition(15, 150);
+			    c.featureImg.setParent(c.descriptBg);
+			    c.featureImg.setWaitDrawSecond(1);
+			    c.featureImg.setPartialDrawSecond(0.5);
+			}
 	    });
 
 	    c.skillBtn = new Drawable(c, '/resource/img/profile2_skillBtn.png');
 		c.skillBtn.setTouchEvent(function(){
 	    	c.skillImg = new Drawable(c, '/resource/img/skillImg.png');
-	    	c.skillImg.setPosition(0, 0);
-		    c.skillImg.setParent(c.descriptBg);
-		    c.skillImg.setPartialDrawSecond(1);
-		    c.skillImg.setPartialDrawDirectReverse(true);
+	    	c.skillImg.img.onload = function(){
+		    	c.skillImg.setPosition(0, 0);
+			    c.skillImg.setParent(c.descriptBg);
+			    c.skillImg.setPartialDrawSecond(1);
+			    c.skillImg.setPartialDrawDirectReverse(true);
+			}
 	    });
 
 	    c.inventoryBtn = new Drawable(c, '/resource/img/profile2_inventoryBtn.png');
 	    c.inventoryBtn.setTouchEvent(function(){
 	    	c.androidImg = new Drawable(c, '/resource/img/androidImg.png');
-	    	c.androidImg.setPosition(10, 15);
-		    c.androidImg.setParent(c.descriptBg);
-		    c.androidImg.setPartialDrawSecond(0.5);
+	    	c.androidImg.img.onload = function(){
+		    	c.androidImg.setPosition(10, 15);
+			    c.androidImg.setParent(c.descriptBg);
+			    c.androidImg.setPartialDrawSecond(0.5);
 
-		    c.appleImg = new Drawable(c, '/resource/img/appleImg.png');
-	    	c.appleImg.setPosition(79, 15);
-		    c.appleImg.setParent(c.descriptBg);
-		    c.appleImg.setPartialDrawSecond(0.5);
+			    c.appleImg = new Drawable(c, '/resource/img/appleImg.png');
+		    	c.appleImg.setPosition(79, 15);
+			    c.appleImg.setParent(c.descriptBg);
+			    c.appleImg.setPartialDrawSecond(0.5);
 
-		    c.xamarinImg = new Drawable(c, '/resource/img/xamarinImg.png');
-	    	c.xamarinImg.setPosition(10, 79);
-		    c.xamarinImg.setParent(c.descriptBg);
-		    c.xamarinImg.setPartialDrawSecond(0.5);
+			    c.xamarinImg = new Drawable(c, '/resource/img/xamarinImg.png');
+		    	c.xamarinImg.setPosition(10, 79);
+			    c.xamarinImg.setParent(c.descriptBg);
+			    c.xamarinImg.setPartialDrawSecond(0.5);
 
-		    c.unityImg = new Drawable(c, '/resource/img/unityImg.png');
-	    	c.unityImg.setPosition(79, 79);
-		    c.unityImg.setParent(c.descriptBg);
-		    c.unityImg.setPartialDrawSecond(0.5);
+			    c.unityImg = new Drawable(c, '/resource/img/unityImg.png');
+		    	c.unityImg.setPosition(79, 79);
+			    c.unityImg.setParent(c.descriptBg);
+			    c.unityImg.setPartialDrawSecond(0.5);
 
-		    c.cocosImg = new Drawable(c, '/resource/img/cocosImg.png');
-	    	c.cocosImg.setPosition(10, 143);
-		    c.cocosImg.setParent(c.descriptBg);
-		    c.cocosImg.setPartialDrawSecond(0.5);
+			    c.cocosImg = new Drawable(c, '/resource/img/cocosImg.png');
+		    	c.cocosImg.setPosition(10, 143);
+			    c.cocosImg.setParent(c.descriptBg);
+			    c.cocosImg.setPartialDrawSecond(0.5);
 
-		    c.coronaImg = new Drawable(c, '/resource/img/coronaImg.png');
-	    	c.coronaImg.setPosition(79, 143);
-		    c.coronaImg.setParent(c.descriptBg);
-		    c.coronaImg.setPartialDrawSecond(0.5);
+			    c.coronaImg = new Drawable(c, '/resource/img/coronaImg.png');
+		    	c.coronaImg.setPosition(79, 143);
+			    c.coronaImg.setParent(c.descriptBg);
+			    c.coronaImg.setPartialDrawSecond(0.5);
+			}
 	    });
 
 	    c.passiveBtn = new Drawable(c, '/resource/img/profile2_passiveBtn.png');
