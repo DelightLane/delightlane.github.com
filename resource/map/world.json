@@ -36,6 +36,52 @@
             "res" : "road",
             "event" : "window.location.href = 'http://a306.cafe24.com/';"
         },
+        {
+            "x" : 7,
+            "y" : 3,
+            "res" : "tree0",
+            "obstacle" : true
+        },
+        {
+            "x" : 4,
+            "y" : 0,
+            "res" : "tree0",
+            "obstacle" : true
+        },
+
+        {
+            "x" : 8,
+            "y" : 3,
+            "res" : "trees0",
+            "obstacle" : true
+        },
+
+        {
+            "x" : 7,
+            "y" : 4,
+            "res" : "tree2",
+            "obstacle" : true
+        },
+
+        {
+            "x" : 8,
+            "y" : 4,
+            "res" : "tree2",
+            "obstacle" : true
+        },
+
+        {
+            "x" : 6,
+            "y" : 4,
+            "res" : "tree0",
+            "obstacle" : true
+        },
+         {
+            "x" : 8,
+            "y" : 0,
+            "res" : "trees0",
+            "obstacle" : true
+        },
 
 
 

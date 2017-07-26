@@ -70,6 +70,14 @@ else
 	setDescription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
 }
 
+function getMouseTouchPos(canvasDom, e) {
+  var rect = canvasDom.getBoundingClientRect();
+  return {
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top
+  };
+}
+
 
 
 // 디스크립션 관련
@@ -87,7 +95,6 @@ function setDescriptionHtml(fileName)
 		$("#descLoading").show();
 		$("#descHtml").load('/descHtml/' + fileName + '.html', function() {
 			$("#descLoading").hide();
-			console.log("load "+ fileName);
 		});
 	}
 	else
@@ -177,6 +184,7 @@ include(SITE_URL + "js/object/player.js");
 include(SITE_URL + "js/object/placeObject.js");
 include(SITE_URL + "js/object/tile.js");
 include(SITE_URL + "js/object/triggerObject.js");
+include(SITE_URL + "js/object/drawable.js");
 
 include(SITE_URL + "js/map.js");
 

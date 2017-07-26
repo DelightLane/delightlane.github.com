@@ -7,88 +7,80 @@
 		var c = document.getElementById("introduce3");
 		var c_ctx = c.getContext('2d');
 
+		c.addEventListener("mouseup", function (e) {
+    		var pos = getMouseTouchPos(c, e);
+
+    		for(var i = 0 ; i < c.touchables.length ; ++i)
+    		{
+    			
+    		}
+
+		}, false);
+
 		c.width = document.getElementById("descHtml").offsetWidth;
 		c.height = canvas.offsetHeight;	
 
 
 		// 버튼들
-	    c.statusBtn = new Image();
-	    c.statusBtn.src = '/resource/img/profile2_statusBtn.png';
-
-	    c.skillBtn = new Image();
-	    c.skillBtn.src = '/resource/img/profile2_skillBtn.png';
-
-	    c.inventoryBtn = new Image();
-	    c.inventoryBtn.src = '/resource/img/profile2_inventoryBtn.png';
-
-	    c.passiveBtn = new Image();
-	    c.passiveBtn.src = '/resource/img/profile2_passiveBtn.png';
-
+	    c.statusBtn = new Drawable(c, '/resource/img/profile2_statusBtn.png');
+	    c.skillBtn = new Drawable(c, '/resource/img/profile2_skillBtn.png');
+	    c.inventoryBtn = new Drawable(c, '/resource/img/profile2_inventoryBtn.png');
+	    c.passiveBtn = new Drawable(c, '/resource/img/profile2_passiveBtn.png');
 
 	    // 타이틀 이미지
-	    c.titleImg = new Image();
-	    c.titleImg.src = '/resource/img/profile2_title.png';
-
-
+	    c.titleImg = new Drawable(c, '/resource/img/profile2_title.png');
 	    // 캐릭터 이미지
-	    c.characterImg = new Image();
-	    c.characterImg.src = '/resource/img/profile2_0.png';
-
-
+	    c.characterImg = new Drawable(c, '/resource/img/profile2_0.png');
 	    // 설명란 이미지
-	    c.descriptBg = new Image();
-	    c.descriptBg.src = '/resource/img/profile2_1.png';
+	    c.descriptBg = new Drawable(c, '/resource/img/profile2_1.png');
 
-	    var drawFunc = function(){
-	    	c_ctx.clearRect(0, 0, c.width, c.height);
 
+
+	    var recalcPosition = function(){
 	    	var margin = 15;
+	    	var btnSize = c.statusBtn.getSize();
 
-			c_ctx.drawImage(c.statusBtn, margin, margin);
-			c_ctx.drawImage(c.skillBtn,
-				margin * 2 + c.statusBtn.width,
-				margin);
-			c_ctx.drawImage(c.inventoryBtn,
-				margin,
-				margin * 2 + c.statusBtn.height);
-			c_ctx.drawImage(c.passiveBtn,
-				margin * 2 + c.statusBtn.width,
-			 	margin * 2 + c.statusBtn.height);
+			c.statusBtn.setPosition(margin, margin);
+			c.skillBtn.setPosition(margin * 2 + btnSize.width,
+									margin);
+			c.inventoryBtn.setPosition(margin,
+									margin * 2 + btnSize.height);
+			c.passiveBtn.setPosition(margin * 2 + btnSize.width,
+			 						margin * 2 + btnSize.height);
 
-			c_ctx.drawImage(c.titleImg,
-				margin,
-				margin * 3 + c.statusBtn.height * 2);
+			c.titleImg.setPosition(margin, margin * 3 + btnSize.height * 2);
 
-
-
-			var char_x = margin * 3 + c.statusBtn.width * 2;
+			var charSize = c.characterImg.getSize();
+			var descSize = c.descriptBg.getSize();
+			
+			var char_x = margin * 3 + btnSize.width * 2;
 			var char_y = margin;
 
-			var descript_x = char_x + c.characterImg.width + 20;
+			var descript_x = char_x + charSize.width + 20;
 			var descript_y = margin;
 
 			var height = canvas.offsetHeight;
 
-			if(c.width < descript_x + c.descriptBg.width){
+			if(c.width < descript_x + descSize.width){
 				descript_x = margin;
 				descript_y = 250;
 
-				char_y = descript_y - c.characterImg.height / 2;
+				char_y = descript_y - charSize.height / 2;
 
-				height += c.descriptBg.height;
+				height += descSize.height;
 			}
 
-			if(c.width < char_x + c.characterImg.width){
+			if(c.width < char_x + charSize.width){
 				char_x = margin;
 				char_y = 250;
 
-				descript_y += c.characterImg.height + margin;
+				descript_y += charSize.height + margin;
 
-				height += c.characterImg.height;
+				height += charSize.height;
 			}
 
-			c_ctx.drawImage(c.characterImg, char_x, char_y);
-			c_ctx.drawImage(c.descriptBg, descript_x, descript_y);
+			c.characterImg.setPosition(char_x, char_y);
+			c.descriptBg.setPosition(descript_x, descript_y);
 
 			if(c.height != height)
 			{
@@ -102,7 +94,14 @@
 				c.width = document.getElementById("descHtml").offsetWidth;
 			}
 
-			drawFunc();
+			c_ctx.clearRect(0, 0, c.width, c.height);
+
+			recalcPosition();
+
+			for(var i = 0 ; i < c.drawables.length ; ++i)
+			{
+				c.drawables[i].draw();
+			}
 		});
 	})();
 </script>
