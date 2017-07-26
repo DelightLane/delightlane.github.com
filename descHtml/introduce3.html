@@ -87,34 +87,39 @@
 			var charSize = c.characterImg.getSize();
 			var descSize = c.descriptBg.getSize();
 			
-			var char_x = margin * 3 + btnSize.width * 2;
-			var char_y = margin;
+			c.characterImg.pos.x = margin * 3 + btnSize.width * 2;
+			c.characterImg.pos.y = margin;
 
-			var descript_x = char_x + charSize.width + 20;
-			var descript_y = margin;
+			c.descriptBg.pos.x = c.characterImg.pos.x + charSize.width + 20;
+			c.descriptBg.pos.y = margin;
 
 			var height = canvas.offsetHeight;
 
-			if(c.width < descript_x + descSize.width){
-				descript_x = margin;
-				descript_y = 250;
+			if(c.width < c.descriptBg.pos.x + descSize.width){
+				c.descriptBg.pos.x = margin;
+				c.descriptBg.pos.y = 250;
 
-				char_y = descript_y - charSize.height / 2;
+				c.characterImg.pos.y = c.descriptBg.pos.y - charSize.height / 2;
 
 				height += descSize.height;
 			}
 
-			if(c.width < char_x + charSize.width){
-				char_x = margin;
-				char_y = 250;
+			if(c.width < c.characterImg.pos.x + charSize.width){
+				c.characterImg.pos.x = margin;
+				c.characterImg.pos.y = 250;
 
-				descript_y += charSize.height + margin;
+				c.descriptBg.pos.y += charSize.height + margin;
 
 				height += charSize.height;
-			}
 
-			c.characterImg.setPosition(char_x, char_y);
-			c.descriptBg.setPosition(descript_x, descript_y);
+				for(var i = 0 ; i < c.drawables.length ; ++i)
+				{
+					if(!c.drawables[i].parent)
+					{
+						c.drawables[i].pos.x += c.drawables[i].getSize().width / 5;
+					}
+				}
+			}
 
 			if(c.height != height)
 			{
