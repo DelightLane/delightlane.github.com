@@ -98,6 +98,41 @@
 	    });
 
 	    c.passiveBtn = new Drawable(c, '/resource/img/profile2_passiveBtn.png');
+	    c.passiveBtn.setTouchEvent(function(){
+	    	c.passiveTitle = new Drawable(c, '/resource/img/passiveTitle.png');
+	    	c.passiveTitle.display = 'none';
+	    	c.passiveTitle.img.onload = function(){
+	    		c.passiveTitle.display = 'block';
+	    		c.passiveTitle.setPosition(25, 17);
+			    c.passiveTitle.setParent(c.descriptBg);
+			    c.passiveTitle.setPartialDrawSecond(0.5);
+			    c.passiveTitle.setPartialDrawDirectReverse(true);
+
+
+	    		c.readwriteImg = new Drawable(c, '/resource/img/readwriteImg.png');
+		    	c.readwriteImg.setPosition(10, 30);
+			    c.readwriteImg.setParent(c.descriptBg);
+			    c.readwriteImg.setPartialDrawSecond(0.5);
+
+			    c.drawingImg = new Drawable(c, '/resource/img/drawingImg.png');
+		    	c.drawingImg.setPosition(79, 70);
+			    c.drawingImg.setParent(c.descriptBg);
+			    c.drawingImg.setPartialDrawSecond(0.5);
+			    c.drawingImg.setWaitDrawSecond(0.5);
+
+			    c.guitarImg = new Drawable(c, '/resource/img/guitarImg.png');
+		    	c.guitarImg.setPosition(10, 110);
+			    c.guitarImg.setParent(c.descriptBg);
+			    c.guitarImg.setPartialDrawSecond(0.5);
+			    c.guitarImg.setWaitDrawSecond(1);
+
+			    c.musicImg = new Drawable(c, '/resource/img/musicImg.png');
+		    	c.musicImg.setPosition(79, 150);
+			    c.musicImg.setParent(c.descriptBg);
+			    c.musicImg.setPartialDrawSecond(0.5);
+			    c.musicImg.setWaitDrawSecond(1.5);
+			}
+	    });
 
 	    // 타이틀 이미지
 	    c.titleImg = new Drawable(c, '/resource/img/profile2_title.png');
