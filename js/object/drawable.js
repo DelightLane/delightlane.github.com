@@ -17,6 +17,12 @@ function Drawable(canvas, imagePath){
 Drawable.prototype.setPartialDrawSecond = function(time){
 	this.partialTime = time;
 	this.totalPartialTime = time;
+
+	this.partialUpDown = false;
+}
+
+Drawable.prototype.setPartialDrawDirectReverse = function(set){
+	this.partialUpDown = set;
 }
 
 Drawable.prototype.setWaitDrawSecond = function(time){
@@ -52,9 +58,17 @@ Drawable.prototype.draw = function(){
 	else
 	{
 		var drawPercentage = (this.totalPartialTime - this.partialTime) / this.totalPartialTime;
-		var drawWidth = this.img.width * drawPercentage;
 
-		ctx.drawImage(this.img, 0, 0, drawWidth, this.img.height, curPos.x, curPos.y, drawWidth, this.img.height);	
+		if(!this.partialUpDown)
+		{
+			var drawWidth = this.img.width * drawPercentage;
+			ctx.drawImage(this.img, 0, 0, drawWidth, this.img.height, curPos.x, curPos.y, drawWidth, this.img.height);	
+		}
+		else
+		{
+			var drawHeight = this.img.height * drawPercentage;
+			ctx.drawImage(this.img, 0, 0, this.img.width, drawHeight, curPos.x, curPos.y, this.img.width, drawHeight);	
+		}
 
 		this.partialTime -= flowSceond;
 	}
