@@ -17,14 +17,19 @@
 	    	c.charImg = new Drawable(c, '/resource/img/charImg.png');
 		    c.charImg.setPosition(15, 15);
 		    c.charImg.setParent(c.descriptBg);
+		    c.charImg.setPartialDrawSecond(0.5);
 
 		    c.careerImg = new Drawable(c, '/resource/img/careerImg.png');
 		    c.careerImg.setPosition(15, 85);
 		    c.careerImg.setParent(c.descriptBg);
+		    c.careerImg.setWaitDrawSecond(0.5);
+		    c.careerImg.setPartialDrawSecond(0.5);
 
 		    c.featureImg = new Drawable(c, '/resource/img/featureImg.png');
 		    c.featureImg.setPosition(15, 150);
 		    c.featureImg.setParent(c.descriptBg);
+		    c.featureImg.setWaitDrawSecond(1);
+		    c.featureImg.setPartialDrawSecond(0.5);
 	    });
 
 	    c.skillBtn = new Drawable(c, '/resource/img/profile2_skillBtn.png');
@@ -117,7 +122,7 @@
 			}
 	    }
  
-	    setUpdateFunc(function(){
+	    setUpdateFunc(function(dt){
 			if(c.width != document.getElementById("descHtml").offsetWidth)
 			{
 				c.width = document.getElementById("descHtml").offsetWidth;

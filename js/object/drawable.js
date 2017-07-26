@@ -14,11 +14,28 @@ function Drawable(canvas, imagePath){
 	canvas.drawables.push(this);
 }
 
+Drawable.prototype.setPartialDrawSecond = function(time){
+	this.partialTime = time;
+	this.totalPartialTime = time;
+}
+
+Drawable.prototype.setWaitDrawSecond = function(time){
+	this.waitDrawTime = time;
+}
+
 Drawable.prototype.setPosition = function(x, y){
 	this.pos = {x : x, y : y};
 }
 
 Drawable.prototype.draw = function(){
+	var flowSceond = 30 / 1000;
+
+	if(this.waitDrawTime && this.waitDrawTime > 0)
+	{
+		this.waitDrawTime -= flowSceond;
+		return;
+	}
+
 	var ctx = this.canvas.getContext('2d');
 
 	var curPos = {x:this.pos.x, y:this.pos.y};
@@ -27,7 +44,20 @@ Drawable.prototype.draw = function(){
 		curPos.x += this.parent.pos.x;
 		curPos.y += this.parent.pos.y;
 	}
-	ctx.drawImage(this.img, curPos.x, curPos.y);
+
+	if(!this.partialTime || this.partialTime <= 0)
+	{
+		ctx.drawImage(this.img, curPos.x, curPos.y);
+	}
+	else
+	{
+		var drawPercentage = (this.totalPartialTime - this.partialTime) / this.totalPartialTime;
+		var drawWidth = this.img.width * drawPercentage;
+
+		ctx.drawImage(this.img, 0, 0, drawWidth, this.img.height, curPos.x, curPos.y, drawWidth, this.img.height);	
+
+		this.partialTime -= flowSceond;
+	}
 }
 
 Drawable.prototype.getSize = function(){
