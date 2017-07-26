@@ -179,7 +179,7 @@
             "x" : 7,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce3');"
+            "event" : "setDescription('좌측 상단의 버튼들을 눌러주세요.'); setDescriptionHtml('introduce3');"
         },
 
 
