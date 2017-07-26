@@ -18,8 +18,10 @@
 	    c.statusBtn = new Drawable(c, '/resource/img/profile2_statusBtn.png');
 	    c.statusBtn.setTouchEvent(function(){
 	    	c.charImg = new Drawable(c, '/resource/img/charImg.png');
+	    	c.charImg.display = 'none';
 
 	    	c.charImg.img.onload = function(){
+	    		c.charImg.display = 'block';
 			    c.charImg.setPosition(15, 15);
 			    c.charImg.setParent(c.descriptBg);
 			    c.charImg.setPartialDrawSecond(0.5);
@@ -41,7 +43,9 @@
 	    c.skillBtn = new Drawable(c, '/resource/img/profile2_skillBtn.png');
 		c.skillBtn.setTouchEvent(function(){
 	    	c.skillImg = new Drawable(c, '/resource/img/skillImg.png');
+	    	c.skillImg.display = 'none';
 	    	c.skillImg.img.onload = function(){
+	    		c.skillImg.display = 'block';
 		    	c.skillImg.setPosition(0, 0);
 			    c.skillImg.setParent(c.descriptBg);
 			    c.skillImg.setPartialDrawSecond(1);
@@ -52,7 +56,9 @@
 	    c.inventoryBtn = new Drawable(c, '/resource/img/profile2_inventoryBtn.png');
 	    c.inventoryBtn.setTouchEvent(function(){
 	    	c.inventoryTitle = new Drawable(c, '/resource/img/inventoryTitle.png');
+	    	c.inventoryTitle.display = 'none';
 	    	c.inventoryTitle.img.onload = function(){
+	    		c.inventoryTitle.display = 'block';
 	    		c.inventoryTitle.setPosition(25, 17);
 			    c.inventoryTitle.setParent(c.descriptBg);
 			    c.inventoryTitle.setPartialDrawSecond(0.5);
