@@ -25,3 +25,10 @@ Drawable.prototype.draw = function(){
 Drawable.prototype.getSize = function(){
 	return { width : this.img.width, height : this.img.height };
 }
+
+Drawable.prototype.isTouched = function(pos){
+	var size = this.getSize();
+
+	return ((this.pos.x <= pos.x && size.width + this.pos.x >= pos.x) &&
+		(this.pos.y <= pos.y && size.height + this.pos.y >= pos.y));
+}

@@ -7,16 +7,6 @@
 		var c = document.getElementById("introduce3");
 		var c_ctx = c.getContext('2d');
 
-		c.addEventListener("mouseup", function (e) {
-    		var pos = getMouseTouchPos(c, e);
-
-    		for(var i = 0 ; i < c.touchables.length ; ++i)
-    		{
-    			
-    		}
-
-		}, false);
-
 		c.width = document.getElementById("descHtml").offsetWidth;
 		c.height = canvas.offsetHeight;	
 
@@ -103,5 +93,18 @@
 				c.drawables[i].draw();
 			}
 		});
+
+		c.addEventListener("mouseup", function (e) {
+    		var pos = getMouseTouchPos(c, e);
+
+    		for(var i = 0 ; i < c.drawables.length ; ++i)
+    		{
+    			if(c.drawables[i].isTouched(pos))
+    			{
+    				// TODO : 터치 시 어떤 걸 동작시킬 지
+    			}
+    		}
+
+		}, false);
 	})();
 </script>
