@@ -5,8 +5,8 @@
     "tiles" :
     [
         "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
-        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
-        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1"
+        "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road"
     ],
     "objs" :
     [
@@ -66,94 +66,41 @@
             "res" : "wall0"
         },
 
-
-
         {
             "x" : 1,
             "y" : 1,
             "res" : "fence1",
             "obstacle" : true
         },
-        {
-            "x" : 2,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 3,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 4,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 5,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 6,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 7,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 8,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 9,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 10,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-
 
 
         {
             "x" : 1,
             "y" : 0,
             "res" : "milestone",
-            "obstacle" : true
+            "obstacle" : true,
+            "event" : "setDescriptionHtml('introduce0');"
         },
         {
             "x" : 3,
             "y" : 0,
             "res" : "statue0",
-            "obstacle" : true
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
         },
         {
             "x" : 5,
             "y" : 0,
             "res" : "statue0",
-            "obstacle" : true
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
         },
         {
             "x" : 7,
             "y" : 0,
             "res" : "statue0",
-            "obstacle" : true
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
         },
 
 
