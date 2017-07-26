@@ -13,6 +13,15 @@
 
 		// 버튼들
 	    c.statusBtn = new Drawable(c, '/resource/img/profile2_statusBtn.png');
+	    c.statusBtn.setTouchEvent(function(){
+	    	c.charImg = new Drawable(c, '/resource/img/charImg.png');
+		    c.charImg.setPosition(15, 15);
+		    c.charImg.setParent(c.descriptBg);
+
+		    c.careerImg = new Drawable(c, '/resource/img/careerImg.png');
+		    c.careerImg.setPosition(15, 75);
+		    c.careerImg.setParent(c.descriptBg);
+	    })
 	    c.skillBtn = new Drawable(c, '/resource/img/profile2_skillBtn.png');
 	    c.inventoryBtn = new Drawable(c, '/resource/img/profile2_inventoryBtn.png');
 	    c.passiveBtn = new Drawable(c, '/resource/img/profile2_passiveBtn.png');
@@ -25,7 +34,29 @@
 	    c.descriptBg = new Drawable(c, '/resource/img/profile2_1.png');
 
 
+	    var removeHasParentElem = function(){
+	    	var removeCount = 0;
 
+	    	for(var i = 0 ; i < c.drawables.length ; ++i)
+    		{
+    			if(c.drawables[i].parent)
+    			{
+    				c.drawables[i] = null;
+    				++removeCount;
+    			}
+    		}
+
+    		for(var i = 0 ; i < c.drawables.length ; ++i)
+    		{
+    			if(c.drawables[i] == null && c.drawables.length > i + 1)
+    			{
+    				c.drawables[i] = c.drawables[i+1];
+    				c.drawables[i+1] = null;
+    			}
+    		}
+
+    		c.drawables = c.drawables.slice(0, c.drawables.length - removeCount);
+	    }
 	    var recalcPosition = function(){
 	    	var margin = 15;
 	    	var btnSize = c.statusBtn.getSize();
@@ -97,11 +128,13 @@
 		c.addEventListener("mouseup", function (e) {
     		var pos = getMouseTouchPos(c, e);
 
+    		removeHasParentElem();
+
     		for(var i = 0 ; i < c.drawables.length ; ++i)
     		{
     			if(c.drawables[i].isTouched(pos))
     			{
-    				// TODO : 터치 시 어떤 걸 동작시킬 지
+    				c.drawables[i].runTouchEvent();
     			}
     		}
 

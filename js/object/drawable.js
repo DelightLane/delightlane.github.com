@@ -4,7 +4,8 @@ function Drawable(canvas, imagePath){
 
 	this.pos = {x : 0, y : 0};
 
-	this.parent = canvas;
+	this.canvas = canvas;
+	this.parent = null;
 
 	if(canvas.drawables == null)
 	{
@@ -18,17 +19,45 @@ Drawable.prototype.setPosition = function(x, y){
 }
 
 Drawable.prototype.draw = function(){
-	var ctx = this.parent.getContext('2d');
-	ctx.drawImage(this.img, this.pos.x, this.pos.y);
+	var ctx = this.canvas.getContext('2d');
+
+	var curPos = {x:this.pos.x, y:this.pos.y};
+	if(this.parent != null)
+	{
+		curPos.x += this.parent.pos.x;
+		curPos.y += this.parent.pos.y;
+	}
+	ctx.drawImage(this.img, curPos.x, curPos.y);
 }
 
 Drawable.prototype.getSize = function(){
 	return { width : this.img.width, height : this.img.height };
 }
 
+Drawable.prototype.setParent = function(parent){
+	this.parent = parent;
+}
+
+Drawable.prototype.setTouchEvent = function(event){
+	this.touchEvent = event;
+}
+
+Drawable.prototype.runTouchEvent = function(){
+	if(this.touchEvent)
+	{
+		this.touchEvent();
+	}
+}
+
 Drawable.prototype.isTouched = function(pos){
 	var size = this.getSize();
 
-	return ((this.pos.x <= pos.x && size.width + this.pos.x >= pos.x) &&
-		(this.pos.y <= pos.y && size.height + this.pos.y >= pos.y));
+	var curPos = {x:this.pos.x, y:this.pos.y};
+	if(this.parent != null)
+	{
+		curPos.x += this.parent.pos.x;
+		curPos.y += this.parent.pos.y;
+	}
+	return ((curPos.x <= pos.x && size.width + curPos.x >= pos.x) &&
+		(curPos.y <= pos.y && size.height + curPos.y >= pos.y));
 }
