@@ -99,7 +99,6 @@ function setDescriptionHtml(fileName)
 		$("#descHtml").load('/descHtml/' + fileName + '.html', function() {
 			if(!loadingHtml)
 			{
-				console.log("in");
 				$("#descHtml").empty();
 			}
 			$("#descLoading").hide();
