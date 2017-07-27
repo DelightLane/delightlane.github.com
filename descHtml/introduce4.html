@@ -46,6 +46,9 @@
 			    c.pjProjectImg1.setPartialDrawSecond(0.5);
 			}
 	    });
+	    c.pjBtn.setWaitDrawSecond(0.2);
+		c.pjBtn.setPartialDrawSecond(0.3);
+		c.pjBtn.setPartialDrawDirectReverse(true);
 
 	    c.innoBtn = new Drawable(c, '/resource/img/profile3_innoBtn.png');
 	    c.innoBtn.setTouchEvent(function(){
@@ -70,6 +73,9 @@
 			    c.innoProjectImg0.setPartialDrawSecond(0.5);
 			}
 	    });
+	    c.innoBtn.setWaitDrawSecond(0.5);
+	    c.innoBtn.setPartialDrawSecond(0.3);
+		c.innoBtn.setPartialDrawDirectReverse(true);
 
 	    // 타이틀 이미지
 	    c.titleImg = new Drawable(c, '/resource/img/profile3_title.png');
