@@ -8,6 +8,8 @@ document.body.onkeydown = function( e ) {
     if ( typeof keys[ e.keyCode ] != 'undefined' ) {
         onKeyDown( keys[ e.keyCode ] );
         render();
+
+        e.preventDefault();
     }
 };
 
