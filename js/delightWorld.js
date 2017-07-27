@@ -83,6 +83,17 @@ function getMouseTouchPos(canvasDom, e) {
 // 디스크립션 관련
 function setDescription(text)
 {
+	var border = $("#descBorder");
+
+	if(text.length <= 0)
+	{
+		border.hide();
+	}
+	else
+	{
+		border.show();
+	}
+
 	var textElem = document.getElementById('descText');
     textElem.innerHTML = text;
     $("#descLoading").hide();
@@ -91,8 +102,12 @@ function setDescription(text)
 var loadingHtml = false;
 function setDescriptionHtml(fileName)
 {
+	var border = $("#descBorder");
+
 	if(fileName != null && fileName.length > 0)
 	{
+		border.show();
+
 		loadingHtml = true;
 
 		$("#descLoading").show();
@@ -108,6 +123,8 @@ function setDescriptionHtml(fileName)
 	}
 	else
 	{
+		border.hide();
+
 		loadingHtml = false;
 
 		$("#descLoading").hide();
