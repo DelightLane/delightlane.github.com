@@ -86,7 +86,7 @@
             "y" : 0,
             "res" : "statue0",
             "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
+            "event" : "setDescriptionHtml(); setDescription('주의 : 만지지 마시오.');"
         },
         {
             "x" : 5,
