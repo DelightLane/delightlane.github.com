@@ -88,17 +88,29 @@ function setDescription(text)
     $("#descLoading").hide();
 }
 
+var loadingHtml = false;
 function setDescriptionHtml(fileName)
 {
 	if(fileName != null && fileName.length > 0)
 	{
+		loadingHtml = true;
+
 		$("#descLoading").show();
 		$("#descHtml").load('/descHtml/' + fileName + '.html', function() {
+			if(!loadingHtml)
+			{
+				console.log("in");
+				$("#descHtml").empty();
+			}
 			$("#descLoading").hide();
+
+			loadingHtml = false;
 		});
 	}
 	else
 	{
+		loadingHtml = false;
+
 		$("#descLoading").hide();
 		$("#descHtml").empty();
 	}
