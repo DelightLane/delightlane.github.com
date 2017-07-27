@@ -102,6 +102,13 @@
             "obstacle" : true,
             "event" : "setDescription('병사 : 이 길은 어디로 이어진 걸까?');"
         },
+        {
+            "x" : 3,
+            "y" : 0,
+            "res" : "bodyChild",
+            "obstacle" : true,
+            "event" : "setDescription('꼬마 : 이 집에는 지하실도 있는 모양이야!');"
+        },
 
 
 
