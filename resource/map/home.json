@@ -67,13 +67,6 @@
             "res" : "bed2"
         },
         {
-            "x" : 1,
-            "y" : 2,
-            "res" : "aengSH",
-            "obstacle" : true,
-            "event" : "setDescription('강아지 : 멍! 멍멍!')"
-        },
-        {
             "x" : 2,
             "y" : 2,
             "res" : "road",
