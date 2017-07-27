@@ -129,16 +129,25 @@
 			var height = descSize.height + margin * 2;
 
 			if(c.width < c.descriptBg.pos.x + descSize.width){
-				c.innoBtn.setPosition(margin * 2 + btnSize.width, margin);
+				c.branchImg.setImage('/resource/img/profile3_branchRotate.png');
+				c.branchImg.setPosition(0,60);
+
+				c.pjBtn.setPosition(margin * 2 + 15, margin + 40);
+				c.innoBtn.setPosition(margin * 2 + btnSize.width + 15, margin);
 
 				c.descriptBg.pos.x = margin;
-				c.descriptBg.pos.y = 250 - (btnSize.height + margin);
+				c.descriptBg.pos.y = 250 - (btnSize.height / 2 + margin);
 
-				c.titleImg.setPosition(margin, margin * 2 + btnSize.height);
+				c.titleImg.setPosition(margin, margin * 2 + btnSize.height * 1.5);
 
 				height += descSize.height;
-				height -= btnSize.height + margin;
+				height -= btnSize.height / 2;
 			}
+			else
+			{
+				c.branchImg.setImage('/resource/img/profile3_branch.png');
+			}
+
 
 			if(c.height != height)
 			{

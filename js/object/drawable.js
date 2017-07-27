@@ -1,6 +1,6 @@
 function Drawable(canvas, imagePath){
-	this.img = new Image();
-	this.img.src = imagePath;
+	
+	this.setImage(imagePath);
 
 	this.pos = {x : 0, y : 0};
 
@@ -12,6 +12,14 @@ function Drawable(canvas, imagePath){
 		canvas.drawables = [];
 	}
 	canvas.drawables.push(this);
+}
+
+Drawable.prototype.setImage = function(imagePath){
+	if(this.img == null || !this.img.src.includes(imagePath))
+	{
+		this.img = new Image();
+		this.img.src = imagePath;
+	}
 }
 
 Drawable.prototype.setPartialDrawSecond = function(time){
