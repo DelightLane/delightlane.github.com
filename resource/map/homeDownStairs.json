@@ -112,6 +112,15 @@
 
 
         {
+            "x" : 2,
+            "y" : 0,
+            "res" : "aengYH",
+            "obstacle" : true,
+            "event" : "setDescription('예현 : 지하 갤리러에 오신 것을 환영해요. 관람 시 관람 위치를 지켜주시길 바랄게요.');"
+        },
+
+
+        {
             "x" : 1,
             "y" : 2,
             "res" : "footprint0",
