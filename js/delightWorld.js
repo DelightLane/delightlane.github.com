@@ -106,8 +106,6 @@ function setDescriptionHtml(fileName)
 
 	if(fileName != null && fileName.length > 0)
 	{
-		border.show();
-
 		loadingHtml = true;
 
 		$("#descLoading").show();
@@ -115,6 +113,10 @@ function setDescriptionHtml(fileName)
 			if(!loadingHtml)
 			{
 				$("#descHtml").empty();
+			}
+			else
+			{
+				border.show();
 			}
 			$("#descLoading").hide();
 
