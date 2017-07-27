@@ -163,13 +163,13 @@
             "x" : 7,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescription('좌측 상단의 버튼들을 눌러주세요.'); setDescriptionHtml('introduce3');"
+            "event" : "setDescriptionHtml('introduce3');"
         },
         {
             "x" : 9,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescription('좌측 상단의 버튼들을 눌러주세요.'); setDescriptionHtml('introduce4');"
+            "event" : "setDescriptionHtml('introduce4');"
         },
 
 
