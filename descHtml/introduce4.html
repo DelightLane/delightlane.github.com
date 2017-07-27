@@ -1,4 +1,5 @@
 <div>
+	<div id="prVideo"/>
 	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce3"></canvas>
 </div>
 
@@ -18,6 +19,8 @@
 		// 버튼들
 	    c.pjBtn = new Drawable(c, '/resource/img/profile3_pjBtn.png');
 	    c.pjBtn.setTouchEvent(function(){
+	    	$("#prVideo").empty();
+
 	    	c.pjTitle = new Drawable(c, '/resource/img/pjTitle.png');
 	    	c.pjTitle.display = 'none';
 	    	c.pjTitle.img.onload = function(){
@@ -38,12 +41,20 @@
 			    c.pjProjectImg0.setParent(c.descriptBg);
 			    c.pjProjectImg0.setWaitDrawSecond(0.5);
 			    c.pjProjectImg0.setPartialDrawSecond(0.5);
+			    c.pjProjectImg0.setTouchEvent(function(){
+			    	$("#prVideo").empty();
+			    	$("#prVideo").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/JsEjBEvDWDI" frameborder="0" allowfullscreen></iframe>');
+			    });
 
 			    c.pjProjectImg1 = new Drawable(c, '/resource/img/pjProjectImg1.png');
 		    	c.pjProjectImg1.setPosition(130, 135);
 			    c.pjProjectImg1.setParent(c.descriptBg);
 			    c.pjProjectImg1.setWaitDrawSecond(0.5);
 			    c.pjProjectImg1.setPartialDrawSecond(0.5);
+			    c.pjProjectImg1.setTouchEvent(function(){
+			    	$("#prVideo").empty();
+			    	$("#prVideo").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/KgFkaxeA88c" frameborder="0" allowfullscreen></iframe>');
+			    });
 			}
 	    });
 	    c.pjBtn.setWaitDrawSecond(0.2);
@@ -52,6 +63,8 @@
 
 	    c.innoBtn = new Drawable(c, '/resource/img/profile3_innoBtn.png');
 	    c.innoBtn.setTouchEvent(function(){
+	    	$("#prVideo").empty();
+
 	    	c.innoTitle = new Drawable(c, '/resource/img/innoTitle.png');
 	    	c.innoTitle.display = 'none';
 	    	c.innoTitle.img.onload = function(){
@@ -71,6 +84,10 @@
 			    c.innoProjectImg0.setParent(c.descriptBg);
 			    c.innoProjectImg0.setWaitDrawSecond(0.5);
 			    c.innoProjectImg0.setPartialDrawSecond(0.5);
+			    c.innoProjectImg0.setTouchEvent(function(){
+			    	$("#prVideo").empty();
+			    	$("#prVideo").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/G_xYbvKjvTE" frameborder="0" allowfullscreen></iframe>');
+			    });
 			}
 	    });
 	    c.innoBtn.setWaitDrawSecond(0.5);
