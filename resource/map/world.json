@@ -76,11 +76,31 @@
             "res" : "tree0",
             "obstacle" : true
         },
-         {
+        {
             "x" : 8,
             "y" : 0,
             "res" : "trees0",
             "obstacle" : true
+        },
+        {
+            "x" : 2,
+            "y" : 3,
+            "res" : "bodyalonelyback",
+            "obstacle" : true,
+            "event" : "setDescription('남자 : 각 집마다 고유의 태그가 있고, 해당 집에 들어가면 그 태그의 게시물들만 걸러져서 보인다고 하네요. 직접 태그 링크를 타고 들어가도 된다는 건 공공연한 비밀이지요.');"
+        },
+        {
+            "x" : 4,
+            "y" : 1,
+            "res" : "statue0",
+            "obstacle" : true
+        },
+        {
+            "x" : 7,
+            "y" : 1,
+            "res" : "bodysoldier2",
+            "obstacle" : true,
+            "event" : "setDescription('병사 : 이 길은 어디로 이어진 걸까?');"
         },
 
 
