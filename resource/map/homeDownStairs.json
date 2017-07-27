@@ -102,6 +102,13 @@
             "obstacle" : true,
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
+        {
+            "x" : 9,
+            "y" : 0,
+            "res" : "statue0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
 
 
         {
@@ -127,6 +134,12 @@
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescription('좌측 상단의 버튼들을 눌러주세요.'); setDescriptionHtml('introduce3');"
+        },
+        {
+            "x" : 9,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescription('좌측 상단의 버튼들을 눌러주세요.'); setDescriptionHtml('introduce4');"
         },
 
 

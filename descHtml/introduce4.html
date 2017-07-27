@@ -1,0 +1,180 @@
+<div>
+	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce3"></canvas>
+</div>
+
+<script type="text/javascript">
+	$("#introduce3").hide();
+	$("#introduce3").fadeIn();
+
+	(function(){
+		var c = document.getElementById("introduce3");
+		var c_ctx = c.getContext('2d');
+
+		c.width = document.getElementById("descHtml").offsetWidth;
+		c.height = canvas.offsetHeight;	
+
+		c.branchImg = new Drawable(c, '/resource/img/profile3_branch.png');
+
+		// 버튼들
+	    c.pjBtn = new Drawable(c, '/resource/img/profile3_pjBtn.png');
+	    c.pjBtn.setTouchEvent(function(){
+	    	c.pjTitle = new Drawable(c, '/resource/img/pjTitle.png');
+	    	c.pjTitle.display = 'none';
+	    	c.pjTitle.img.onload = function(){
+	    		c.pjTitle.display = 'block';
+	    		c.pjTitle.setPosition(25, 17);
+			    c.pjTitle.setParent(c.descriptBg);
+			    c.pjTitle.setPartialDrawSecond(0.5);
+			    c.pjTitle.setPartialDrawDirectReverse(true);
+
+
+	    		c.pjCardImg = new Drawable(c, '/resource/img/pjCardImg.png');
+		    	c.pjCardImg.setPosition(15, 35);
+			    c.pjCardImg.setParent(c.descriptBg);
+			    c.pjCardImg.setPartialDrawSecond(0.5);
+
+			    c.pjProjectImg0 = new Drawable(c, '/resource/img/pjProjectImg0.png');
+		    	c.pjProjectImg0.setPosition(130, 40);
+			    c.pjProjectImg0.setParent(c.descriptBg);
+			    c.pjProjectImg0.setWaitDrawSecond(0.5);
+			    c.pjProjectImg0.setPartialDrawSecond(0.5);
+
+			    c.pjProjectImg1 = new Drawable(c, '/resource/img/pjProjectImg1.png');
+		    	c.pjProjectImg1.setPosition(130, 135);
+			    c.pjProjectImg1.setParent(c.descriptBg);
+			    c.pjProjectImg1.setWaitDrawSecond(0.5);
+			    c.pjProjectImg1.setPartialDrawSecond(0.5);
+			}
+	    });
+
+	    c.innoBtn = new Drawable(c, '/resource/img/profile3_innoBtn.png');
+	    c.innoBtn.setTouchEvent(function(){
+	    	c.innoTitle = new Drawable(c, '/resource/img/innoTitle.png');
+	    	c.innoTitle.display = 'none';
+	    	c.innoTitle.img.onload = function(){
+	    		c.innoTitle.display = 'block';
+	    		c.innoTitle.setPosition(25, 17);
+			    c.innoTitle.setParent(c.descriptBg);
+			    c.innoTitle.setPartialDrawSecond(0.5);
+			    c.innoTitle.setPartialDrawDirectReverse(true);
+
+	    		c.innoCardImg = new Drawable(c, '/resource/img/innoCardImg.png');
+		    	c.innoCardImg.setPosition(15, 35);
+			    c.innoCardImg.setParent(c.descriptBg);
+			    c.innoCardImg.setPartialDrawSecond(0.5);
+
+			    c.innoProjectImg0 = new Drawable(c, '/resource/img/innoProjectImg0.png');
+		    	c.innoProjectImg0.setPosition(130, 145);
+			    c.innoProjectImg0.setParent(c.descriptBg);
+			    c.innoProjectImg0.setWaitDrawSecond(0.5);
+			    c.innoProjectImg0.setPartialDrawSecond(0.5);
+			}
+	    });
+
+	    // 타이틀 이미지
+	    c.titleImg = new Drawable(c, '/resource/img/profile3_title.png');
+	    // 설명란 이미지
+	    c.descriptBg = new Drawable(c, '/resource/img/profile3_0.png');
+
+
+	    c.pjBtn.runTouchEvent();
+
+
+	    var removeHasParentElem = function(){
+	    	var removeCount = 0;
+
+	    	for(var i = 0 ; i < c.drawables.length ; ++i)
+    		{
+    			if(c.drawables[i].parent)
+    			{
+    				c.drawables[i] = null;
+    				++removeCount;
+    			}
+    		}
+
+    		for(var i = 0 ; i < c.drawables.length ; ++i)
+    		{
+    			if(c.drawables[i] == null && c.drawables.length > i + 1)
+    			{
+    				c.drawables[i] = c.drawables[i+1];
+    				c.drawables[i+1] = null;
+    			}
+    		}
+
+    		c.drawables = c.drawables.slice(0, c.drawables.length - removeCount);
+	    }
+	    var recalcPosition = function(){
+	    	var margin = 15;
+	    	var btnSize = c.pjBtn.getSize();
+
+	    	c.branchImg.setPosition(60,0);
+
+			c.pjBtn.setPosition(margin * 2, margin + 40);
+			c.innoBtn.setPosition(0,
+									(margin) * 2 + 30 + btnSize.height);
+
+			c.titleImg.setPosition(margin, margin * 3 + 20 + btnSize.height * 2);
+
+			var descSize = c.descriptBg.getSize();
+
+			c.descriptBg.pos.x = btnSize.width + 50;
+			c.descriptBg.pos.y = margin;
+
+			var height = descSize.height + margin * 2;
+
+			if(c.width < c.descriptBg.pos.x + descSize.width){
+				c.innoBtn.setPosition(margin * 2 + btnSize.width, margin);
+
+				c.descriptBg.pos.x = margin;
+				c.descriptBg.pos.y = 250 - (btnSize.height + margin);
+
+				c.titleImg.setPosition(margin, margin * 2 + btnSize.height);
+
+				height += descSize.height;
+				height -= btnSize.height + margin;
+			}
+
+			if(c.height != height)
+			{
+				c.height = height;
+			}
+	    }
+ 
+	    setUpdateFunc(function(dt){
+			if(c.width != document.getElementById("descHtml").offsetWidth)
+			{
+				c.width = document.getElementById("descHtml").offsetWidth;
+			}
+
+			c_ctx.clearRect(0, 0, c.width, c.height);
+
+			recalcPosition();
+
+			for(var i = 0 ; i < c.drawables.length ; ++i)
+			{
+				c.drawables[i].draw();
+			}
+		});
+
+		c.addEventListener("mouseup", function (e) {
+    		var pos = getMouseTouchPos(c, e);
+
+    		for(var i = 0 ; i < c.drawables.length ; ++i)
+    		{
+    			if(c.drawables[i].isTouched(pos))
+    			{
+    				if(c.drawables[i].hasTouchEvent())
+    				{
+    					if(c.drawables[i].parent == null)
+    					{
+							removeHasParentElem();
+						}
+    				}
+
+    				c.drawables[i].runTouchEvent();
+    			}
+    		}
+
+		}, false);
+	})();
+</script>
