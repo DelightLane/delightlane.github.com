@@ -1,12 +1,12 @@
 {
-    "cols" : 11,
+    "cols" : 15,
     "rows" : 3,
     "startPos" : { "x" : 0, "y" : 1 },
     "tiles" :
     [
-        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
-        "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
-        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road"
+        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road"
     ],
     "objs" :
     [
@@ -65,6 +65,36 @@
             "y" : 0,
             "res" : "wall0"
         },
+        {
+            "x" : 11,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 12,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 12,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 12,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 13,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 14,
+            "y" : 0,
+            "res" : "wall0"
+        },
 
         {
             "x" : 1,
@@ -73,35 +103,36 @@
             "obstacle" : true
         },
         {
-            "x" : 2,
-            "y" : 0,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
             "x" : 4,
             "y" : 0,
-            "res" : "fence1",
+            "res" : "fenceLine1",
             "obstacle" : true
         },
         {
             "x" : 6,
             "y" : 0,
-            "res" : "fence1",
+            "res" : "fenceLine1",
             "obstacle" : true
         },
         {
             "x" : 8,
             "y" : 0,
-            "res" : "fence1",
+            "res" : "fenceLine1",
             "obstacle" : true
         },
         {
             "x" : 10,
             "y" : 0,
-            "res" : "fence1",
+            "res" : "fenceLine1",
             "obstacle" : true
         },
+         {
+            "x" : 13,
+            "y" : 0,
+            "res" : "fenceLine1",
+            "obstacle" : true
+        },
+
 
 
         {
@@ -110,6 +141,13 @@
             "res" : "milestone",
             "obstacle" : true,
             "event" : "setDescriptionHtml('introduce0');"
+        },
+        {
+            "x" : 2,
+            "y" : 0,
+            "res" : "hangBoard0",
+            "obstacle" : true,
+            "event" : "setDescriptionHtml('board0');"
         },
         {
             "x" : 3,
@@ -139,6 +177,20 @@
             "obstacle" : true,
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
+        {
+            "x" : 11,
+            "y" : 0,
+            "res" : "hangBoard0",
+            "obstacle" : true,
+            "event" : "setDescriptionHtml('board1');"
+        },
+        {
+            "x" : 12,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
 
 
         {
@@ -146,6 +198,12 @@
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce0');"
+        },
+        {
+            "x" : 2,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('board0');"
         },
         {
             "x" : 3,
@@ -170,6 +228,18 @@
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce4');"
+        },
+        {
+            "x" : 11,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('board1');"
+        },
+        {
+            "x" : 12,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('introduce5');"
         },
 
 

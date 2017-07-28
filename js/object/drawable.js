@@ -46,6 +46,12 @@ Drawable.prototype.setImage = function(imagePath){
 	}
 }
 
+Drawable.prototype.setSize = function(width, height){
+	this.size = {};
+	this.size.width = width;
+	this.size.height = height;
+}
+
 Drawable.prototype.setScale = function(scale){
 	this.scale = scale;
 }
@@ -88,9 +94,11 @@ Drawable.prototype.draw = function(){
 		curPos.y += this.parent.pos.y;
 	}
 
+	var size = this.size || { width : this.img.width, height : this.img.height };
+
 	if(!this.partialTime || this.partialTime <= 0)
 	{
-		ctx.drawImage(this.img, curPos.x, curPos.y, this.img.width * scale, this.img.height * scale);
+		ctx.drawImage(this.img, curPos.x, curPos.y, size.width * scale, size.height * scale);
 	}
 	else
 	{
@@ -98,13 +106,15 @@ Drawable.prototype.draw = function(){
 
 		if(!this.partialUpDown)
 		{
-			var drawWidth = this.img.width * drawPercentage;
-			ctx.drawImage(this.img, 0, 0, drawWidth, this.img.height, curPos.x, curPos.y, drawWidth * scale, this.img.height * scale);	
+			var drawWidth = size.width * drawPercentage;
+			var originWidth = this.img.width * drawPercentage;
+			ctx.drawImage(this.img, 0, 0, originWidth, this.img.height, curPos.x, curPos.y, drawWidth * scale, size.height * scale);	
 		}
 		else
 		{
-			var drawHeight = this.img.height * drawPercentage;
-			ctx.drawImage(this.img, 0, 0, this.img.width, drawHeight, curPos.x, curPos.y, this.img.width * scale, drawHeight * scale);	
+			var drawHeight = size.height * drawPercentage;
+			var originHeight = this.img.height * drawPercentage;
+			ctx.drawImage(this.img, 0, 0, this.img.width, originHeight, curPos.x, curPos.y, size.width * scale, drawHeight * scale);	
 		}
 
 		this.partialTime -= flowSceond;

@@ -1,0 +1,43 @@
+<div>
+	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce5"></canvas>
+</div>
+
+<script type="text/javascript">
+	
+	$("#introduce5").hide();
+	$("#introduce5").fadeIn();
+
+	(function(){
+		var c = document.getElementById("introduce5");
+		var c_ctx = c.getContext('2d');
+
+		c.width = document.getElementById("descHtml").offsetWidth;
+		c.height = canvas.offsetHeight;	
+
+	    // 타이틀 이미지
+	    c.picture = new Drawable(c, '/resource/img/room.png');
+	    c.picture.img.onload = function()
+	    {
+		    c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.width);
+		    c.picture.setPartialDrawSecond(0.5);
+		    c.picture.setPosition(0, 0);
+		}
+
+ 
+	    setUpdateFunc(function(dt){
+			if(c.width != document.getElementById("descHtml").offsetWidth)
+			{
+				c.width = document.getElementById("descHtml").offsetWidth;
+			}
+
+			c.picture.setSize(c.width, c.picture.img.height * c.height / c.picture.img.height);
+
+			c_ctx.clearRect(0, 0, c.width, c.height);
+
+			for(var i = 0 ; i < c.drawables.length ; ++i)
+			{
+				c.drawables[i].draw();
+			}
+		});
+	})();
+</script>
