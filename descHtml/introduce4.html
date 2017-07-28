@@ -180,7 +180,7 @@
     		{
     			if(c.drawables[i].isTouched(pos))
     			{
-    				if(c.drawables[i].hasTouchEvent())
+    				if(c.drawables[i].hasTouchEvent() && c.drawables[i].parent == null)
     				{
     					c.descriptBg.removeAllChildren();
     				}
