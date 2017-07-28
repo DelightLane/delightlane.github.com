@@ -13,9 +13,12 @@
 		c.width = document.getElementById("descHtml").offsetWidth;
 		c.height = canvas.offsetHeight;	
 
+		c.btnSet = new Drawable(c, '');
+		c.btnSet.setPosition(0, 0);
 
 		// 버튼들
 	    c.statusBtn = new Drawable(c, '/resource/img/profile2_statusBtn.png');
+	    c.statusBtn.setParent(c.btnSet);
 	    c.statusBtn.setTouchEvent(function(){
 	    	c.charImg = new Drawable(c, '/resource/img/charImg.png');
 	    	c.charImg.display = 'none';
@@ -41,6 +44,7 @@
 	    });
 
 	    c.skillBtn = new Drawable(c, '/resource/img/profile2_skillBtn.png');
+	    c.skillBtn.setParent(c.btnSet);
 		c.skillBtn.setTouchEvent(function(){
 	    	c.skillImg = new Drawable(c, '/resource/img/skillImg.png');
 	    	c.skillImg.display = 'none';
@@ -54,6 +58,7 @@
 	    });
 
 	    c.toolBtn = new Drawable(c, '/resource/img/profile2_toolBtn.png');
+	    c.toolBtn.setParent(c.btnSet);
 	    c.toolBtn.setTouchEvent(function(){
 	    	c.toolTitle = new Drawable(c, '/resource/img/toolTitle.png');
 	    	c.toolTitle.display = 'none';
@@ -98,6 +103,7 @@
 	    });
 
 	    c.passiveBtn = new Drawable(c, '/resource/img/profile2_passiveBtn.png');
+	    c.passiveBtn.setParent(c.btnSet);
 	    c.passiveBtn.setTouchEvent(function(){
 	    	c.passiveTitle = new Drawable(c, '/resource/img/passiveTitle.png');
 	    	c.passiveTitle.display = 'none';
@@ -134,6 +140,21 @@
 			}
 	    });
 
+	    var margin = 15;
+	    c.statusBtn.img.onload = function(){
+    		var btnSize = c.statusBtn.getSize();
+
+			c.statusBtn.setPosition(margin, margin);
+			c.skillBtn.setPosition(margin * 2 + btnSize.width,
+									margin);
+			c.toolBtn.setPosition(margin,
+									margin * 2 + btnSize.height);
+			c.passiveBtn.setPosition(margin * 2 + btnSize.width,
+			 						margin * 2 + btnSize.height);
+
+			c.btnSet.setSize(margin * 2 + btnSize.width * 2, margin * 2 + btnSize.height * 2);
+		}
+
 	    // 타이틀 이미지
 	    c.titleImg = new Drawable(c, '/resource/img/profile2_title.png');
 	    // 캐릭터 이미지
@@ -146,16 +167,7 @@
 
 
 	    var recalcPosition = function(){
-	    	var margin = 15;
 	    	var btnSize = c.statusBtn.getSize();
-
-			c.statusBtn.setPosition(margin, margin);
-			c.skillBtn.setPosition(margin * 2 + btnSize.width,
-									margin);
-			c.toolBtn.setPosition(margin,
-									margin * 2 + btnSize.height);
-			c.passiveBtn.setPosition(margin * 2 + btnSize.width,
-			 						margin * 2 + btnSize.height);
 
 			c.titleImg.setPosition(margin, margin * 3 + btnSize.height * 2);
 
@@ -168,32 +180,53 @@
 			c.descriptBg.pos.x = c.characterImg.pos.x + charSize.width + 50;
 			c.descriptBg.pos.y = margin;
 
+			c.btnSet.pos.x = 0;
+
 			var height = canvas.offsetHeight;
 
 			if(c.width < c.descriptBg.pos.x + descSize.width){
-				c.descriptBg.pos.x = margin;
-				c.descriptBg.pos.y = 250;
+				
 
-				c.characterImg.pos.y = c.descriptBg.pos.y - charSize.height / 2;
-
-				height += descSize.height;
+				//c.descriptBg.pos.x = c.btnSet.width + margin;
 			}
 
-			if(c.width < c.characterImg.pos.x + charSize.width){
-				c.characterImg.pos.x = margin;
+			if(c.width < c.descriptBg.pos.x + descSize.width){
+				var centerMargin = c.width / 10;
+				if(centerMargin < 38)
+				{
+					centerMargin = 0;
+				}
+
+				c.titleImg.pos.x = c.width / 2 - c.titleImg.getSize().width - centerMargin;
+
+				c.characterImg.pos.x = c.width / 2 - c.characterImg.getSize().width - centerMargin;
 				c.characterImg.pos.y = 250;
 
-				c.descriptBg.pos.y += charSize.height + margin;
+				c.btnSet.pos.x = c.width / 2 - c.btnSet.getSize().width - centerMargin * 0.5;
+				if(c.btnSet.pos.x < 0)
+				{
+					c.btnSet.pos.x = 0;
+				}
+
+				c.descriptBg.pos.x = c.width / 2 + centerMargin;
+				if(c.descriptBg.pos.x < c.btnSet.getSize().width)
+				{
+					c.descriptBg.pos.x = c.btnSet.getSize().width;
+				}
+
+				if(descSize.width + c.btnSet.getSize().width > c.width)
+				{
+					c.btnSet.pos.x = c.width / 2 - c.btnSet.getSize().width / 2;
+					c.descriptBg.pos.x = c.width / 2 - descSize.width / 2;
+					c.descriptBg.pos.y = c.characterImg.pos.y + charSize.height + margin;
+
+					c.titleImg.pos.x = c.width / 2 - c.titleImg.getSize().width / 2;
+					c.characterImg.pos.x = c.width / 2 - charSize.width / 2;
+
+					height += descSize.height;
+				}
 
 				height += charSize.height;
-
-				for(var i = 0 ; i < c.drawables.length ; ++i)
-				{
-					if(!c.drawables[i].parent)
-					{
-						c.drawables[i].pos.x += c.drawables[i].getSize().width / 5;
-					}
-				}
 			}
 
 			if(c.height != height)

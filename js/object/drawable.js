@@ -39,10 +39,13 @@ Drawable.removeHasParentElem = function(canvas){
 }
 
 Drawable.prototype.setImage = function(imagePath){
-	if(this.img == null || !this.img.src.includes(imagePath))
+	if(imagePath && imagePath.length > 0)
 	{
-		this.img = new Image();
-		this.img.src = imagePath;
+		if(this.img == null || !this.img.src.includes(imagePath))
+		{
+			this.img = new Image();
+			this.img.src = imagePath;
+		}
 	}
 }
 
@@ -76,6 +79,11 @@ Drawable.prototype.setPosition = function(x, y){
 }
 
 Drawable.prototype.draw = function(){
+	if(!this.img)
+	{
+		return;
+	}
+
 	var flowSceond = 30 / 1000;
 
 	if(this.waitDrawTime && this.waitDrawTime > 0)
@@ -122,8 +130,16 @@ Drawable.prototype.draw = function(){
 }
 
 Drawable.prototype.getSize = function(){
-	var scale = this.scale || 1;
-	return { width : this.img.width * scale, height : this.img.height * scale };
+	if(this.size)
+	{
+		return this.size;
+	}
+
+	if(this.img)
+	{
+		var scale = this.scale || 1;
+		return { width : this.img.width * scale, height : this.img.height * scale };
+	}
 }
 
 Drawable.prototype.setParent = function(parent){
