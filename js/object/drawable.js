@@ -130,14 +130,15 @@ Drawable.prototype.draw = function(){
 }
 
 Drawable.prototype.getSize = function(){
+	var scale = this.scale || 1;
+
 	if(this.size)
 	{
-		return this.size;
+		return { width : this.size.width * scale, height : this.size.height * scale };
 	}
 
 	if(this.img)
 	{
-		var scale = this.scale || 1;
 		return { width : this.img.width * scale, height : this.img.height * scale };
 	}
 }

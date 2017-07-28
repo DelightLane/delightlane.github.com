@@ -41,7 +41,17 @@
 				c.leftImg.setScale(0.75);
 				c.rightImg.setScale(0.75);
 
-				c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 30, 15);
+				c.leftImg.setPosition(15, 20);
+				c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 30, 20);
+
+				if(c.leftImg.getSize().width + c.rightImg.getSize().width > c.width)
+				{
+					c.leftImg.setScale(0.5);
+					c.rightImg.setScale(0.5);
+
+					c.leftImg.setPosition(15, 40);
+					c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 30, 40);
+				}
 			}
 			else
 			{
@@ -50,6 +60,8 @@
 
 				c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 30, 15);
 			}
+
+			c.height = c.leftImg.getSize().height + c.leftImg.pos.y + 15;
 	    }
  
 	    setUpdateFunc(function(dt){
