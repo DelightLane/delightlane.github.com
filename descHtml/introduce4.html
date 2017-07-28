@@ -43,7 +43,7 @@
 			    c.pjProjectImg0.setPartialDrawSecond(0.5);
 			    c.pjProjectImg0.setTouchEvent(function(){
 			    	$("#prVideo").empty();
-			    	$("#prVideo").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/JsEjBEvDWDI" frameborder="0" allowfullscreen></iframe>');
+			    	$("#prVideo").append('<iframe id="pjVideo0" width="'+ c.width +'" height="315" src="https://www.youtube.com/embed/JsEjBEvDWDI" frameborder="0" allowfullscreen></iframe>');
 			    });
 
 			    c.pjProjectImg1 = new Drawable(c, '/resource/img/pjProjectImg1.png');
@@ -53,7 +53,7 @@
 			    c.pjProjectImg1.setPartialDrawSecond(0.5);
 			    c.pjProjectImg1.setTouchEvent(function(){
 			    	$("#prVideo").empty();
-			    	$("#prVideo").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/KgFkaxeA88c" frameborder="0" allowfullscreen></iframe>');
+			    	$("#prVideo").append('<iframe id="pjVideo1" width="'+ c.width +'" height="315" src="https://www.youtube.com/embed/KgFkaxeA88c" frameborder="0" allowfullscreen></iframe>');
 			    });
 			}
 	    });
@@ -86,7 +86,7 @@
 			    c.innoProjectImg0.setPartialDrawSecond(0.5);
 			    c.innoProjectImg0.setTouchEvent(function(){
 			    	$("#prVideo").empty();
-			    	$("#prVideo").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/G_xYbvKjvTE" frameborder="0" allowfullscreen></iframe>');
+			    	$("#prVideo").append('<iframe id="innoVideo0" width="'+ c.width +'" height="315" src="https://www.youtube.com/embed/G_xYbvKjvTE" frameborder="0" allowfullscreen></iframe>');
 			    });
 			}
 	    });
@@ -140,6 +140,10 @@
 			{
 				c.branchImg.setImage('/resource/img/profile3_branch.png');
 			}
+
+			$("#pjVideo0").width(c.width);
+			$("#pjVideo1").width(c.width);
+			$("#innoVideo0").width(c.width);
 
 
 			if(c.height != height)
