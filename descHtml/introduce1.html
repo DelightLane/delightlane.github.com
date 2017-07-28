@@ -52,8 +52,20 @@
 				c.eggImg.setScale(0.5);
 				c.charImg.setScale(0.5);
 
-				c.hometownImg.setPosition(150 * 0.75, 30);
-				c.arrowImg.setPosition(150 * 0.75, 170);
+				if(c.charImg.scale && c.charImg.scale < 1 && c.width < c.hometownImg.originalRightPos + c.charImg.getSize().width - 50)
+				{
+					c.hometownImg.setScale(0.7);
+					c.arrowImg.setScale(0.7);
+					c.hometownImg.setPosition(150 * 0.5, 30 / 0.5);
+					c.arrowImg.setPosition(150 * 0.5, 170);
+				}
+				else
+				{
+					c.hometownImg.setScale(1);
+					c.arrowImg.setScale(1);
+					c.hometownImg.setPosition(150 * 0.7, 30);
+					c.arrowImg.setPosition(150 * 0.7, 170);
+				}
 			}
 			else
 			{
