@@ -196,13 +196,13 @@
         {
             "x" : 1,
             "y" : 2,
-            "res" : "footprint0",
+            "res" : "",
             "event" : "setDescriptionHtml('introduce0');"
         },
         {
             "x" : 2,
             "y" : 2,
-            "res" : "footprint0",
+            "res" : "",
             "event" : "setDescriptionHtml('board0');"
         },
         {
@@ -232,7 +232,7 @@
         {
             "x" : 11,
             "y" : 2,
-            "res" : "footprint0",
+            "res" : "",
             "event" : "setDescriptionHtml('board1');"
         },
         {
