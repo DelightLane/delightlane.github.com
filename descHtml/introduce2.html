@@ -35,22 +35,22 @@
 
 	    	c.titleImg.setPosition(15, 15);
 
-			c.leftImg.setPosition(15, 15);
+			c.leftImg.setPosition(40, 15);
 
 			if(c.width < c.rightImg.originalRightPos){
 				c.leftImg.setScale(0.75);
 				c.rightImg.setScale(0.75);
 
-				c.leftImg.setPosition(15, 20);
-				c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 30, 20);
+				c.leftImg.setPosition(40, 20);
+				c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 40, 20);
 
-				if(c.leftImg.getSize().width + c.rightImg.getSize().width > c.width)
+				if(c.leftImg.getSize().width + c.rightImg.getSize().width + 40 > c.width)
 				{
 					c.leftImg.setScale(0.5);
 					c.rightImg.setScale(0.5);
 
-					c.leftImg.setPosition(15, 40);
-					c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 30, 40);
+					c.leftImg.setPosition(40, 40);
+					c.rightImg.setPosition(c.width - c.rightImg.getSize().width - 40, 40);
 				}
 			}
 			else
