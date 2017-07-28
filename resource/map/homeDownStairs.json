@@ -4,8 +4,8 @@
     "startPos" : { "x" : 0, "y" : 1 },
     "tiles" :
     [
-        "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
-        "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1",
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1",
         "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road"
     ],
     "objs" :
