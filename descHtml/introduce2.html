@@ -1,19 +1,71 @@
-<div style="display: inline-block; margin: auto; padding:20px;">
-
-	<img id="profile1_0" style="float:left;" src="/resource/img/profile1_0.png"/>
-	<img id="profile1_1" style="float:left;" src="/resource/img/profile1_1.png"/>
-	
+<div>
+	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce2"></canvas>
 </div>
 
 <script type="text/javascript">
-	$("#profile1_0").hide();
-	$("#profile1_1").hide();
+	
+	$("#introduce2").hide();
+	$("#introduce2").fadeIn();
 
-	$('#profile1_0').load(function() {
-		if(this.complete){
-		$(this).fadeIn(null, function(){
-				$("#profile1_1").slideDown("slow");
-			});
-		}
-	});
+	(function(){
+		var c = document.getElementById("introduce2");
+		var c_ctx = c.getContext('2d');
+
+		c.width = document.getElementById("descHtml").offsetWidth;
+		c.height = canvas.offsetHeight;	
+
+		// 타이틀 이미지
+	    c.titleImg = new Drawable(c, '/resource/img/profile1_title.png');
+	    c.titleImg.setPartialDrawSecond(0.5);
+
+	    c.leftImg = new Drawable(c, '/resource/img/profile1_0.png');
+	    c.leftImg.setPartialDrawSecond(0.5);
+	    
+	    c.rightImg = new Drawable(c, '/resource/img/profile1_1.png');
+	    c.rightImg.setWaitDrawSecond(0.5);
+	    c.rightImg.setPartialDrawSecond(0.5);
+	    c.rightImg.originalRightPos = 0;
+	    c.rightImg.img.onload = function()
+	    {
+	    	c.rightImg.setPosition(213, 15);
+	    	c.rightImg.originalRightPos = c.rightImg.getSize().width + c.rightImg.pos.x;
+	    }
+	    
+	    var recalcPosition = function(){
+
+	    	c.titleImg.setPosition(15, 15);
+
+			c.leftImg.setPosition(15, 15);
+
+			if(c.width < c.rightImg.originalRightPos){
+				c.leftImg.setScale(0.75);
+				c.rightImg.setScale(0.75);
+
+				c.rightImg.setPosition((c.leftImg.getSize().width + 15) * 0.75, 15);
+			}
+			else
+			{
+				c.leftImg.setScale(1);
+				c.rightImg.setScale(1);
+
+				c.rightImg.setPosition(c.leftImg.getSize().width + 15, 15);
+			}
+	    }
+ 
+	    setUpdateFunc(function(dt){
+			if(c.width != document.getElementById("descHtml").offsetWidth)
+			{
+				c.width = document.getElementById("descHtml").offsetWidth;
+			}
+
+			c_ctx.clearRect(0, 0, c.width, c.height);
+
+			recalcPosition();
+
+			for(var i = 0 ; i < c.drawables.length ; ++i)
+			{
+				c.drawables[i].draw();
+			}
+		});
+	})();
 </script>

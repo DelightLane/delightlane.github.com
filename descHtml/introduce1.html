@@ -43,8 +43,7 @@
 	    c.charImg.setWaitDrawSecond(1.5);
 
 	    var recalcPosition = function(){
-	    	var height = canvas.offsetHeight;
-
+	    	
 			c.titleImg.setPosition(15, 15);
 			c.eggImg.setPosition(60, c.height - c.eggImg.getSize().height - 30);
 			c.charImg.setPosition(c.width - c.charImg.getSize().width - 30, c.height - c.charImg.getSize().height - 15);
@@ -63,12 +62,6 @@
 
 				c.hometownImg.setPosition(150, 30);
 				c.arrowImg.setPosition(150, 170);
-			}
-
-
-			if(c.height != height)
-			{
-				c.height = height;
 			}
 	    }
  
