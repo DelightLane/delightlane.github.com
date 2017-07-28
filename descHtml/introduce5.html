@@ -18,7 +18,7 @@
 	    c.picture = new Drawable(c, '/resource/img/room.png');
 	    c.picture.img.onload = function()
 	    {
-		    c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.width);
+		    c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.height);
 		    c.picture.setPartialDrawSecond(0.5);
 		    c.picture.setPosition(0, 0);
 		}
@@ -30,7 +30,9 @@
 				c.width = document.getElementById("descHtml").offsetWidth;
 			}
 
-			c.picture.setSize(c.width, c.picture.img.height * c.height / c.picture.img.height);
+			var height = c.picture.img.height * c.width / c.picture.img.width;
+			c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.width);
+			c.height = c.picture.img.height * c.width / c.picture.img.width;
 
 			c_ctx.clearRect(0, 0, c.width, c.height);
 
