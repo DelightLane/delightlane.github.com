@@ -1,11 +1,91 @@
-<img style="display:block; margin: auto;" id="profile0" src="/resource/img/profile0.png"/>
+<div>
+	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce1"></canvas>
+</div>
 
 <script type="text/javascript">
 	
-	$('#profile0').hide();
-	$('#profile0').load(function() {
-		if(this.complete){
-			$(this).fadeIn();
-		}
-	});
+	$("#introduce1").hide();
+	$("#introduce1").fadeIn();
+
+	(function(){
+		var c = document.getElementById("introduce1");
+		var c_ctx = c.getContext('2d');
+
+		c.width = document.getElementById("descHtml").offsetWidth;
+		c.height = canvas.offsetHeight;	
+
+	    // 타이틀 이미지
+	    c.titleImg = new Drawable(c, '/resource/img/profile0_title.png');
+	    c.titleImg.setPartialDrawSecond(0.5);
+
+	    
+	    c.eggImg = new Drawable(c, '/resource/img/profile0_0.png');
+	    c.eggImg.setWaitDrawSecond(0.5);
+	    c.eggImg.setPartialDrawSecond(0.5);
+	    
+
+	    c.hometownImg = new Drawable(c, '/resource/img/profile0_1.png');
+	    c.hometownImg.setWaitDrawSecond(1.5);
+	    c.hometownImg.setPartialDrawSecond(0.5);
+	    c.hometownImg.originalRightPos = 0;
+	    c.hometownImg.img.onload = function()
+	    {
+	    	c.hometownImg.setPosition(150, 30);
+	    	c.hometownImg.originalRightPos = c.hometownImg.pos.x + c.hometownImg.getSize().width;
+	    }
+
+	    c.arrowImg = new Drawable(c, '/resource/img/profile0_2.png');
+	    c.arrowImg.setPartialDrawSecond(0.5);
+	    c.arrowImg.setWaitDrawSecond(1);
+	    
+	    c.charImg = new Drawable(c, '/resource/img/profile0_3.png');
+	    c.charImg.setPartialDrawSecond(0.5);
+	    c.charImg.setWaitDrawSecond(1.5);
+
+	    var recalcPosition = function(){
+	    	var height = canvas.offsetHeight;
+
+			c.titleImg.setPosition(15, 15);
+			c.eggImg.setPosition(60, c.height - c.eggImg.getSize().height - 30);
+			c.charImg.setPosition(c.width - c.charImg.getSize().width - 30, c.height - c.charImg.getSize().height - 15);
+
+			if(c.width < c.hometownImg.originalRightPos + c.charImg.getSize().width / (c.charImg.scale || 1)){
+				c.eggImg.setScale(0.5);
+				c.charImg.setScale(0.5);
+
+				c.hometownImg.setPosition(150 * 0.75, 30);
+				c.arrowImg.setPosition(150 * 0.75, 170);
+			}
+			else
+			{
+				c.eggImg.setScale(1);
+				c.charImg.setScale(1);
+
+				c.hometownImg.setPosition(150, 30);
+				c.arrowImg.setPosition(150, 170);
+			}
+
+
+			if(c.height != height)
+			{
+				c.height = height;
+			}
+	    }
+ 
+	    setUpdateFunc(function(dt){
+			if(c.width != document.getElementById("descHtml").offsetWidth)
+			{
+				c.width = document.getElementById("descHtml").offsetWidth;
+			}
+
+			c_ctx.clearRect(0, 0, c.width, c.height);
+
+			recalcPosition();
+
+			for(var i = 0 ; i < c.drawables.length ; ++i)
+			{
+				c.drawables[i].draw();
+			}
+		});
+	})();
 </script>

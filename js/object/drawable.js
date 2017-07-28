@@ -46,6 +46,10 @@ Drawable.prototype.setImage = function(imagePath){
 	}
 }
 
+Drawable.prototype.setScale = function(scale){
+	this.scale = scale;
+}
+
 Drawable.prototype.setPartialDrawSecond = function(time){
 	this.partialTime = time;
 	this.totalPartialTime = time;
@@ -75,6 +79,7 @@ Drawable.prototype.draw = function(){
 	}
 
 	var ctx = this.canvas.getContext('2d');
+	var scale = this.scale || 1;
 
 	var curPos = {x:this.pos.x, y:this.pos.y};
 	if(this.parent != null)
@@ -85,7 +90,7 @@ Drawable.prototype.draw = function(){
 
 	if(!this.partialTime || this.partialTime <= 0)
 	{
-		ctx.drawImage(this.img, curPos.x, curPos.y);
+		ctx.drawImage(this.img, curPos.x, curPos.y, this.img.width * scale, this.img.height * scale);
 	}
 	else
 	{
@@ -94,12 +99,12 @@ Drawable.prototype.draw = function(){
 		if(!this.partialUpDown)
 		{
 			var drawWidth = this.img.width * drawPercentage;
-			ctx.drawImage(this.img, 0, 0, drawWidth, this.img.height, curPos.x, curPos.y, drawWidth, this.img.height);	
+			ctx.drawImage(this.img, 0, 0, drawWidth, this.img.height, curPos.x, curPos.y, drawWidth * scale, this.img.height * scale);	
 		}
 		else
 		{
 			var drawHeight = this.img.height * drawPercentage;
-			ctx.drawImage(this.img, 0, 0, this.img.width, drawHeight, curPos.x, curPos.y, this.img.width, drawHeight);	
+			ctx.drawImage(this.img, 0, 0, this.img.width, drawHeight, curPos.x, curPos.y, this.img.width * scale, drawHeight * scale);	
 		}
 
 		this.partialTime -= flowSceond;
@@ -107,7 +112,8 @@ Drawable.prototype.draw = function(){
 }
 
 Drawable.prototype.getSize = function(){
-	return { width : this.img.width, height : this.img.height };
+	var scale = this.scale || 1;
+	return { width : this.img.width * scale, height : this.img.height * scale };
 }
 
 Drawable.prototype.setParent = function(parent){
