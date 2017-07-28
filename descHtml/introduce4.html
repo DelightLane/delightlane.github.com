@@ -1,14 +1,14 @@
 <div>
-	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce3"></canvas>
+	<canvas style="display: block; margin: auto; border-style: solid; background-color: #747474;" id="introduce4"></canvas>
 	<div id="prVideo"/>
 </div>
 
 <script type="text/javascript">
-	$("#introduce3").hide();
-	$("#introduce3").fadeIn();
+	$("#introduce4").hide();
+	$("#introduce4").fadeIn();
 
 	(function(){
-		var c = document.getElementById("introduce3");
+		var c = document.getElementById("introduce4");
 		var c_ctx = c.getContext('2d');
 
 		c.width = document.getElementById("descHtml").offsetWidth;
@@ -102,30 +102,6 @@
 
 	    c.pjBtn.runTouchEvent();
 
-
-	    var removeHasParentElem = function(){
-	    	var removeCount = 0;
-
-	    	for(var i = 0 ; i < c.drawables.length ; ++i)
-    		{
-    			if(c.drawables[i].parent)
-    			{
-    				c.drawables[i] = null;
-    				++removeCount;
-    			}
-    		}
-
-    		for(var i = 0 ; i < c.drawables.length ; ++i)
-    		{
-    			if(c.drawables[i] == null && c.drawables.length > i + 1)
-    			{
-    				c.drawables[i] = c.drawables[i+1];
-    				c.drawables[i+1] = null;
-    			}
-    		}
-
-    		c.drawables = c.drawables.slice(0, c.drawables.length - removeCount);
-	    }
 	    var recalcPosition = function(){
 	    	var margin = 15;
 	    	var btnSize = c.pjBtn.getSize();
@@ -199,7 +175,7 @@
     				{
     					if(c.drawables[i].parent == null)
     					{
-							removeHasParentElem();
+							Drawable.removeHasParentElem(c);
 						}
     				}
 

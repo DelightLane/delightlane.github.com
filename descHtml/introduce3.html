@@ -145,29 +145,6 @@
 	    c.statusBtn.runTouchEvent();
 
 
-	    var removeHasParentElem = function(){
-	    	var removeCount = 0;
-
-	    	for(var i = 0 ; i < c.drawables.length ; ++i)
-    		{
-    			if(c.drawables[i].parent)
-    			{
-    				c.drawables[i] = null;
-    				++removeCount;
-    			}
-    		}
-
-    		for(var i = 0 ; i < c.drawables.length ; ++i)
-    		{
-    			if(c.drawables[i] == null && c.drawables.length > i + 1)
-    			{
-    				c.drawables[i] = c.drawables[i+1];
-    				c.drawables[i+1] = null;
-    			}
-    		}
-
-    		c.drawables = c.drawables.slice(0, c.drawables.length - removeCount);
-	    }
 	    var recalcPosition = function(){
 	    	var margin = 15;
 	    	var btnSize = c.statusBtn.getSize();
@@ -252,7 +229,7 @@
     				{
     					if(c.drawables[i].parent == null)
     					{
-							removeHasParentElem();
+							Drawable.removeHasParentElem(c);
 						}
     				}
 

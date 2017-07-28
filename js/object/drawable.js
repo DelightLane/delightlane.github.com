@@ -14,6 +14,30 @@ function Drawable(canvas, imagePath){
 	canvas.drawables.push(this);
 }
 
+Drawable.removeHasParentElem = function(canvas){
+	var removeCount = 0;
+
+	for(var i = 0 ; i < canvas.drawables.length ; ++i)
+	{
+		if(canvas.drawables[i].parent)
+		{
+			canvas.drawables[i] = null;
+			++removeCount;
+		}
+	}
+
+	for(var i = 0 ; i < canvas.drawables.length ; ++i)
+	{
+		if(canvas.drawables[i] == null && canvas.drawables.length > i + 1)
+		{
+			canvas.drawables[i] = canvas.drawables[i+1];
+			canvas.drawables[i+1] = null;
+		}
+	}
+
+	canvas.drawables = canvas.drawables.slice(0, canvas.drawables.length - removeCount);
+}
+
 Drawable.prototype.setImage = function(imagePath){
 	if(this.img == null || !this.img.src.includes(imagePath))
 	{
