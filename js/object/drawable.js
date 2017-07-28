@@ -14,28 +14,28 @@ function Drawable(canvas, imagePath){
 	canvas.drawables.push(this);
 }
 
-Drawable.removeHasParentElem = function(canvas){
+Drawable.prototype.removeAllChildren = function(){
 	var removeCount = 0;
 
-	for(var i = 0 ; i < canvas.drawables.length ; ++i)
+	for(var i = 0 ; i < this.canvas.drawables.length ; ++i)
 	{
-		if(canvas.drawables[i].parent)
+		if(this.canvas.drawables[i].parent && this.canvas.drawables[i].parent == this)
 		{
-			canvas.drawables[i] = null;
+			this.canvas.drawables[i] = null;
 			++removeCount;
 		}
 	}
 
-	for(var i = 0 ; i < canvas.drawables.length ; ++i)
+	for(var i = 0 ; i < this.canvas.drawables.length ; ++i)
 	{
-		if(canvas.drawables[i] == null && canvas.drawables.length > i + 1)
+		if(this.canvas.drawables[i] == null && this.canvas.drawables.length > i + 1)
 		{
-			canvas.drawables[i] = canvas.drawables[i+1];
-			canvas.drawables[i+1] = null;
+			this.canvas.drawables[i] = this.canvas.drawables[i+1];
+			this.canvas.drawables[i+1] = null;
 		}
 	}
 
-	canvas.drawables = canvas.drawables.slice(0, canvas.drawables.length - removeCount);
+	this.canvas.drawables = this.canvas.drawables.slice(0, this.canvas.drawables.length - removeCount);
 }
 
 Drawable.prototype.setImage = function(imagePath){
