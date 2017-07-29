@@ -99,6 +99,7 @@ function setDescription(text)
     $("#descLoading").hide();
 }
 
+var loadHtml = null;
 function setDescriptionHtml(fileName)
 {
 	var border = $("#descBorder");
@@ -106,15 +107,24 @@ function setDescriptionHtml(fileName)
 	if(fileName != null && fileName.length > 0)
 	{
 		$("#descLoading").show();
-		$("#descHtml").load('/descHtml/' + fileName + '.html', function() {
-			border.show();
-			$("#descLoading").hide();
-		});
+
+		loadHtml = $.ajax({
+            url: '/descHtml/' + fileName + '.html',
+            success: function(data) {
+              $("#descHtml").html(data);
+              border.show();
+              $("#descLoading").hide();
+            }
+          });
 	}
 	else
 	{
-		$('#descHtml').unbind('load');
-		
+		if(loadHtml != null)
+		{
+			loadHtml.abort();
+			loadHtml = null;
+		}
+
 		border.hide();
 
 		$("#descLoading").hide();
