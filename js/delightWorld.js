@@ -99,35 +99,23 @@ function setDescription(text)
     $("#descLoading").hide();
 }
 
-var loadingHtml = false;
 function setDescriptionHtml(fileName)
 {
 	var border = $("#descBorder");
 
 	if(fileName != null && fileName.length > 0)
 	{
-		loadingHtml = true;
-
 		$("#descLoading").show();
 		$("#descHtml").load('/descHtml/' + fileName + '.html', function() {
-			if(!loadingHtml)
-			{
-				$("#descHtml").empty();
-			}
-			else
-			{
-				border.show();
-			}
+			border.show();
 			$("#descLoading").hide();
-
-			loadingHtml = false;
 		});
 	}
 	else
 	{
+		$('#descHtml').unbind('load');
+		
 		border.hide();
-
-		loadingHtml = false;
 
 		$("#descLoading").hide();
 		$("#descHtml").empty();
