@@ -14,7 +14,6 @@
 		c.width = document.getElementById("descHtml").offsetWidth;
 		c.height = canvas.offsetHeight;	
 
-	    // 타이틀 이미지
 	    c.picture = new Drawable(c, '/resource/img/room.png');
 	    c.picture.img.onload = function()
 	    {
@@ -23,6 +22,61 @@
 		    c.picture.setPosition(0, 0);
 		}
 
+		c.btnBgRect = { width : 35, height : 35 };
+		c.raiseBtnBgRect = false;
+		c.updateBtnBgRect = function(){
+			if(c.raiseBtnBgRect)
+			{
+				if(c.btnBgRect.width < c.width)
+				{
+					c.btnBgRect.width += c.width / 10;
+					c.btnBgRect.height += c.height / 10;
+				}
+				else
+				{
+					c.btnBgRect.width = c.width;
+					c.btnBgRect.height = c.height;	
+				}
+			}
+			else
+			{
+				if(c.btnBgRect.width >= 60)
+				{
+					c.btnBgRect.width -= c.width / 10;
+					c.btnBgRect.height -= c.height / 10;
+				}
+				else
+				{
+					c.btnBgRect.width = 35;
+					c.btnBgRect.height = 35;	
+				}
+			}
+		}
+		c.drawBtnBgRect = function(){
+			c_ctx.rect(0, 0, c.btnBgRect.width, c.btnBgRect.height);
+			c_ctx.stroke();
+
+			c_ctx.fillStyle = "#FFD8D8";
+			c_ctx.globalAlpha = 0.7;
+			c_ctx.fillRect(0, 0, c.btnBgRect.width, c.btnBgRect.height);
+			c_ctx.globalAlpha = 1;
+
+			c.clickImg.draw();
+
+			if(c.raiseBtnBgRect)
+			{
+				c_ctx.font = 15 + 'px DungGeunMo';
+				c_ctx.fillStyle = "#000000";
+				c_ctx.fillText("제 방의 작업 환경입니다.", 15, 55);
+				c_ctx.fillText("개인 프로젝트를 할 때는 주로 이 환경에서 작업하고 있습니다.", 15, 85)
+			}
+		}
+
+		c.clickImg = new Drawable(c, '/resource/click.png');
+		c.clickImg.setPosition(0 ,0);
+		c.clickImg.setTouchEvent(function(){
+			c.raiseBtnBgRect = !c.raiseBtnBgRect;
+		});
  
 	    setUpdateFunc(function(dt){
 			if(c.width != document.getElementById("descHtml").offsetWidth)
@@ -34,12 +88,29 @@
 			c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.width);
 			c.height = c.picture.img.height * c.width / c.picture.img.width;
 
+			c.updateBtnBgRect();
+
 			c_ctx.clearRect(0, 0, c.width, c.height);
 
 			for(var i = 0 ; i < c.drawables.length ; ++i)
 			{
 				c.drawables[i].draw();
 			}
+
+			c.drawBtnBgRect();
 		});
+
+		c.addEventListener("mouseup", function (e) {
+    		var pos = getMouseTouchPos(c, e);
+
+    		for(var i = 0 ; i < c.drawables.length ; ++i)
+    		{
+    			if(c.drawables[i].isTouched(pos))
+    			{
+    				c.drawables[i].runTouchEvent();
+    			}
+    		}
+
+		}, false);
 	})();
 </script>
