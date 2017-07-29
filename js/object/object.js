@@ -41,7 +41,22 @@ Object.prototype.calcCanvasPos = function(){
 	return false;
 }
 
+Object.drawImage = function(img, offsetX, offsetY, cropWidth, cropHeight, posX, posY, width, height)
+{
+	// turn off image anti aliasing
+	ctx.msImageSmoothingEnabled = false;
+	ctx.mozImageSmoothingEnabled = false;
+	ctx.webkitImageSmoothingEnabled = false;
+	ctx.imageSmoothingEnabled = false;
+	ctx.drawImage(img, offsetX, offsetY, cropWidth, cropHeight, posX, posY, width, height);
+}
+
 Object.prototype.drawSprite = function(spriteName){
+	if(!this.img)
+	{
+		return;
+	}
+
 	if(typeof(this.atlasData) == 'undefined')
 	{
 		this.imgWidth = this.img.width * DRAW_SCALE;
@@ -49,12 +64,7 @@ Object.prototype.drawSprite = function(spriteName){
 
 		if(this.calcCanvasPos())
 		{
-			// turn off image anti aliasing
-			ctx.msImageSmoothingEnabled = false;
-			ctx.mozImageSmoothingEnabled = false;
-			ctx.webkitImageSmoothingEnabled = false;
-			ctx.imageSmoothingEnabled = false;
-			ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
+			Object.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
 		}
 	}
 	else
@@ -84,12 +94,7 @@ Object.prototype.drawSprite = function(spriteName){
 
 			if(this.calcCanvasPos())
 			{
-				// turn off image anti aliasing
-				ctx.msImageSmoothingEnabled = false;
-				ctx.mozImageSmoothingEnabled = false;
-				ctx.webkitImageSmoothingEnabled = false;
-				ctx.imageSmoothingEnabled = false;
-				ctx.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
+				Object.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
 			}
 		}
 

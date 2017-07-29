@@ -79,7 +79,7 @@ function getMouseTouchPos(canvasDom, e) {
 }
 
 
-
+var descriptMark = false;
 // 디스크립션 관련
 function setDescription(text)
 {
@@ -88,10 +88,12 @@ function setDescription(text)
 	if(text.length <= 0)
 	{
 		border.hide();
+		descriptMark = false;
 	}
 	else
 	{
 		border.show();
+		descriptMark = true;
 	}
 
 	var textElem = document.getElementById('descText');
@@ -107,6 +109,8 @@ function setDescriptionHtml(fileName)
 	if(fileName != null && fileName.length > 0)
 	{
 		$("#descLoading").show();
+
+		descriptMark = true;
 
 		loadHtml = $.ajax({
             url: '/descHtml/' + fileName + '.html',
@@ -124,6 +128,8 @@ function setDescriptionHtml(fileName)
 			loadHtml.abort();
 			loadHtml = null;
 		}
+
+		descriptMark = false;
 
 		border.hide();
 

@@ -9,6 +9,15 @@ function Player(pos, drawPos){
 
     this.spriteName = "hero_idle_UP";
     this.spriteNum = 0;
+
+    this.talks = {};
+    for(var i = 0 ; i < 3 ; ++i)
+    {
+        this.talks[i] = new Image();
+        this.talks[i].src = SITE_URL + 'resource/talk' + i +".png";
+    }
+    this.talkIdx = 0;
+    
 }
 
 Player.prototype = new Object();
@@ -52,6 +61,29 @@ Player.prototype.move = function (key){
     }
 }
 
+var checkTime = 0;
+Player.prototype.update = function(){
+    if(descriptMark)
+    {
+        checkTime += 1;
+
+        if(checkTime >= 3)
+        {
+            checkTime = 0;
+
+            ++this.talkIdx;
+            if(this.talkIdx >= 3)
+            {
+                this.talkIdx = 0;
+            }
+        }
+    }
+    else
+    {
+        this.talkIdx = 0;
+    }
+}
+
 Player.prototype.draw = function (){   
     var success = this.drawSprite(this.spriteName + this.spriteNum);
 
@@ -62,5 +94,13 @@ Player.prototype.draw = function (){
             this.spriteNum = 0;
             this.draw();
         }
+    }
+
+    if(descriptMark)
+    {
+        var markWidth = this.talks[this.talkIdx].width * DRAW_SCALE;
+        var markHeight = this.talks[this.talkIdx].height * DRAW_SCALE;
+
+        Object.drawImage(this.talks[this.talkIdx], 0, 0, this.talks[this.talkIdx].width, this.talks[this.talkIdx].height, this.calcX, this.calcY - markHeight, markWidth, markHeight);
     }
 }
