@@ -24,6 +24,7 @@
 
 		c.btnBgRect = { width : 35, height : 35 };
 		c.raiseBtnBgRect = false;
+		c.successRaiseBtnBgRect = false;
 		c.updateBtnBgRect = function(){
 			if(c.raiseBtnBgRect)
 			{
@@ -35,11 +36,15 @@
 				else
 				{
 					c.btnBgRect.width = c.width;
-					c.btnBgRect.height = c.height;	
+					c.btnBgRect.height = c.height;
+					
+					c.successRaiseBtnBgRect = true;
 				}
 			}
 			else
 			{
+				c.successRaiseBtnBgRect = false;
+
 				if(c.btnBgRect.width >= 60)
 				{
 					c.btnBgRect.width -= c.width / 10;
@@ -78,7 +83,7 @@
 
 			c.clickImg.draw();
 
-			if(c.raiseBtnBgRect)
+			if(c.successRaiseBtnBgRect)
 			{
 				if(!isRunLineText())
 				{
