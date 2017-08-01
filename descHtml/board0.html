@@ -17,18 +17,21 @@
 			var drawDesc = function(){
 
 				var fontSize = 20;
-					
-				startLineText(c, '* PR 섹션 *\n환영합니다. 이 섹션에서는 디라이트의 연혁 및 경력 등을 간략하게 확인하실 수 있습니다.', 0, fontSize, 10, fontSize,
-					function(ctx){
-						ctx.strokeStyle = "rgb(93, 93, 93)";
+				var text = '* PR 섹션 *\n환영합니다. 이 섹션에서는 디라이트의 연혁 및 경력 등을 간략하게 확인하실 수 있습니다.';
+				var ctxSetFunc = function(){
+					c_ctx.strokeStyle = "rgb(93, 93, 93)";
 
-						ctx.font = fontSize + 'px DungGeunMo';
+					c_ctx.font = fontSize + 'px DungGeunMo';
 
-						var gradient = ctx.createLinearGradient(0, 0, 0, 170);
-		      			gradient.addColorStop(0, "rgb(9, 9, 9)");
-		      			gradient.addColorStop(1, "rgb(246, 246, 246)");
-		      			ctx.fillStyle = gradient;
-					});
+					var gradient = c_ctx.createLinearGradient(0, 0, 0, 170);
+	      			gradient.addColorStop(0, "rgb(9, 9, 9)");
+	      			gradient.addColorStop(1, "rgb(246, 246, 246)");
+	      			c_ctx.fillStyle = gradient;
+				};
+
+				c.height = getTextHeight(c, text, 0, fontSize, 10, fontSize, ctxSetFunc);
+			
+				startLineText(c, text, 0, fontSize, 10, fontSize, ctxSetFunc);
 			};
 
 			drawDesc();
@@ -40,8 +43,11 @@
 
 					c.width = document.getElementById("descHtml").offsetWidth;
 					c_ctx.clearRect(0, 0, c.width, c.height);
+
 					drawDesc();
 				}
+
+				drawAllLineText(true);
 			});
 		})();
 	}

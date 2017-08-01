@@ -18,17 +18,22 @@
 
 				var fontSize = 20;
 					
-				startLineText(c, '디라이트의 지하 프로필 갤러리입니다.\n오른쪽으로 계속 이동하며 관람해 주세요.\n즐거운 시간 되시길 바랍니다.', 0, fontSize, 10, fontSize,
-					function(ctx){
-						ctx.strokeStyle = "rgb(93, 93, 93)";
+				var text = '디라이트의 지하 프로필 갤러리입니다.\n오른쪽으로 계속 이동하며 관람해 주세요.\n즐거운 시간 되시길 바랍니다.';
 
-						ctx.font = fontSize + 'px DungGeunMo';
+				var ctxSetFunc = function(){
+					c_ctx.strokeStyle = "rgb(93, 93, 93)";
 
-						var gradient = ctx.createLinearGradient(0, 0, 0, 170);
-		      			gradient.addColorStop(0, "rgb(9, 9, 9)");
-		      			gradient.addColorStop(1, "rgb(246, 246, 246)");
-		      			ctx.fillStyle = gradient;
-					});
+					c_ctx.font = fontSize + 'px DungGeunMo';
+
+					var gradient = c_ctx.createLinearGradient(0, 0, 0, 170);
+	      			gradient.addColorStop(0, "rgb(9, 9, 9)");
+	      			gradient.addColorStop(1, "rgb(246, 246, 246)");
+	      			c_ctx.fillStyle = gradient;
+				};
+
+				c.height = getTextHeight(c, text, 0, fontSize, 10, fontSize, ctxSetFunc);
+			
+				startLineText(c, text, 0, fontSize, 10, fontSize, ctxSetFunc);
 			};
 
 			drawDesc();
@@ -42,6 +47,8 @@
 					c_ctx.clearRect(0, 0, c.width, c.height);
 					drawDesc();
 				}
+
+				drawAllLineText(true);
 			});
 		})();
 	}

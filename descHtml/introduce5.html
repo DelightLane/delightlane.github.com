@@ -52,7 +52,22 @@
 				}
 			}
 		}
+
+		c.startLineText = function(){
+			var text = '제 방의 작업 환경입니다.\n개인 프로젝트를 할 때는 주로 이 환경에서 작업하고 있습니다.';
+
+			var ctxSetFunc = function(){
+				c_ctx.strokeStyle = "rgb(93, 93, 93)";
+
+				c_ctx.font = c.fontSize + 'px DungGeunMo';
+      			c_ctx.fillStyle = 'black';
+			};
+
+			startLineText(c, text, 0, c.fontSize + c.clickImg.getSize().height, 10, c.fontSize, ctxSetFunc);
+		}
+
 		c.drawBtnBgRect = function(){
+			
 			c_ctx.rect(0, 0, c.btnBgRect.width, c.btnBgRect.height);
 			c_ctx.stroke();
 
@@ -65,10 +80,16 @@
 
 			if(c.raiseBtnBgRect)
 			{
-				c_ctx.font = 15 + 'px DungGeunMo';
-				c_ctx.fillStyle = "#000000";
-				c_ctx.fillText("제 방의 작업 환경입니다.", 15, 55);
-				c_ctx.fillText("개인 프로젝트를 할 때는 주로 이 환경에서 작업하고 있습니다.", 15, 85)
+				if(!isRunLineText())
+				{
+					c.startLineText();
+				}
+				
+				drawAllLineText(false);
+			}
+			else
+			{
+				stopLineText();
 			}
 		}
 
@@ -79,14 +100,22 @@
 		});
  
 	    setUpdateFunc(function(dt){
+	    	c.fontSize = c.width / 25;
+
 			if(c.width != document.getElementById("descHtml").offsetWidth)
 			{
+				stopLineText();
+
 				c.width = document.getElementById("descHtml").offsetWidth;
+
+				c.fontSize = c.width / 25;
+
+				c.startLineText();
 			}
 
 			var height = c.picture.img.height * c.width / c.picture.img.width;
-			c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.width);
 			c.height = c.picture.img.height * c.width / c.picture.img.width;
+			c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.width);
 
 			c.updateBtnBgRect();
 
