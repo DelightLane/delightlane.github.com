@@ -1,12 +1,12 @@
 {
-    "cols" : 15,
+    "cols" : 25,
     "rows" : 3,
     "startPos" : { "x" : 0, "y" : 1 },
     "tiles" :
     [
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1",
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1",
-        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road"
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road",  "road", "road", "road", "road", "road", "road"
     ],
     "objs" :
     [
@@ -95,6 +95,57 @@
             "y" : 0,
             "res" : "wall0"
         },
+        {
+            "x" : 15,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 16,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 17,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 18,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 19,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 20,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 21,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 22,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 23,
+            "y" : 0,
+            "res" : "wall0"
+        },
+        {
+            "x" : 24,
+            "y" : 0,
+            "res" : "wall0"
+        },
+
 
         {
             "x" : 1,
@@ -126,8 +177,20 @@
             "res" : "fenceLine1",
             "obstacle" : true
         },
-         {
+        {
             "x" : 13,
+            "y" : 0,
+            "res" : "fenceLine1",
+            "obstacle" : true
+        },
+        {
+            "x" : 15,
+            "y" : 0,
+            "res" : "fenceLine1",
+            "obstacle" : true
+        },
+        {
+            "x" : 17,
             "y" : 0,
             "res" : "fenceLine1",
             "obstacle" : true
@@ -191,6 +254,27 @@
             "obstacle" : true,
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
+        {
+            "x" : 14,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
+        {
+            "x" : 16,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
+        {
+            "x" : 18,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
 
 
         {
@@ -240,6 +324,24 @@
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce5');"
+        },
+        {
+            "x" : 14,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('introduce6');"
+        },
+        {
+            "x" : 16,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('introduce7');"
+        },
+        {
+            "x" : 18,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('introduce8');"
         },
 
 
