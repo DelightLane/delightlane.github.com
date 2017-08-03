@@ -5,7 +5,6 @@ function getTextHeight(canvas, text, x, y, yMargin, fontSize, ctxSetFunc)
 
 	ctxSetFunc();
 
-	var lineStr = "";
 	var count = 0;
 
 	var textLength = text.length;
@@ -44,6 +43,7 @@ function getTextHeight(canvas, text, x, y, yMargin, fontSize, ctxSetFunc)
 }
 
 var lineTextData = null;
+var charInfos = null;
 
 function drawAllLineText(clearRect)
 {
@@ -53,6 +53,8 @@ function drawAllLineText(clearRect)
 		{
 			lineTextData.context.clearRect(0, 0, lineTextData.canvas.width, lineTextData.canvas.height);
 		}
+
+		charInfos = new Array();
 
 		for(var i = 0 ; i <= lineTextData.drawTextSize ; ++i)
 		{
@@ -68,12 +70,20 @@ function drawLineText(i)
 		var char = lineTextData.text[i];
 		if(char)
 		{
-			var lineStr = "";
 			var lineCount = 0;
 			var newLine = true;
 			var calcX = lineTextData.x;
 
-			for(var idx = 0 ; idx <= i ; ++idx)
+			var idx = 0;
+
+			if(charInfos && charInfos[i - 1]){
+				lineCount = charInfos[i - 1].lineCount;
+				newLine = charInfos[i - 1].newLine;
+				calcX = charInfos[i - 1].calcX;
+				idx = i;
+			}
+
+			for(; idx <= i ; ++idx)
 			{
 				var innerChar = lineTextData.text[idx];
 				var charWidth = lineTextData.context.measureText(innerChar).width;
@@ -97,6 +107,14 @@ function drawLineText(i)
 				{
 					newLine = false;
 				}
+			}
+
+			if(charInfos)
+			{
+				charInfos[i] = {};
+				charInfos[i].lineCount = lineCount;
+				charInfos[i].newLine = newLine;
+				charInfos[i].calcX = calcX;
 			}
 
 			var calcHeight = lineTextData.y + (lineTextData.yMargin + lineTextData.fontSize) * lineCount;
@@ -149,6 +167,7 @@ function stopLineText()
 	if(isRunLineText()){
 		cancelAnimationFrame(lineTextData.requestAnimId);
 		lineTextData = null;
+		charInfos = null;
 	}
 }
 
