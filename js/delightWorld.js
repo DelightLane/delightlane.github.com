@@ -208,6 +208,24 @@ function setUpdateFunc(func)
 }
 
 
+var imagePreload = function() {
+    var image_cache_array = new Array();
+    var i = 0;
+
+    if (!document.images) {
+      return false;
+    }
+
+    for (key in arguments) {
+      	image_cache_array[i] = new Image();
+      	image_cache_array[i].src = arguments[key];
+      	i++;
+    }
+
+    return i;
+  }
+
+
 
 function include(jsname) {
 	document.write("<script src='" + jsname + "'></script>");

@@ -53,9 +53,14 @@ function init(mapName) {
 
         // 오브젝트 초기화
         var resCreator = function(resName){
-            var img = new Image();
-            img.src = SITE_URL + "/resource/" + resName + ".png";
-            return img;
+            if(resName && resName.length > 0)
+            {
+                var img = new Image();
+                img.src = SITE_URL + "/resource/" + resName + ".png";
+                return img;
+            }
+
+            return null;
         };
 
         var eventFunc = function(){
