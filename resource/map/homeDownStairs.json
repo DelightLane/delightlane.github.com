@@ -195,6 +195,12 @@
             "res" : "fenceLine1",
             "obstacle" : true
         },
+        {
+            "x" : 19,
+            "y" : 0,
+            "res" : "fenceLine1",
+            "obstacle" : true
+        },
 
 
 
@@ -275,6 +281,13 @@
             "obstacle" : true,
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
+        {
+            "x" : 20,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
 
 
         {
@@ -342,6 +355,12 @@
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce8');"
+        },
+        {
+            "x" : 20,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('introduce9');"
         },
 
 
