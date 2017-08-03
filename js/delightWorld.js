@@ -115,9 +115,9 @@ function setDescriptionHtml(fileName)
 		loadHtml = $.ajax({
             url: '/descHtml/' + fileName + '.html',
             success: function(data) {
-              $("#descHtml").html(data);
               border.show();
               $("#descLoading").hide();
+              $("#descHtml").html(data);
             }
           });
 	}
