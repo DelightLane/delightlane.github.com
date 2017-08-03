@@ -1,14 +1,13 @@
 function showPictureFrame(canvasId, imageName, description){
 
+	$("#descLoading").show();
+	$("#descBorder").hide();
+	
 	$("#"+canvasId).hide();
 
 	(function(){
 		var c = document.getElementById(canvasId);
 		var c_ctx = c.getContext('2d');
-
-		$("#descLoading").show();
-		$("#descBorder").hide();
-
 
 	    c.picture = new Drawable(c, '/resource/img/' + imageName + '.png');
 	    c.picture.img.onload = function()
