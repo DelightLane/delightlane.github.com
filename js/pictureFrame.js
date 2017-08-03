@@ -1,18 +1,24 @@
 function showPictureFrame(canvasId, imageName, description){
 
 	$("#"+canvasId).hide();
-	$("#"+canvasId).fadeIn();
 
 	(function(){
 		var c = document.getElementById(canvasId);
 		var c_ctx = c.getContext('2d');
 
-		c.width = document.getElementById("descHtml").offsetWidth;
-		c.height = canvas.offsetHeight;	
+		$("#descLoading").show();
+
 
 	    c.picture = new Drawable(c, '/resource/img/' + imageName + '.png');
 	    c.picture.img.onload = function()
 	    {
+	    	$("#descLoading").hide();
+	    	
+	    	$("#"+canvasId).fadeIn();
+
+	    	c.width = document.getElementById("descHtml").offsetWidth;
+			c.height = canvas.offsetHeight;	
+
 		    c.picture.setSize(c.width, c.picture.img.height * c.width / c.picture.img.height);
 		    c.picture.setPartialDrawSecond(0.5);
 		    c.picture.setPosition(0, 0);
