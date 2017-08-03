@@ -8,6 +8,11 @@ function init(mapName) {
 
     getJson(SITE_URL + "resource/map/"+ mapName +".json", function(map)
     {
+        if(map.preEvent)
+        {
+            eval(map.preEvent);
+        }
+
         isInit = true;
 
         initGlobal(map);

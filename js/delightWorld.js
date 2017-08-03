@@ -207,7 +207,6 @@ function setUpdateFunc(func)
 	}
 }
 
-
 var imagePreload = function() {
     var image_cache_array = new Array();
     var i = 0;
@@ -220,6 +219,15 @@ var imagePreload = function() {
       	image_cache_array[i] = new Image();
       	image_cache_array[i].src = arguments[key];
       	i++;
+    }
+
+    var allPage = $('allPage');
+	allPage.css('display', 'none');
+
+    image_cache_array[i - 1].onload = function(){
+    	$('loading').fadeOut('', function(){
+			allPage.fadeIn();
+		});
     }
 
     return i;
