@@ -7,13 +7,15 @@ function showPictureFrame(canvasId, imageName, description){
 		var c_ctx = c.getContext('2d');
 
 		$("#descLoading").show();
+		$("#descBorder").hide();
 
 
 	    c.picture = new Drawable(c, '/resource/img/' + imageName + '.png');
 	    c.picture.img.onload = function()
 	    {
 	    	$("#descLoading").hide();
-	    	
+	    	$("#descBorder").show();
+
 	    	$("#"+canvasId).fadeIn();
 
 	    	c.width = document.getElementById("descHtml").offsetWidth;
