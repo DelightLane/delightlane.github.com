@@ -223,6 +223,7 @@ var imagePreload = function() {
 
     var allPage = $('allPage');
 	allPage.css('display', 'none');
+	$('loading').show();
 
     image_cache_array[i - 1].onload = function(){
     	$('loading').fadeOut('', function(){
