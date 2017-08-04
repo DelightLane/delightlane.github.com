@@ -226,14 +226,14 @@
             "y" : 0,
             "res" : "milestone",
             "obstacle" : true,
-            "event" : "setDescriptionHtml('introduce0');"
+            "event" : "setDescriptionHtml('introduce_headMilestone');"
         },
         {
             "x" : 2,
             "y" : 0,
             "res" : "hangBoard0",
             "obstacle" : true,
-            "event" : "setDescriptionHtml('board0');"
+            "event" : "setDescriptionHtml('board_PR');"
         },
         {
             "x" : 3,
@@ -268,7 +268,7 @@
             "y" : 0,
             "res" : "hangBoard0",
             "obstacle" : true,
-            "event" : "setDescriptionHtml('board1');"
+            "event" : "setDescriptionHtml('board_ART');"
         },
         {
             "x" : 12,
@@ -331,91 +331,91 @@
             "x" : 1,
             "y" : 2,
             "res" : "",
-            "event" : "setDescriptionHtml('introduce0');"
+            "event" : "setDescriptionHtml('introduce_headMilestone');"
         },
         {
             "x" : 2,
             "y" : 2,
             "res" : "",
-            "event" : "setDescriptionHtml('board0');"
+            "event" : "setDescriptionHtml('board_PR');"
         },
         {
             "x" : 3,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce1');"
+            "event" : "setDescriptionHtml('introduce_born');"
         },
         {
             "x" : 5,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce2');"
+            "event" : "setDescriptionHtml('introduce_college');"
         },
         {
             "x" : 7,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce3');"
+            "event" : "setDescriptionHtml('introduce_ability');"
         },
         {
             "x" : 9,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce4');"
+            "event" : "setDescriptionHtml('introduce_jobHistory');"
         },
         {
             "x" : 11,
             "y" : 2,
             "res" : "",
-            "event" : "setDescriptionHtml('board1');"
+            "event" : "setDescriptionHtml('board_ART');"
         },
         {
             "x" : 12,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce5');"
+            "event" : "setDescriptionHtml('introduce_workPlace');"
         },
         {
             "x" : 14,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce6');"
+            "event" : "setDescriptionHtml('introduce_diary');"
         },
         {
             "x" : 16,
             "y" : 2,
             "res" : "",
-            "event" : "setDescriptionHtml('board2');"
+            "event" : "setDescriptionHtml('board_PROJECT');"
         },
         {
             "x" : 17,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce7');"
+            "event" : "setDescriptionHtml('introduce_fantasyMake');"
         },
         {
             "x" : 19,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce8');"
+            "event" : "setDescriptionHtml('introduce_dfg');"
         },
         {
             "x" : 21,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce9');"
+            "event" : "setDescriptionHtml('introduce_fzTactics');"
         },
         {
             "x" : 23,
             "y" : 2,
             "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce10');"
+            "event" : "setDescriptionHtml('introduce_blockAttacker');"
         },
         {
             "x" : 24,
             "y" : 2,
             "res" : "",
-            "event" : "setDescriptionHtml('introduce11');"
+            "event" : "setDescriptionHtml('introduce_tailMilestone');"
         },
 
 
