@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "[VB] [완성] 검은 핑계"
+date:   2011-01-07
+tags: [work]
+---
+
+![screenshot]({{ site.url }}/resource/post/spScreenShot.png)
+
+검은 핑계입니다.
+
+판타지 비쥬얼 노벨[명목상으론[..]]
+
+전역 하고 '뭐든 만들어낼테다!'라는 느낌으로 만든 허접한 프로그램입니다.
+
+[>>다운로드<<]({{ site.url }}/resource/download/sp.zip)
