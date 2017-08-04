@@ -1,13 +1,13 @@
 {
-    "cols" : 26,
+    "cols" : 27,
     "rows" : 3,
     "startPos" : { "x" : 0, "y" : 1 },
     "preloadImages" : ["/resource/img/room.png", "/resource/img/diary.png", "/resource/img/fantasyMake.png", "/resource/img/dfg.png", "/resource/img/FZTactics.png", "/resource/img/blockAttacker.png"],
     "tiles" :
     [
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
-        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road",  "road", "road", "road", "road", "road", "road", "road"
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
+        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road",  "road", "road", "road", "road", "road", "road", "road", "road"
     ],
     "objs" :
     [
@@ -151,6 +151,11 @@
             "y" : 0,
             "res" : "wall0"
         },
+        {
+            "x" : 26,
+            "y" : 0,
+            "res" : "wall0"
+        },
 
 
         {
@@ -215,6 +220,12 @@
         },
         {
             "x" : 24,
+            "y" : 0,
+            "res" : "fenceLine1",
+            "obstacle" : true
+        },
+        {
+            "x" : 25,
             "y" : 1,
             "res" : "fence1",
             "obstacle" : true
@@ -320,7 +331,7 @@
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
         {
-            "x" : 24,
+            "x" : 25,
             "y" : 0,
             "res" : "milestone",
             "obstacle" : true
@@ -412,7 +423,7 @@
             "event" : "setDescriptionHtml('introduce_blockAttacker');"
         },
         {
-            "x" : 24,
+            "x" : 25,
             "y" : 2,
             "res" : "",
             "event" : "setDescriptionHtml('introduce_tailMilestone');"
@@ -427,7 +438,7 @@
         },
 
         {
-            "x" : 25,
+            "x" : 26,
             "y" : 0,
             "res" : "upstair0",
             "event" : "newGame('home');"
