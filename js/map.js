@@ -8,9 +8,9 @@ function init(mapName) {
 
     getJson(SITE_URL + "resource/map/"+ mapName +".json", function(map)
     {
-        if(map.preEvent)
+        if(map.preloadImages)
         {
-            eval(map.preEvent);
+            imagePreload.apply(this, map.preloadImages);
         }
 
         isInit = true;

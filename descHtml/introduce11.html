@@ -1,0 +1,56 @@
+<div>
+	<img style="display: block; margin: auto;" id="title" src="/resource/img/mapTitle.png" />
+	<p>&nbsp</p>
+	<canvas style="display: block; margin: auto;" id="introduceMyself"></canvas>
+</div>
+
+<script type="text/javascript" src='/js/lineText.js'></script>
+
+<script type="text/javascript">
+	document.getElementById("title").onload = function(){
+		(function(){
+			var c = document.getElementById("introduceMyself");
+			var c_ctx = c.getContext( '2d' );
+
+			c.width = document.getElementById("descHtml").offsetWidth;
+
+			var drawDesc = function(){
+
+				var fontSize = 20;
+					
+				var text = '귀한 시간 할애해 주셔서 감사합니다.\n관람은 즐거우셨나요?\n현재 준비된 갤러리는 여기까지입니다.\n나가시는 길은 오른쪽에 준비되어 있습니다.\n추가적인 문의 사항은 이메일이나 유선으로 연락 부탁 드립니다.\n다시 한 번 감사 드립니다.';
+
+				var ctxSetFunc = function(){
+					c_ctx.strokeStyle = "rgb(93, 93, 93)";
+
+					c_ctx.font = fontSize + 'px DungGeunMo';
+
+					var gradient = c_ctx.createLinearGradient(0, 0, 0, 170);
+	      			gradient.addColorStop(0, "rgb(9, 9, 9)");
+	      			gradient.addColorStop(1, "rgb(246, 246, 246)");
+	      			c_ctx.fillStyle = gradient;
+				};
+
+				c.height = getTextHeight(c, text, 0, fontSize, 10, fontSize, ctxSetFunc);
+			
+				startLineText(c, text, 0, fontSize, 10, fontSize, ctxSetFunc);
+			};
+
+			drawDesc();
+
+			setUpdateFunc(function(){
+				if(c.width != document.getElementById("descHtml").offsetWidth)
+				{
+					stopLineText();
+
+					c.width = document.getElementById("descHtml").offsetWidth;
+					c_ctx.clearRect(0, 0, c.width, c.height);
+					drawDesc();
+				}
+
+				drawAllLineText(true);
+			});
+		})();
+	}
+
+</script>

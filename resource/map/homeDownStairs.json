@@ -2,11 +2,11 @@
     "cols" : 25,
     "rows" : 3,
     "startPos" : { "x" : 0, "y" : 1 },
-    "preEvent" : "imagePreload(\"/resource/img/room.png\" , \"/resource/img/diary.png\" , \"/resource/img/fantasyMake.png\" , \"/resource/img/dfg.png\" , \"/resource/img/FZTactics.png\")",
+    "preloadImages" : ["/resource/img/room.png", "/resource/img/diary.png", "/resource/img/fantasyMake.png", "/resource/img/dfg.png", "/resource/img/FZTactics.png", "/resource/img/blockAttacker.png"],
     "tiles" :
     [
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1",
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
         "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road",  "road", "road", "road", "road", "road", "road"
     ],
     "objs" :
@@ -202,6 +202,18 @@
             "res" : "fenceLine1",
             "obstacle" : true
         },
+        {
+            "x" : 21,
+            "y" : 0,
+            "res" : "fenceLine1",
+            "obstacle" : true
+        },
+        {
+            "x" : 23,
+            "y" : 1,
+            "res" : "fence1",
+            "obstacle" : true
+        },
 
 
         {
@@ -288,6 +300,19 @@
             "obstacle" : true,
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
+        {
+            "x" : 22,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
+        {
+            "x" : 23,
+            "y" : 0,
+            "res" : "milestone",
+            "obstacle" : true
+        },
 
 
         {
@@ -362,10 +387,29 @@
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce9');"
         },
+        {
+            "x" : 22,
+            "y" : 2,
+            "res" : "footprint0",
+            "event" : "setDescriptionHtml('introduce10');"
+        },
+        {
+            "x" : 23,
+            "y" : 2,
+            "res" : "",
+            "event" : "setDescriptionHtml('introduce11');"
+        },
 
 
         {
             "x" : 0,
+            "y" : 0,
+            "res" : "upstair0",
+            "event" : "newGame('home');"
+        },
+
+        {
+            "x" : 24,
             "y" : 0,
             "res" : "upstair0",
             "event" : "newGame('home');"
