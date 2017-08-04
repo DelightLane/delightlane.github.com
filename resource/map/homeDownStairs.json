@@ -1,13 +1,13 @@
 {
-    "cols" : 25,
+    "cols" : 26,
     "rows" : 3,
     "startPos" : { "x" : 0, "y" : 1 },
     "preloadImages" : ["/resource/img/room.png", "/resource/img/diary.png", "/resource/img/fantasyMake.png", "/resource/img/dfg.png", "/resource/img/FZTactics.png", "/resource/img/blockAttacker.png"],
     "tiles" :
     [
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
-        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road",  "road", "road", "road", "road", "road", "road"
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
+        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
+        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road",  "road", "road", "road", "road", "road", "road", "road"
     ],
     "objs" :
     [
@@ -146,6 +146,11 @@
             "y" : 0,
             "res" : "wall0"
         },
+        {
+            "x" : 25,
+            "y" : 0,
+            "res" : "wall0"
+        },
 
 
         {
@@ -191,25 +196,25 @@
             "obstacle" : true
         },
         {
-            "x" : 17,
+            "x" : 18,
             "y" : 0,
             "res" : "fenceLine1",
             "obstacle" : true
         },
         {
-            "x" : 19,
+            "x" : 20,
             "y" : 0,
             "res" : "fenceLine1",
             "obstacle" : true
         },
         {
-            "x" : 21,
+            "x" : 22,
             "y" : 0,
             "res" : "fenceLine1",
             "obstacle" : true
         },
         {
-            "x" : 23,
+            "x" : 24,
             "y" : 1,
             "res" : "fence1",
             "obstacle" : true
@@ -282,26 +287,26 @@
         {
             "x" : 16,
             "y" : 0,
-            "res" : "photoframe0",
+            "res" : "hangBoard0",
             "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
+            "event" : "setDescriptionHtml('board2');"
         },
         {
-            "x" : 18,
+            "x" : 17,
             "y" : 0,
             "res" : "photoframe0",
             "obstacle" : true,
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
         {
-            "x" : 20,
+            "x" : 19,
             "y" : 0,
             "res" : "photoframe0",
             "obstacle" : true,
             "event" : "setDescription('주의 : 만지지 마시오.');"
         },
         {
-            "x" : 22,
+            "x" : 21,
             "y" : 0,
             "res" : "photoframe0",
             "obstacle" : true,
@@ -309,6 +314,13 @@
         },
         {
             "x" : 23,
+            "y" : 0,
+            "res" : "photoframe0",
+            "obstacle" : true,
+            "event" : "setDescription('주의 : 만지지 마시오.');"
+        },
+        {
+            "x" : 24,
             "y" : 0,
             "res" : "milestone",
             "obstacle" : true
@@ -372,29 +384,35 @@
         {
             "x" : 16,
             "y" : 2,
+            "res" : "",
+            "event" : "setDescriptionHtml('board2');"
+        },
+        {
+            "x" : 17,
+            "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce7');"
         },
         {
-            "x" : 18,
+            "x" : 19,
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce8');"
         },
         {
-            "x" : 20,
+            "x" : 21,
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce9');"
         },
         {
-            "x" : 22,
+            "x" : 23,
             "y" : 2,
             "res" : "footprint0",
             "event" : "setDescriptionHtml('introduce10');"
         },
         {
-            "x" : 23,
+            "x" : 24,
             "y" : 2,
             "res" : "",
             "event" : "setDescriptionHtml('introduce11');"
@@ -409,7 +427,7 @@
         },
 
         {
-            "x" : 24,
+            "x" : 25,
             "y" : 0,
             "res" : "upstair0",
             "event" : "newGame('home');"
