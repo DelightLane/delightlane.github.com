@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "1"
+title:  "[Cocos2d-x] [일지] 슈팅 게임 만들기 (1) - 기본틀 완성"
 date:   2013-10-11
 tags: [work]
 ---
