@@ -2,7 +2,7 @@
 layout: post
 title:  "[Android] [완성] 교야드야즈 대륙기 어플리케이션"
 date:   2011-03-06
-tags: [work]
+tags: [work, complete]
 ---
 
 ![screenshot]({{ site.url }}/resource/post/gyonovelScreenShot.jpg)

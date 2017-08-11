@@ -48,3 +48,15 @@ NullReferenceException: Object reference not set to an instance of an object
 <br/>
 
   문제 하나를 해결하면 문제가 굴러들어오는 이건 문제 지옥 ㅠㅠ.. 
+
+
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (1) - NavMesh]({{ site.url }}/2013/09/25/work_aos0.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (2) - 가까운 적 인식에 대해]({{ site.url }}/2013/09/25/work_aos1.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (3) - HP 관리]({{ site.url }}/2013/10/01/work_aos2.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (5) - Terrain으로 지형 만들기]({{ site.url }}/2013/10/11/work_aos4.html)
+
+[[Unity] [완성] 소프트웨어 프로젝트, AOS 만들기]({{ site.url }}/2013/11/20/work_aos5.html)

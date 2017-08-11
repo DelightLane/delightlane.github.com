@@ -34,3 +34,14 @@ gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
 
 - 유니티 빌보드를 사용하는 방법이 있을 듯. 수정해보자. 
 결과 : LookAt을 사용하니 계속해서 카메라를 바라보게 되는데 카메라가 항상 정면이 아니라는 사실을 해봄으로써 알게 되었다 ㅋㅋ.. 아무튼 실패. 이전의 방식이 좀 더 나은 것 같다.
+
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (1) - NavMesh]({{ site.url }}/2013/09/25/work_aos0.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (2) - 가까운 적 인식에 대해]({{ site.url }}/2013/09/25/work_aos1.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (4) - 문제들 봉착..]({{ site.url }}/2013/10/04/work_aos3.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (5) - Terrain으로 지형 만들기]({{ site.url }}/2013/10/11/work_aos4.html)
+
+[[Unity] [완성] 소프트웨어 프로젝트, AOS 만들기]({{ site.url }}/2013/11/20/work_aos5.html)

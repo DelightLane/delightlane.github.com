@@ -32,3 +32,14 @@ tags: [work]
   Collider를 트리거로 사용함으로써 챔피언들끼리 겹치지 않게 되진 않을까 생각했는데 아마 NavMeshAgent끼리 인식을 하는건지 겹쳐지지 않는다.. 
 
   아무튼 다음 문제로 이동. 문제가 생기면 돌아와서 수정하자;
+
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (1) - NavMesh]({{ site.url }}/2013/09/25/work_aos0.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (3) - HP 관리]({{ site.url }}/2013/10/01/work_aos2.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (4) - 문제들 봉착..]({{ site.url }}/2013/10/04/work_aos3.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (5) - Terrain으로 지형 만들기]({{ site.url }}/2013/10/11/work_aos4.html)
+
+[[Unity] [완성] 소프트웨어 프로젝트, AOS 만들기]({{ site.url }}/2013/11/20/work_aos5.html)

@@ -2,10 +2,11 @@
 layout: post
 title:  "[VB] [완성] 검은 핑계"
 date:   2011-01-07
-tags: [work]
+tags: [work, complete]
 ---
 
 ![screenshot]({{ site.url }}/resource/post/spScreenShot.png)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gxm4Zv6pyqg" frameborder="0" allowfullscreen></iframe>
 
 검은 핑계입니다.
 

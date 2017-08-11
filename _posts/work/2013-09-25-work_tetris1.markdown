@@ -2,10 +2,12 @@
 layout: post
 title:  "[Unity] [일지] [완성] 테트리스 만들기 Ver 0.5"
 date:   2013-09-25
-tags: [work]
+tags: [work, complete]
 ---
 
 ![screenshot]({{ site.url }}/resource/post/tetrisScreenShot.png)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/82yCvxqgS1Y" frameborder="0" allowfullscreen></iframe>
 
   완성 아닌 완성을 했다. 수많은 버그를 내포하고 있는 완성본이지만, 그래도 이 정도로 만족하고 지금 서둘러 해나가야 하는 다른 프로젝트로 눈길을 돌리기로 했다. 
 

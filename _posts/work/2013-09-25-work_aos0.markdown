@@ -26,3 +26,15 @@ tags: [work]
   처음에는 괴랄한 해석을 자랑하는 유니티 위키의 글을 보고 했는데, 컴포넌트 접근을 고민하다가 다음과 같이 잘 설명되어 있는 블로그를 발견했다. 저번에도 해봤으면서 저걸 왜 고민했을까.... 점점점.. 
 
   [참조](http://blog.naver.com/PostView.nhn?blogId=monster7575&logNo=100196237796&redirect=Dlog&widgetTypeCall=true) 
+
+
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (2) - 가까운 적 인식에 대해]({{ site.url }}/2013/09/25/work_aos1.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (3) - HP 관리]({{ site.url }}/2013/10/01/work_aos2.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (4) - 문제들 봉착..]({{ site.url }}/2013/10/04/work_aos3.html)
+
+[[Unity] [일지] 소프트웨어 프로젝트, AOS 만들기 (5) - Terrain으로 지형 만들기]({{ site.url }}/2013/10/11/work_aos4.html)
+
+[[Unity] [완성] 소프트웨어 프로젝트, AOS 만들기]({{ site.url }}/2013/11/20/work_aos5.html)
