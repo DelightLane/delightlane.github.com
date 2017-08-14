@@ -2,7 +2,7 @@
     "cols" : 29,
     "rows" : 3,
     "startPos" : { "x" : 0, "y" : 1 },
-    "preloadImages" : ["/resource/img/room.png", "/resource/img/diary.png", "/resource/img/fantasyMake.png", "/resource/img/dfg.png", "/resource/img/FZTactics.png", "/resource/img/blockAttacker.png"],
+    "preloadImages" : ["/resource/img/room.png", "/resource/img/diary.png", "/resource/img/fantasyMake.png", "/resource/img/dfg.png", "/resource/img/FZTactics.png", "/resource/img/blockAttacker.png", "/resource/img/completeProject.png"],
     "tiles" :
     [
         "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
