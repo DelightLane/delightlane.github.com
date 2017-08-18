@@ -5,4 +5,5 @@ permalink: /tags/profile/
 ---
 <script type="text/javascript">
 	newGame("home");
+	notifyMapName("자택");
 </script>

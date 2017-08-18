@@ -232,7 +232,21 @@ var imagePreload = function() {
     }
 
     return i;
-  }
+}
+
+function notifyMapName(mapName){
+	setUpdateFunc(function(){
+		if(isInit)
+		{
+			var txt = new Drawable(canvas, mapName, true);
+			txt.setPosition(canvas.width - txt.getSize().width - 20, canvas.height - txt.getSize().height - 20);
+			txt.setTextFadeOut(1);
+			txt.setWaitRemoveSecond(5);
+
+			setUpdateFunc(null);
+		}
+	});
+}
 
 
 

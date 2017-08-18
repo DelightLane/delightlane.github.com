@@ -117,6 +117,14 @@ function drawMap(){
         drawPlaces();
 
         player.draw();
+
+        if(canvas.drawables && canvas.drawables.length > 0)
+        {
+            for(var i = 0 ; i < canvas.drawables.length ; ++i)
+            {
+                canvas.drawables[i].draw();
+            }
+        }
     }
 }
 
