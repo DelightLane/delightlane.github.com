@@ -13,8 +13,6 @@ function init(mapName) {
             imagePreload.apply(this, map.preloadImages);
         }
 
-        isInit = true;
-
         initGlobal(map);
 
         // 플레이어 초기화
@@ -79,6 +77,8 @@ function init(mapName) {
             var objData = map.objs[i];
             placeObjects.push(new TriggerObject(objData, player, resCreator(objData.res), eventFunc));
         }
+
+        isInit = true;
     });
 }
 
