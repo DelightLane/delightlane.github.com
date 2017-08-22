@@ -8,10 +8,16 @@ function init(mapName) {
 
     getJson(SITE_URL + "resource/map/"+ mapName +".json", function(map)
     {
+        var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
+        initCanvas(canvasWidth, 300);
+
         if(map.preloadImages)
         {
             imagePreload.apply(this, map.preloadImages);
         }
+
+        var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
+        initCanvas(canvasWidth, 300);
 
         initGlobal(map);
 

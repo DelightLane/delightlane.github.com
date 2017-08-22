@@ -9,12 +9,6 @@ initScreenInfo();
 var COLS;
 var ROWS;
 
-var W;
-var H;
-
-var BLOCK_W;
-var BLOCK_H;
-
 function initGlobal(mapData)
 {
 	if(mapData != null)
@@ -22,12 +16,6 @@ function initGlobal(mapData)
 		COLS = mapData.cols;
 		ROWS = mapData.rows;
 	}
-
-	W = window.innerWidth;
-	H = window.innerHeight;
-
-	BLOCK_W = W / COLS;
-	BLOCK_H = H / ROWS;
 }
 
 function initScreenInfo() {
