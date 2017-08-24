@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] 프로그래밍은 상상이다"
+title:  "[책] [재독] 프로그래밍은 상상이다"
 date:   2016-06-30
 tags: [book]
 ---

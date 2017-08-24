@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "노인과 바다"
+title:  "[책] 노인과 바다"
 date:   2014-07-11
 tags: [book]
 ---

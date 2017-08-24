@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "위대한 개츠비"
+title:  "[책] 위대한 개츠비"
 date:   2013-02-03
 tags: [book]
 ---

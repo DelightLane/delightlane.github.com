@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "어둠의 왼손"
+title:  "[책] 어둠의 왼손"
 date:   2016-06-25
 tags: [book]
 ---

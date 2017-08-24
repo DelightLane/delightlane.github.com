@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "무기여 잘 있거라"
+title:  "[책] 무기여 잘 있거라"
 date:   2014-08-31
 tags: [book]
 ---

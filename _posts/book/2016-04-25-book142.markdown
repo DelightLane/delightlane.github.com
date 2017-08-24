@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "c# 코딩의 기술"
+title:  "[책] c# 코딩의 기술"
 date:   2016-04-25
 tags: [book]
 ---

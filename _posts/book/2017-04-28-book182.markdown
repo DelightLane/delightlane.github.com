@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GOF의 디자인 패턴"
+title:  "[책] GOF의 디자인 패턴"
 date:   2017-04-28
 tags: [book]
 ---

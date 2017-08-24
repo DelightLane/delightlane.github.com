@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "More Effective C++"
+title:  "[책] More Effective C++"
 date:   2015-08-12
 tags: [book]
 ---

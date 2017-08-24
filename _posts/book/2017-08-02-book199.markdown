@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "빼앗긴 자들"
+title:  "[책] 빼앗긴 자들"
 date:   2017-08-02
 tags: [book]
 ---

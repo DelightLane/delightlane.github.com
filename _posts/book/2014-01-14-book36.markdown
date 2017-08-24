@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "지금은 없는 공주를 위하여"
+title:  "[책] 지금은 없는 공주를 위하여"
 date:   2014-01-14
 tags: [book]
 ---

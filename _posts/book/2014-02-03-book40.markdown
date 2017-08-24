@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "끌림"
+title:  "[책] 끌림"
 date:   2014-02-03
 tags: [book]
 ---

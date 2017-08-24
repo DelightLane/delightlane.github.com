@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로그래머의 길, 멘토에게 묻다"
+title:  "[책] 프로그래머의 길, 멘토에게 묻다"
 date:   2014-03-04
 tags: [book]
 ---

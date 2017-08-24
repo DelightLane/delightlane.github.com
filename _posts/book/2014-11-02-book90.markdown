@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "동물 농장"
+title:  "[책] 동물 농장"
 date:   2014-11-02
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "똑바로 일하라"
+title:  "[책] 똑바로 일하라"
 date:   2014-06-15
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "채소의 기분, 바다표범의 키스"
+title:  "[책] 채소의 기분, 바다표범의 키스"
 date:   2013-03-18
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "미래를 바꾼 아홉까지 알고리즘"
+title:  "[책] 미래를 바꾼 아홉까지 알고리즘"
 date:   2016-03-04
 tags: [book]
 ---

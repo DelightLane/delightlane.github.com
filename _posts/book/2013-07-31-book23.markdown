@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "브레이브 스토리"
+title:  "[책] 브레이브 스토리"
 date:   2013-07-31
 tags: [book]
 ---

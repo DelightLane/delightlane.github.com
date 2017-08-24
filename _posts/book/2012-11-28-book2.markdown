@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "누군가"
+title:  "[책] 누군가"
 date:   2012-11-28
 tags: [book]
 ---

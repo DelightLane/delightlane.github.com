@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "백년동안의 고독"
+title:  "[책] 백년동안의 고독"
 date:   2013-03-12
 tags: [book]
 ---

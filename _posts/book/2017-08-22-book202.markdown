@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] 해커와 화가"
+title:  "[책] [재독] 해커와 화가"
 date:   2017-08-22
 tags: [book]
 ---

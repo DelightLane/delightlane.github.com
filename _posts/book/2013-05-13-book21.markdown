@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "마술은 속삭인다"
+title:  "[책] 마술은 속삭인다"
 date:   2013-05-13
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "조엘 온 소프트웨어"
+title:  "[책] 조엘 온 소프트웨어"
 date:   2014-01-07
 tags: [book]
 ---

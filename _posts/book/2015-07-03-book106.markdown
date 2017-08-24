@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "유쾌한 자바 퍼즐러"
+title:  "[책] 유쾌한 자바 퍼즐러"
 date:   2015-07-03
 tags: [book]
 ---

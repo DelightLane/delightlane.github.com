@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "낯선 시선 - 메타 젠더로 본 세상"
+title:  "[책] 낯선 시선 - 메타 젠더로 본 세상"
 date:   2017-06-15
 tags: [book]
 ---

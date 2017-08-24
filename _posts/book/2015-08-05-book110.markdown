@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로그래머 철학을 만나다"
+title:  "[책] 프로그래머 철학을 만나다"
 date:   2015-08-05
 tags: [book]
 ---

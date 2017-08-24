@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "하이브리드 앱을 구현하는 기술"
+title:  "[책] 하이브리드 앱을 구현하는 기술"
 date:   2015-12-07
 tags: [book]
 ---

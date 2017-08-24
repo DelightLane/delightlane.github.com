@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "누워서 읽는 퍼즐북"
+title:  "[책] 누워서 읽는 퍼즐북"
 date:   2016-09-23
 tags: [book]
 ---

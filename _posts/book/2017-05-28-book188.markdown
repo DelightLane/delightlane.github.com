@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "임백준의 대살개문"
+title:  "[책] 임백준의 대살개문"
 date:   2017-05-28
 tags: [book]
 ---

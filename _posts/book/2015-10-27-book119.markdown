@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Effective STL"
+title:  "[책] Effective STL"
 date:   2015-10-27
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Head First Design Patterns"
+title:  "[책] Head First Design Patterns"
 date:   2014-05-27
 tags: [book]
 ---

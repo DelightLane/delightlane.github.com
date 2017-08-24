@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "보물섬"
+title:  "[책] 보물섬"
 date:   2014-10-29
 tags: [book]
 ---

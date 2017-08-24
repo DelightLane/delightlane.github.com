@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "cpp에서 objective-c로"
+title:  "[책] cpp에서 objective-c로"
 date:   2014-05-22
 tags: [book]
 ---

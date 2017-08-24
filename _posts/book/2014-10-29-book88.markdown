@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "보노보 찬가"
+title:  "[책] 보노보 찬가"
 date:   2014-10-29
 tags: [book]
 ---

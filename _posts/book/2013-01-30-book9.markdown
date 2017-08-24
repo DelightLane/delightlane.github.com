@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "밤은 부드러워"
+title:  "[책] 밤은 부드러워"
 date:   2013-01-30
 tags: [book]
 ---

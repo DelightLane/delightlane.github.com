@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "일상에서 만나는 똑똑한 심리학"
+title:  "[책] 일상에서 만나는 똑똑한 심리학"
 date:   2013-08-11
 tags: [book]
 ---

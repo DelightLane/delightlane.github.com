@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] C++11 핵심 노트"
+title:  "[책] [재독] C++11 핵심 노트"
 date:   2015-09-28
 tags: [book]
 ---

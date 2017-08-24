@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "잠자기 전 30분"
+title:  "[책] 잠자기 전 30분"
 date:   2014-05-12
 tags: [book]
 ---

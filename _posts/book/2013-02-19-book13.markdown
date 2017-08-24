@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "우리는 사소한 것에 목숨을 건다."
+title:  "[책] 우리는 사소한 것에 목숨을 건다."
 date:   2013-02-19
 tags: [book]
 ---

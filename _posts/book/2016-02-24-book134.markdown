@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Becoming a Better Programmer"
+title:  "[책] Becoming a Better Programmer"
 date:   2016-02-24
 tags: [book]
 ---

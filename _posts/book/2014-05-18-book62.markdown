@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "스텝 파더 스텝"
+title:  "[책] 스텝 파더 스텝"
 date:   2014-05-18
 tags: [book]
 ---

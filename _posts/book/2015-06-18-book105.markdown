@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] 조엘 온 소프트웨어"
+title:  "[책] [재독] 조엘 온 소프트웨어"
 date:   2015-06-18
 tags: [book]
 ---

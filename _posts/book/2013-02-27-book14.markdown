@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "멸종"
+title:  "[책] 멸종"
 date:   2013-02-27
 tags: [book]
 ---

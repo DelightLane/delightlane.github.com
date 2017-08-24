@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "페르시아의 왕자"
+title:  "[책] 페르시아의 왕자"
 date:   2017-01-01
 tags: [book]
 ---

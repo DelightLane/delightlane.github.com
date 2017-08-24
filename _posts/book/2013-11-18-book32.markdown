@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "하루키의 여행법"
+title:  "[책] 하루키의 여행법"
 date:   2013-11-18
 tags: [book]
 ---

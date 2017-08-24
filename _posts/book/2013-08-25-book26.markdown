@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "머리 좀 굴려보시죠!"
+title:  "[책] 머리 좀 굴려보시죠!"
 date:   2013-08-25
 tags: [book]
 ---

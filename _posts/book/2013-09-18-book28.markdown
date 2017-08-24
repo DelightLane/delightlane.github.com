@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "손대현의 재미학 콘서트"
+title:  "[책] 손대현의 재미학 콘서트"
 date:   2013-09-18
 tags: [book]
 ---

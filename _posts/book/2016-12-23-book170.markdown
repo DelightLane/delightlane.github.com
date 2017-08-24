@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Game Programming Gems"
+title:  "[책] Game Programming Gems"
 date:   2016-12-23
 tags: [book]
 ---

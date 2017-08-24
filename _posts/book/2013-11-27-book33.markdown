@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "렉싱턴의 유령"
+title:  "[책] 렉싱턴의 유령"
 date:   2013-11-27
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "HTML, CSS, JavaScript로 iphoneApps 개발하기"
+title:  "[책] HTML, CSS, JavaScript로 iphoneApps 개발하기"
 date:   2015-11-18
 tags: [book]
 ---

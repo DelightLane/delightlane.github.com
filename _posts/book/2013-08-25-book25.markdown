@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로의 경지"
+title:  "[책] 프로의 경지"
 date:   2013-08-25
 tags: [book]
 ---

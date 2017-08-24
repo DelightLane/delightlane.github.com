@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] 보노보 찬가"
+title:  "[책] [재독] 보노보 찬가"
 date:   2016-05-01
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "하늘 호수로 떠난 여행"
+title:  "[책] 하늘 호수로 떠난 여행"
 date:   2013-01-01
 tags: [book]
 ---

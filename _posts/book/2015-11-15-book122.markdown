@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Refactoring[신판]"
+title:  "[책] Refactoring[신판]"
 date:   2015-11-15
 tags: [book]
 ---

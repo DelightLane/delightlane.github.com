@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "혁명하는 여자들"
+title:  "[책] 혁명하는 여자들"
 date:   2017-07-11
 tags: [book]
 ---

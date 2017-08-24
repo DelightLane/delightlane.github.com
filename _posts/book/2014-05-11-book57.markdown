@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "나는 프로그래머다"
+title:  "[책] 나는 프로그래머다"
 date:   2014-05-11
 tags: [book]
 ---

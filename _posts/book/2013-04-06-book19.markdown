@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "소크라테스의 재판"
+title:  "[책] 소크라테스의 재판"
 date:   2013-04-06
 tags: [book]
 ---

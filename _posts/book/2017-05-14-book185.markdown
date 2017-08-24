@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "길모퉁이 재즈 카페"
+title:  "[책] 길모퉁이 재즈 카페"
 date:   2017-05-14
 tags: [book]
 ---

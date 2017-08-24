@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "코끼리뼈"
+title:  "[책] 코끼리뼈"
 date:   2016-09-10
 tags: [book]
 ---

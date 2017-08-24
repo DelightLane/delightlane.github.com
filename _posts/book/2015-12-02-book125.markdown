@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "80일간의 세계일주"
+title:  "[책] 80일간의 세계일주"
 date:   2015-12-02
 tags: [book]
 ---

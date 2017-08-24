@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "나는 지갑이다"
+title:  "[책] 나는 지갑이다"
 date:   2012-11-18
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "매디슨 카운티의 다리"
+title:  "[책] 매디슨 카운티의 다리"
 date:   2014-05-13
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "일의 기쁨과 슬픔"
+title:  "[책] 일의 기쁨과 슬픔"
 date:   2014-06-14
 tags: [book]
 ---

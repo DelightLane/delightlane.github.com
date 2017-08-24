@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "마왕 신해철"
+title:  "[책] 마왕 신해철"
 date:   2015-02-27
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "위로의 레시피"
+title:  "[책] 위로의 레시피"
 date:   2014-06-08
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로그래머로 사는 법"
+title:  "[책] 프로그래머로 사는 법"
 date:   2015-08-24
 tags: [book]
 ---

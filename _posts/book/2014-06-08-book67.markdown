@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] 나는 지갑이다"
+title:  "[책] [재독] 나는 지갑이다"
 date:   2014-06-08
 tags: [book]
 ---

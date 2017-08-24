@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "REFACTORING[구판]"
+title:  "[책] REFACTORING[구판]"
 date:   2015-07-11
 tags: [book]
 ---

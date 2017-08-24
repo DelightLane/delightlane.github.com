@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "C++11 핵심 노트"
+title:  "[책] C++11 핵심 노트"
 date:   2015-04-09
 tags: [book]
 ---

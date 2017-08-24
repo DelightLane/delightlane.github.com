@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "개발자를 부탁해"
+title:  "[책] 개발자를 부탁해"
 date:   2014-03-04
 tags: [book]
 ---

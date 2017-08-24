@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "게임 프로그래밍 패턴"
+title:  "[책] 게임 프로그래밍 패턴"
 date:   2017-05-25
 tags: [book]
 ---

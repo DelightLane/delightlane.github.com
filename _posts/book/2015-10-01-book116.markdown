@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로그래밍 루아"
+title:  "[책] 프로그래밍 루아"
 date:   2015-10-01
 tags: [book]
 ---

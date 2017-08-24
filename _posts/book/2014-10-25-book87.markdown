@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "고전혁명"
+title:  "[책] 고전혁명"
 date:   2014-10-25
 tags: [book]
 ---

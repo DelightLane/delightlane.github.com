@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "바람의 노래를 들어라"
+title:  "[책] 바람의 노래를 들어라"
 date:   2014-07-23
 tags: [book]
 ---

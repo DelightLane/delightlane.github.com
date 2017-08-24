@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "이름 없는 독"
+title:  "[책] 이름 없는 독"
 date:   2012-11-30
 tags: [book]
 ---

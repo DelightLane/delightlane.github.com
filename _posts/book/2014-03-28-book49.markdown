@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "프로그래밍 마인드"
+title:  "[책] 프로그래밍 마인드"
 date:   2014-03-28
 tags: [book]
 ---

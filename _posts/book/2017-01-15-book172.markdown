@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "퓨쳐 워커"
+title:  "[책] 퓨쳐 워커"
 date:   2017-01-15
 tags: [book]
 ---

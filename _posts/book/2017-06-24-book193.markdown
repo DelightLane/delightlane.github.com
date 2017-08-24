@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "공부책"
+title:  "[책] 공부책"
 date:   2017-06-24
 tags: [book]
 ---

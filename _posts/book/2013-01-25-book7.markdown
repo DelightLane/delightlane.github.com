@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "행동하는 낙관주의자"
+title:  "[책] 행동하는 낙관주의자"
 date:   2013-01-25
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "efficient c++ 샘플"
+title:  "[책] efficient c++ 샘플"
 date:   2014-05-21
 tags: [book]
 ---

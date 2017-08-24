@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "인터랙티브 디벨로퍼"
+title:  "[책] 인터랙티브 디벨로퍼"
 date:   2017-06-18
 tags: [book]
 ---

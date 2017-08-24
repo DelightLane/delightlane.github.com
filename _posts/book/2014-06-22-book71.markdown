@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "호모 서치엔스의 탄생"
+title:  "[책] 호모 서치엔스의 탄생"
 date:   2014-06-22
 tags: [book]
 ---

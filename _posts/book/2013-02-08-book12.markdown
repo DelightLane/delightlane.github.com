@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "9월의 4분의 1"
+title:  "[책] 9월의 4분의 1"
 date:   2013-02-08
 tags: [book]
 ---

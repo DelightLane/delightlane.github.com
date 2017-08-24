@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "셰이더 프로그래밍 입문"
+title:  "[책] 셰이더 프로그래밍 입문"
 date:   2016-05-30
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "귀차니스트 탐구 생활"
+title:  "[책] 귀차니스트 탐구 생활"
 date:   2014-01-09
 tags: [book]
 ---

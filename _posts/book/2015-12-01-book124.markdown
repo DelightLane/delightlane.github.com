@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "변신"
+title:  "[책] 변신"
 date:   2015-12-01
 tags: [book]
 ---

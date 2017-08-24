@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "심리학 초콜릿"
+title:  "[책] 심리학 초콜릿"
 date:   2014-04-22
 tags: [book]
 ---

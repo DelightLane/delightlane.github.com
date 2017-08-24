@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "언어의 정원"
+title:  "[책] 언어의 정원"
 date:   2017-07-08
 tags: [book]
 ---

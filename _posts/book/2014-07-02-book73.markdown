@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "젊은 베르테르의 슬픔"
+title:  "[책] 젊은 베르테르의 슬픔"
 date:   2014-07-02
 tags: [book]
 ---

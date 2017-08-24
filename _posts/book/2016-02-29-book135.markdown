@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "어스시의 마법사"
+title:  "[책] 어스시의 마법사"
 date:   2016-02-29
 tags: [book]
 ---

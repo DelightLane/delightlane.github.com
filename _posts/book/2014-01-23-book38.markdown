@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "양을 쫓는 모험"
+title:  "[책] 양을 쫓는 모험"
 date:   2014-01-23
 tags: [book]
 ---

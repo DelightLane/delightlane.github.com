@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] 뉴욕의 프로그래머"
+title:  "[책] [재독] 뉴욕의 프로그래머"
 date:   2017-05-07
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "데미안"
+title:  "[책] 데미안"
 date:   2013-09-25
 tags: [book]
 ---

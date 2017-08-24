@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "그림으로 읽는 생생 연애 심리학"
+title:  "[책] 그림으로 읽는 생생 연애 심리학"
 date:   2014-05-17
 tags: [book]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "에드워드 툴레인의 신기한 여행"
+title:  "[책] 에드워드 툴레인의 신기한 여행"
 date:   2014-08-28
 tags: [book]
 ---

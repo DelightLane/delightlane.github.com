@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[재독] 행복한 프로그래밍"
+title:  "[책] [재독] 행복한 프로그래밍"
 date:   2016-07-09
 tags: [book]
 ---

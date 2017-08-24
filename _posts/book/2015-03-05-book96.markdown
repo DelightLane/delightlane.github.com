@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "강신주의 다상담"
+title:  "[책] 강신주의 다상담"
 date:   2015-03-05
 tags: [book]
 ---

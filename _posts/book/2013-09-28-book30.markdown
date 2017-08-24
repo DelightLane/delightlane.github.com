@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "상록수"
+title:  "[책] 상록수"
 date:   2013-09-28
 tags: [book]
 ---
