@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Effective C++] 항목 52 ~ 55"
-date:   2016-10-11
+date:   2016-10-13
 tags: [work, cpp]
 ---
 
