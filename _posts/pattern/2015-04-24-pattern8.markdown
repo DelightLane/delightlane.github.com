@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "[Design Pattern] 9. Template Method Pattern"
+date:   2015-04-24
+tags: [work, pattern]
+---
+
+  이번에 구현해볼 패턴은 템플릿 메소드 패턴이다.
+
+  최근 EC++ 공부하면서 (항목 35 : 가상함수 대신 쓸 것들도 생각해두는 자세를 시시때때로 길러두자.) 가상함수를 private 멤버로 숨기는 방식으로 한번 나왔다. 
+
+  이 패턴은 앞에 퍼사드 패턴을 하면서 느낀건데, 마치... 퍼사드 패턴을 동적으로 구현해둔 느낌..?
+
+  아무튼 얼른 본론으로 들어가자. 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 알고리즘의 골격을 정의. 알고리즘 여러 단계 중 일부는 서브클래스에서 구현할 수 있다. </b>
+
+  <em>장점 1. 특정 알고리즘을 서브 클래스에서 재활용할 수 있다. </em>
+
+---------------------------------------
+<br/>
+
+  예제.
+
+{% highlight cpp %}
+// 템플릿 메소드 패턴을 사용한 추상 클래스
+class CharacterCreator{
+public:
+    virtual ~CharacterCreator() = 0;
+    void create(){
+        setName();
+        setCloth();
+        setState();
+        setCustom();
+        print();
+    }
+protected:
+    std::string _name;
+    std::string _cloth;
+    std::string _state;
+    std::string _custom;
+private:
+    virtual void setName() = 0;
+    virtual void setCloth() = 0;
+    virtual void setState() = 0;
+    virtual void setCustom() = 0;
+    void print(){
+        cout<<"name : " + _name<<endl;
+        cout<<"cloth : " + _cloth<<endl;
+        cout<<"state : " + _state<<endl;
+        cout<<"custom : " + _custom<<endl;
+    }
+};
+CharacterCreator::~CharacterCreator(){}
+
+// 템플릿 메소드를 위한 서브클래스 1
+class SwordmanCreator : public CharacterCreator{
+public:
+    ~SwordmanCreator(){}
+private:
+    void setName(){
+        _name = "SWORDMAN";
+    }
+    void setCloth(){
+        _cloth = "CHAINMAIL";
+    }
+    void setState(){
+        _state = "NORMAL";
+    }
+    void setCustom(){
+        _custom = "BLUEHAIR";
+    }
+};
+// 템플릿 메소드를 위한 서브클래스 2
+class MagicianCreator : public CharacterCreator{
+public:
+    ~MagicianCreator(){}
+private:
+    void setName(){
+        _name = "MAGICIAN";
+    }
+    void setCloth(){
+        _cloth = "HOOD";
+    }
+    void setState(){
+        _state = "NORMAL";
+    }
+    void setCustom(){
+        _custom = "BLACKHAIR";
+    }
+};
+
+int main()
+{
+    std::unique_ptr<CharacterCreator> creator (new SwordmanCreator());
+    creator->create();
+    
+    creator.reset(new MagicianCreator);
+    creator->create();
+    
+    return 0;
+}
+{% endhighlight %}

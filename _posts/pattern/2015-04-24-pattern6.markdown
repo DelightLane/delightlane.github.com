@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "[Design Pattern] 7. Adaptor Pattern"
+date:   2015-04-24
+tags: [work, pattern]
+---
+
+  이번에는 어댑터 패턴. 어댑터 패턴은 굉장히 쉬운 듯 하면서도 신경 쓸 게 많은 것 같다. 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 어떤 클래스(Adaptee)의 인터페이스를 다른 클래스의 인터페이스(Target)에 맞춰서 사용하고 싶을 때 사용. </b>
+
+  <em>장점 1. 어댑터는 Target의 속성(다형성 등)을 그대로 사용할 수 있다.</em>
+
+---------------------------------------
+<br/>
+
+  종류로는 두 가지가 있는 듯하다. 첫번째는 클래스 어댑터, 두번째는 객체 어댑터. 구현방식의 차이가 있을 뿐이다. 이름 그대로 직관적.
+
+  1. 클래스 어댑터 : 다중 상속을 사용하여 두 클래스(Adaptee, Target)의 인터페이스와 구현 모두를 상속받아 Target 인터페이스에 Adaptee 구현을 끼워맞춰 사용하는 형식.
+
+  2. 객체 어댑터 : Target을 상속받아 인터페이스를 상속받은 후, Adaptee를 객체로 가지고 있음으로써 Adaptee의 구현을 사용하는 형식. 
+
+  다음은 예제! 
+  
+
+{% highlight cpp %}
+// 인터페이스를 변경하고자 하는 클래스
+// adaptee
+class Human{
+public:
+    virtual void officialLanguage(){
+        cout<<"officialLanguage"<&ltendl;
+    }
+};
+
+// 1. 클래스 어댑터 구현
+// target
+class Elf{
+public:
+    virtual void quenya(){
+        cout<<"quenya"<&ltendl;
+    }
+};
+// adapter
+class HumanToElfAdapter : public Elf, public Human{
+    void quenya() override {
+        Human::officialLanguage();
+    }
+};
+
+// 2. 객체 어댑터 구현
+// target
+class Orc{
+public:
+    virtual void orcish(){
+        cout<<"orcish"<&ltendl;
+    }
+};
+// adapter
+class HumanToOrcAdapter : public Orc{
+public:
+    HumanToOrcAdapter() : _human(new Human) {}
+    void orcish() override {
+        _human->officialLanguage();
+    }
+private:
+    Human* _human;
+};
+
+int main()
+{
+    // 클래스 어댑터
+    unique_ptr<Elf> rebirth(new HumanToElfAdapter());
+    rebirth->quenya();
+    
+    // 객체 어댑터
+    unique_ptr<Orc> rebirth2(new HumanToOrcAdapter());
+    rebirth2->orcish();
+    
+    return 0;
+}
+{% endhighlight %}

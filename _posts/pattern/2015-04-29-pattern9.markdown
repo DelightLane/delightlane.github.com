@@ -1,0 +1,139 @@
+---
+layout: post
+title:  "[Design Pattern] 10. Iterator Pattern"
+date:   2015-04-29
+tags: [work, pattern]
+---
+
+  정말 오랜만에; 다시 디자인 패턴 정리. 좀 대충 만든 감이 없잖아 있다.. 이번 패턴은 이터레이터(반복자) 패턴! 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 컨테이너들을 같은 인터페이스로 활용하기 위해 사용</b>
+
+  <em>장점 1. 같은 인터페이스를 재활용 가능</em>
+
+  <em>장점 2. 내부 구현이 숨겨짐. </em>
+
+---------------------------------------
+<br/>
+
+{% highlight cpp %}
+// 반복자 추상 클래스
+template<typename T>
+class DELIterator{
+public:
+    DELIterator() : _idx(0) {}
+    virtual ~DELIterator() {};
+    virtual bool hasNext() = 0;
+    virtual T next() = 0;
+    virtual void remove() = 0;
+protected:
+    int _idx;
+};
+
+// 배열 반복자(0을 사용하지 못함..)
+template<typename T>
+class DELArrayIterator : public DELIterator<T>{
+public:
+    DELArrayIterator(T* array, int size) : _array(array), _size(size) {}
+
+    bool hasNext() override{
+        if (_idx < _size && _array[_idx] != NULL){
+            return true;
+        }
+        return false;
+    }
+
+    T next() override{
+        if (hasNext()){
+            return _array[_idx++];
+        }
+        return NULL;
+    }
+    void remove() override{
+        _array[_idx - 1] = NULL;
+
+        for (int i = _idx; i < _size; ++i){
+            _array[i - 1] = _array[i];
+            _array[i] = NULL;
+        }
+    }
+private:
+    T* _array; // void*의 포인터(배열)
+    int _size; // 배열 크기
+};
+
+// 벡터 반복자
+template<typename T>
+class DELVectorIterator : public DELIterator<T>{
+public:
+    DELVectorIterator(std::vector<T> vector) : _vector(vector){}
+    
+    bool hasNext() override{
+        if (_idx < _vector.size() && &_vector[_idx] != nullptr){
+            return true;
+        }
+        return false;
+    }
+
+    T next(){
+        if (hasNext()){
+            return _vector.at(_idx++);
+        }
+        return NULL;
+    }
+    
+    void remove() override{
+        auto it = _vector.begin();
+        for (int i = 0; i < _idx; ++i){
+            ++it;
+        }
+
+        _vector.erase(it);
+    }
+private:
+    std::vector<T> _vector;
+};
+
+void main(){
+    int i[7] = { 1, 2, 3, 4, 5, 6 };
+    vector<std::string> v;
+    v.push_back("a");
+    v.push_back("b");
+    v.push_back("c");
+    v.push_back("d");
+
+    std::unique_ptr<DELArrayIterator<int>> iter(new DELArrayIterator<int>(i, 7));
+    std::unique_ptr<DELVectorIterator<std::string>> iter2(new DELVectorIterator<std::string>(v));
+
+    while (iter->hasNext() || iter2->hasNext()){
+        if (iter->hasNext())
+            cout << iter->next() << endl;
+        if (iter2->hasNext())
+            cout << iter2->next().c_str() << endl;
+    }
+
+    cout << endl << endl;
+
+    iter.reset(new DELArrayIterator<int>(i, 7));
+    iter2.reset(new DELVectorIterator<std::string>(v));
+
+    int idx = 0;
+    while (iter->hasNext() || iter2->hasNext()){
+        if (iter->hasNext()){
+            if (idx == 3){
+                iter->remove();
+            }
+            cout << iter->next() << endl;
+        }
+        if (iter2->hasNext()){
+            if (idx == 2){
+                iter2->remove();
+            }
+            cout << iter2->next().c_str() << endl;
+        }
+        ++idx;
+    }   
+}
+{% endhighlight %}

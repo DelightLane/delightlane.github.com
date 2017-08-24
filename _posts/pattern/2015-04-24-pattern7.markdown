@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "[Design Pattern] 8. Facade Pattern"
+date:   2015-04-24
+tags: [work, pattern]
+---
+
+  진짜 '패턴'이라는 인지 없이 매일매일 쓰던 걸 패턴이라는 이름으로 배우게 되었을때는 이딴것도 패턴이야? 라는 생각이 들었다. 지금 생각은.. 패턴 자체가 좋은 객체 구조의 정형화된 이름 정도일 뿐이니까 쉽다고 무시하는 건 웃긴 일이지 ㅋㅋ 
+
+  아무튼 이번에 정리할 패턴은 퍼사드 패턴. 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 어떤 클래스에서 제공하는 일련의 인터페이스에 대한 통합된 인터페이스를 제공 </b>
+
+  즉, 필요에 따른 흐름을 인터페이스로 묶어둔 거다. 
+
+  <em>장점 1. 같은 행동의 재현이 편해진다.</em>
+
+  <em>장점 2. 가독률이 오른다.</em>
+
+---------------------------------------
+<br/>
+
+  다음은 예제!   
+
+{% highlight cpp %}
+class Battle{
+public:
+    void attack(){
+        cout<<"attack"<<endl;
+    }
+    void defence(){
+        cout<<"defence"<<endl;
+    }
+    void move(){
+        cout<<"move"<<endl;
+    }
+
+    // 퍼사드 패턴을 이용한 메소드
+    void autoBattle(){
+        attack();
+        move();
+        move();
+        defence();
+        attack();
+    }
+};
+
+int main()
+{
+    Battle b;
+    b.autoBattle();
+    return 0;
+}
+{% endhighlight %}

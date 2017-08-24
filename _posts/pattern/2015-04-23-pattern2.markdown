@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "[Design Pattern] 3. Decorator Pattern"
+date:   2015-04-23
+tags: [work, pattern]
+---
+
+  이번에는 데코레이터 패턴. 
+
+  처음 공부했을 때는 우와, 신박하다! 라고 생각했는데, 음.. 꾸며주기 위해 많은 생성자가 불린다는 점이 조금 거슬린다.. 디자인 패턴 자체가 성능이 우선시 된다기보단 추상화와 의존성에 치중하는 것이긴 하지만. 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 객체에 추가적으로 무언가를 '동적으로' 첨가한다. </b>
+
+  <em>장점 1. 서브클래스만 추가하면 런타임시 쉽게 객체에 추가할 수 있으므로 유연하다.</em>
+
+  <em>장점 2. 데코레이터를 추가하는 부분이 꽤 직관적이라서 가독성이 좋은 것 같다. </em>
+
+---------------------------------------
+<br/>
+
+자 그럼 예제.
+
+{% highlight cpp %}
+// 장비를 위한 상위 추상 클래스
+class Equipment{
+public:
+    virtual ~Equipment() = 0;
+    virtual std::string explain() = 0;
+};
+Equipment::~Equipment(){}
+
+// 실제 장비를 하는 객체의 추상 클래스
+class EquipInstance : public Equipment{
+public:
+    EquipInstance(const std::string &expl) : _explain(expl) {}
+    virtual ~EquipInstance() = 0;
+    
+    std::string explain() override{
+        return _explain;
+    }
+private:
+    std::string _explain;
+};
+EquipInstance::~EquipInstance(){}
+
+// 장비 객체를 꾸며주는 데코레이터 추상 클래스
+class EquipDecorator : public Equipment{
+public:
+    EquipDecorator(const std::shared_ptr<Equipment> &e) : _parent(e) {};
+    virtual ~EquipDecorator() = 0;
+    
+    std::string explain() override{
+        return _parent->explain() + " '" + _partExplain + "'";
+    }
+protected:
+    void setPartExplain(const std::string &partExpl){
+        this->_partExplain = partExpl;
+    }
+private:
+    std::shared_ptr<Equipment> _parent;
+    std::string _partExplain;
+};
+EquipDecorator::~EquipDecorator(){}
+
+// 장비 객체 자식 클래스
+class HumanEquip : public EquipInstance{
+public:
+    HumanEquip(const std::string &expl) : EquipInstance(expl) {}
+    ~HumanEquip(){}
+};
+// 데코레이터 자식 클래스 1
+class SwordDeco : public EquipDecorator{
+public:
+    SwordDeco(const std::shared_ptr<Equipment> &e) : EquipDecorator(e) {
+        setPartExplain("Swrod");
+    }
+    ~SwordDeco() {}
+};
+// 데코레이터 자식 클래스 2
+class ShildDeco : public EquipDecorator{
+public:
+    ShildDeco(const std::shared_ptr<Equipment> &e) : EquipDecorator(e) {
+        setPartExplain("Shild");
+    }
+    ~ShildDeco() {}
+
+}
+
+int main()
+{
+    std::shared_ptr<Equipment> humanEquip(new HumanEquip("Swordman's Equip"));
+    humanEquip = std::shared_ptr<Equipment>(new SwordDeco(humanEquip));
+    humanEquip = std::shared_ptr<Equipment>(new ShildDeco(humanEquip));
+    
+    cout << humanEquip->explain() << endl;
+    
+    return 0;
+}
+{% endhighlight %}

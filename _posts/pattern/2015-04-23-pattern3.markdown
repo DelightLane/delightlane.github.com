@@ -1,0 +1,138 @@
+---
+layout: post
+title:  "[Design Pattern] 4. Fectory Pattern"
+date:   2015-04-23
+tags: [work, pattern]
+---
+
+  이번에는 팩토리 패턴에 대해서 알아보겠다! 
+
+  팩토리 패턴은 총 두가지, 관용적인 표현까지 합하면 무려 세가지! 세가지나 존재하는 패턴이다. 
+  그러나 관용구는 너무 수시로 사용하고 너무 쉬워서..(그러니까 그냥 포인터 객체를 반환하는 메소드를 만들어서 여기저기서 활용하는 걸 말하는거다.) 설명 및 예제는 생략! 
+
+  하나 하나씩 설명! 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">1. 팩토리 메소드 패턴 : 객체를 생성하기 위한 인터페이스를 정의, 어떤 클래스의 인스턴스를 만들지는 자식 클래스에게 위임. </b>
+
+<b style="font-size:20px">2. 추상 팩토리 패턴 : 인스턴스를 만드는 인터페이스만 정의된 추상 클래스를 구현하고 자식 클래스에서 어떤 인스턴스를 만들지 위임. 해당 추상 클래스의 인스턴스화 되는 내용에 따라 내부적으로 구현한 인터페이스에서 다른 객체를 생성.</b>
+
+  즉 쉽게 설명하자면, 
+
+  팩토리 메소드 패턴은 그냥 내부적으로 어떤 객체를 만들지 자식 클래스에게 위임해서 사용하고플때 사용. 
+  추상 팩토리 패턴은 '팩토리 객체'를 따로 구현하여 팩토리 객체의 종류에 따라서 어떤 객체를 생성받고 싶을 때 사용. 
+
+  만드는 주체의 차이다. 
+
+  <em>장점 1. 객체를 유연하게 생성할 수 있다. </em>
+
+  <em>장점 2. 객체 만들 시 전후과정을 처리해 줄 수 있다.(예를 들자면 만들고 데코레이터 패턴을 바로 적용시킨다거나.)</em>
+
+---------------------------------------
+<br/>
+
+{% highlight cpp %}
+// 추상 팩토리가 반환하는 객체의 추상 클래스
+class Unit{
+public:
+    virtual ~Unit() = 0;
+    virtual std::string getName() = 0;
+};
+Unit::~Unit(){}
+// 추상 팩토리를 구현한 추상 클래스
+class UnitFactory{
+public:
+    virtual ~UnitFactory() = 0;
+    virtual Unit* createUnit() = 0;
+};
+UnitFactory::~UnitFactory(){}
+// 팩토리 메소드를 구현한 추상 클래스
+// 팩토리 메소드에서 추상 팩토리를 구현한 클래스 객체를 만든다.
+class Structure{
+public:
+    virtual ~Structure() = 0;
+    virtual UnitFactory* createFactory() = 0;
+    void popUnit(){
+        cout << "POP UNIT : " + _factory->createUnit()->getName() << endl;
+    }
+protected:
+    void setFactory(){
+        _factory = createFactory();
+    }
+private:
+    UnitFactory* _factory;
+};
+Structure::~Structure(){
+    delete _factory;
+}
+
+
+// 추상 팩토리 반환 객체 1
+class Marine : public Unit{
+public:
+    ~Marine(){}
+    std::string getName() override{
+        return "MARINE";
+    }
+};
+// 추상 팩토리 반환 객체 2
+class Zealot : public Unit{
+    ~Zealot(){}
+    std::string getName() override{
+        return "ZEALOT";
+    }
+};
+// 팩토리 메소드 반환 객체 1이자 추상 팩토리 클래스를 상속받은 클래스 1
+class MarineFactory : public UnitFactory{
+public:
+    ~MarineFactory(){}
+    Unit* createUnit() override{
+        return new Marine();
+    }
+};
+// 팩토리 메소드 반환 객체 1이자 추상 팩토리 클래스를 상속받은 클래스 2
+class ZealotFactory : public UnitFactory{
+public:
+    ~ZealotFactory(){}
+    Unit* createUnit() override{
+        return new Zealot();
+    }
+};
+// 팩토리 메소드 클래스를 상속받은 클래스 1
+class CommendCenter : public Structure{
+public:
+    CommendCenter(){
+        setFactory();
+    }
+    ~CommendCenter(){}
+    UnitFactory* createFactory() override{
+        return new MarineFactory();
+    }
+};
+// 팩토리 메소드 클래스를 상속받은 클래스 2
+class Gateway : public Structure{
+public:
+    Gateway(){
+        setFactory();
+    }
+    ~Gateway(){}
+    UnitFactory* createFactory() override{
+        return new ZealotFactory();
+    }
+};
+
+
+int main()
+{
+    std::unique_ptr<Structure> build(new CommendCenter());
+    for(int i = 0 ; i < 5 ; ++i)
+        build->popUnit();
+    
+    build.reset(new Gateway());
+    for(int i = 0 ; i < 3 ; ++i)
+        build->popUnit();
+    
+    return 0;
+}
+{% endhighlight %}

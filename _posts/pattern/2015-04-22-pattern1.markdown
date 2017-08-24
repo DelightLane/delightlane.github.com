@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "[Design Pattern] 2. Observer Pattern"
+date:   2015-04-22
+tags: [work, pattern]
+---
+
+  이번에 만들어볼 디자인 패턴은 옵저버 패턴. 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 알려주는 데이터들을 리스너를 통하여 받아서 데이터를 갱신시켜주는 디자인 패턴이다. 어느 특정 데이터가 변경되었음을 알려오면 각 옵저버 클래스 객체들은 해당 데이터를 받아서 자신의 정보를 갱신시킨다. </b>
+
+  <em>장점. 어느 데이터의 변화에 매번 일일이 확인하지 않아도 알아서 정보를 갱신시켜준다. </em>
+
+---------------------------------------
+<br/>
+
+  책에서는 Subject 인터페이스도 구현하여 여러가지 주제들(옵저버들에게 알려줄 데이터를 가지는 것들)을 만들 수 있게 추상화 해두었으나, 여기서 중요한 건 '옵저버에게 전달한다' 라고 생각하여 옵저버만 구현하였다.
+
+{% highlight cpp %}
+// 수정되는 내용들을 구독할 옵저버 추상 클래스
+class Observer{
+public:
+        virtual void update(const string data) = 0;
+        virtual ~Observer() = 0;
+};
+Observer::~Observer() {}
+
+// 자식 클래스 1
+class Item : public Observer{
+public:
+        void update(const string data) override {
+                _name = data;
+                cout << "Item's name is " << _name.c_str() << endl;
+        }
+private:
+        string _name;
+};
+
+// 자식 클래스 2
+class Person : public Observer{
+public:
+        void update(const string data) override {
+                _usingItem = data;
+                cout << "Person is using " << _usingItem.c_str() << endl;
+        }
+private:
+        string _usingItem;
+};
+
+// 구독하는 옵저버들을 관리해주는 클래스
+// 구독하는 데이터는 std::string _data
+class Subject{
+public:
+        Subject() : _observers(new list<Observer*>){
+
+        }
+        void registerObserver(Observer* const o){
+                _observers->push_back(o);
+        }
+        void removeObserver(Observer* const o){
+                _observers->remove(o);
+        }
+        void notifyObserver(){
+                string data = getData();
+                for_each(_observers->begin(), _observers->end(), [data](Observer *o){
+                        o->update(data);
+                });
+        }
+        string getData(){
+                return this->_data;
+        }
+        void setData(const string data){
+                this->_data = data;
+        }
+private:
+        unique_ptr<list<Observer*>> _observers;
+        string _data;
+};
+
+int main(){
+        Subject subject;
+
+        Person *person(new Person);
+        Item *item(new Item);
+
+        subject.registerObserver(person);
+        subject.registerObserver(item);
+
+        subject.setData("빨간 물약");
+
+        subject.notifyObserver();
+
+        subject.removeObserver(item);
+        
+        subject.setData("파란 물약");
+
+        subject.notifyObserver();
+
+        delete person;
+        delete item;
+}
+{% endhighlight %}

@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "[Design Pattern] 1. Strategy Pattern"
+date:   2015-04-22
+tags: [work, pattern]
+---
+
+  매번 글을 찾아보고 확인하는 작업을 계속하는 것도 지겨우니, 이번을 기회 삼아서 한번 코딩으로 정리를 해보기로 마음 먹었다. 옛날에 정리해둔 헤드 퍼스트 디자인 패턴 내의 순으로 정리해나갈 것이고, 일단 내가 알고 있고 기억하는 내용 순으로만 정리를 해나갈 거기 때문에 부족한 부분이라거나 와전된 부분이 있을 수 있음.. 그런 부분이 있다면 추가 및 수정을 해야 할 것이다. 
+
+  일단 첫번째로는 스트래티지(혹은 전략) 패턴. 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 객체가 될 타겟 클래스는 내부적으로 인터페이스만 제공하고 그 구현은 구현을 맡은 다른 객체에게 맡기는 방식으로, 구현을 인터페이스와 분리시키는 패턴.</b>
+
+  <em>장점 1. 구현이 인터페이스와 분리되어 있기 때문에 구현부를 런타임 중에도 바꿀 수 있다.</em>
+
+  <em>장점 2. 상속으로 인해 쓸데없이 자식 클래스에서 사용하지 않는 인터페이스를 신경써야 하는 상황을 방지할 수 있다.</em>
+  
+---------------------------------------
+<br/>
+  코드로 구현해보자. 
+
+  편의를 위해 모든 함수는 암시적 인라인 함수로 구현합니다.. 데헷. 
+
+{% highlight cpp %}
+// 구현을 맡을 추상 클래스
+
+class Behavior{
+public:
+       	virtual void action() = 0;
+        virtual ~Behavior() = 0;
+
+};
+
+Behavior::~Behavior(){ }
+
+// 걷기 구현
+class WalkBehavior : public Behavior{
+public:
+        void action() override{
+                cout << "walking" << endl;
+        }
+        ~WalkBehavior(){}
+};
+
+// 공격 구현
+class AttackBehavior : public Behavior{
+public:
+        void action() override{
+                cout << "attacking" << endl;
+        }
+        ~AttackBehavior(){}
+};
+
+// action 인터페이스를 가지고 있을 사람 클래스
+// 실질적인 구현은 Behavior가 맡는다.
+class Person{
+public:
+        Person() : b(std::unique_ptr<Behavior>(new WalkBehavior())){}
+
+        void setBehavior(Behavior* const b){
+                this->b.reset(b);
+        }
+
+        void action(){
+                this->b->action();
+        }
+private:
+        std::unique_ptr<Behavior> b;
+};
+
+int main()
+{
+        std::unique_ptr<Person> p(new Person());
+
+        p->action();
+
+        p->setBehavior(new AttackBehavior());
+
+        p->action();
+
+        return 0;
+
+}
+{% endhighlight %}

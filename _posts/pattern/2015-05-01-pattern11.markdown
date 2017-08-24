@@ -1,0 +1,196 @@
+---
+layout: post
+title:  "[Design Pattern] 12. State Pattern"
+date:   2015-05-01
+tags: [work, pattern]
+---
+
+  뭔가 코드를 만들다 보니 너무 길어졌다 ㅋㅋ 코딩을 시작하면 왜 이렇게 진지하게 되어버리는가... 대충 하고 치우려고 했는데 사실 ㅋㅋ 그래도 집중 못하는 것보다는 낫겠지.
+
+  아무튼 이번에 볼 패턴은 스테이트 패턴. 
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 객체의 상태를 구현된 인터페이스에 맞춰 바꿔주는 패턴 </b>
+
+  <em>장점 1. 런타임 중에 객체의 사용 용도를 아예 바꿔줄 수 있다. </em>
+
+  <em>장점 2. 내부를 캡슐화 한 채로 용도를 바꿀 수 있다. </em>
+
+---------------------------------------
+<br/>
+
+예제.
+
+{% highlight cpp %}
+class State{
+public:
+    State() : hp(100), maxHp(100), speed(1), ap(10) {}
+    State(State* state) : maxHp(state->getMaxHp()), hp(state->getHp()), speed(state->getSpeed()), ap(state->getAp()) {
+        if (state->state == "Poison"){
+            speed *= 2;
+            ap *= 2;
+        }
+    }
+    virtual ~State() = 0;
+
+    virtual int getHp(){
+        return hp;
+    }
+    int getMaxHp(){
+        return maxHp;
+    }
+    virtual float getSpeed(){
+        return speed;
+    }
+    virtual int getAp(){
+        return ap;
+    }
+    virtual void damaged(int damage){
+        hp -= damage;
+        if (hp <= 0){
+            hp = 0;
+            cout << "dead player" << endl;
+        }
+    }
+
+    void printState(){
+        cout << "state : " << state << endl;
+        cout << "hp : " << maxHp << '/' << getHp() << endl;
+        cout << "speed : " << getSpeed() << endl;
+        cout << "ap : " << getAp() << endl;
+    }
+protected:
+    void setHp(int hp){
+        this->hp = hp;
+    }
+    void setSpeed(float speed){
+        this->speed = speed;
+    }
+    void setAp(int ap){
+        this->ap = ap;
+    }
+    void setState(const char* state){
+        this->state = state;
+    }
+private:
+    const char* state;
+    int hp, maxHp;
+    float speed;
+    int ap;
+};
+State::~State() {}
+// 보통
+class NormalState : public State{
+public:
+    NormalState(){
+        setState("Normal");
+    }
+    NormalState(State* state) : State(state) {
+        setState("Normal");
+    }
+    ~NormalState() {}
+};
+// 중독
+class PoisonState : public State{
+public:
+    PoisonState(State* state) : State(state), _time(time(NULL))  {
+        setState("Poison");
+    }
+    ~PoisonState(){}
+    // 초마다 1씩 hp를 깎는다.
+    int getHp() override {
+        setHp(State::getHp() - getCalSec());
+        // 현재 시간으로 다시 저장
+        _time = time(NULL);
+        return State::getHp();
+    }
+    // 스피드와 공격력이 절반
+    float getSpeed() override {
+        return State::getSpeed() / 2;
+    }
+    int getAp() override {
+        return State::getAp() / 2;
+    }
+private:
+    // 중독된 시간 저장
+    time_t _time;
+
+    int getCalSec(){
+        return static_cast<int>(time(NULL) - _time);
+    }
+};
+// 무적
+class SuperState : public State{
+public:
+    SuperState(State* state) : State(state) {
+        setState("Super");
+    }
+    ~SuperState() {}
+
+    // 데미지를 받지 않는다.
+    void damaged(int damage) override{
+        return;
+    }
+};
+
+class Player{
+public:
+    Player() : _state(new NormalState()) {}
+
+    void setState(State* state){
+        _state.reset(state);
+    }
+    void printState(){
+        _state->printState();
+    }
+    void damaged(int damage){
+        _state->damaged(damage);
+    }
+    State* getState(){
+        return _state.get();
+    }
+private:
+    std::unique_ptr<State> _state;
+};
+
+int main(){
+    Player p;
+    p.printState();
+    cout << endl;
+    
+    // 데미지 2
+    p.damaged(2);
+    p.printState();
+    cout << endl;
+
+    // 중독
+    p.setState(new PoisonState(p.getState()));
+    p.printState();
+    cout << endl;
+
+    // 5초동안 데미지
+    time_t now = time(NULL);
+    while (time(NULL) - now < 5){}
+    p.printState();
+    cout << endl;
+
+    // 무적
+    p.setState(new SuperState(p.getState()));
+    p.printState();
+    cout << endl;
+
+    // 데미지 없음
+    p.damaged(100);
+    p.printState();
+    cout << endl;
+
+    // 죽음
+    p.setState(new NormalState(p.getState()));
+    p.damaged(100);
+    cout << endl;
+    p.printState();
+
+    return 0;
+}
+{% endhighlight %}

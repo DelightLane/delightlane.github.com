@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "[Design Pattern] 6. Command Pattern"
+date:   2015-04-24
+tags: [work, pattern]
+---
+
+  이번에 구현해볼 디자인 패턴은 커맨드 패턴이다.
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 메소드를 캡슐화하는 패턴.</b>
+
+  <em>장점 1. 객체 등 동적으로 변경 가능한 걸 사용해서 구현하므로 런타임시 변경 가능</em>
+
+  <em>장점 2. 사용자는 캡슐화 된 메소드를 별 생각 없이 사용만 하면 된다.</em>
+
+---------------------------------------
+<br/>
+
+{% highlight cpp %}
+// 커맨드 패턴 적용을 위한 추상 클래스
+class Commend{
+public:
+    virtual ~Commend() = 0;
+    virtual void execute() = 0;
+};
+Commend::~Commend(){}
+
+// 리시버
+class Login{
+public:
+    Login() : _state("Disconnected") {}
+    void printState(){
+        cout<<_state<<endl;
+    }
+    void login(){
+        _state = "Connected";
+    }
+    void logout(){
+        _state = "Disconnected";
+    }
+private:
+    std::string _state;
+};
+
+// 커맨드 클래스 1
+class LoginCommend : public Commend{
+public:
+    LoginCommend(Login* const login) : _login(login){}
+    ~LoginCommend(){}
+    void execute(){
+        _login->login();
+        _login->printState();
+    }
+private:
+    Login *_login;
+};
+// 커맨드 클래스 2
+class LogoutCommend : public Commend{
+public:
+    LogoutCommend(Login* const login) : _login(login){}
+    ~LogoutCommend(){}
+    void execute(){
+        _login->logout();
+        _login->printState();
+    }
+private:
+    Login *_login;
+};
+
+// 인보커
+class SceenManager{
+public:
+    void setCommend(const shared_ptr<Commend> c){
+        _commend = c;
+    }
+    void sceenAction(){
+        _commend->execute();
+    }
+private:
+    shared_ptr<Commend> _commend;
+};
+
+int main()
+{
+    unique_ptr<SceenManager> sm(new SceenManager);
+    shared_ptr<Login> login(new Login);
+    
+    login->printState();
+    
+    sm->setCommend(shared_ptr<Commend>(new LoginCommend(login.get())));
+    sm->sceenAction();
+    
+    sm->setCommend(shared_ptr<Commend>(new LogoutCommend(login.get())));
+    sm->sceenAction();
+    
+    return 0;
+}
+{% endhighlight %}

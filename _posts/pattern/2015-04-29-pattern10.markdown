@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "[Design Pattern] 11. Composite Pattern"
+date:   2015-04-29
+tags: [work, pattern]
+---
+
+  이번에 정리할 패턴은 컴포지트 패턴.
+
+---------------------------------------
+<br/>
+<b style="font-size:20px">- 트리 형태로 객체들을 관리한다.</b>
+
+  <em>장점 1. 자식 객체들에게 동일한 인터페이스 제공 </em>
+
+  <em>장점 2. 트리 형태라 검색 등이 용이하게 작성 가능 </em>
+
+---------------------------------------
+<br/>
+
+{% highlight cpp %}
+class PartyComponent{
+public:
+    const char* getName(){
+        return _name.c_str();
+    }
+    const char* getDescription(){
+        return _description.c_str();
+    }
+    void setName(std::string &s){
+        _name = s;
+    }
+    void setDescription(std::string &s){
+        _description = s;
+    }
+
+    virtual void print(){
+        cout << getName() << " : " << getDescription() << endl;
+    }
+
+    virtual void add(PartyComponent* const com){}
+    virtual void remove(PartyComponent* const com){}
+    virtual PartyComponent* getChild(int i){
+        return nullptr;
+    }
+
+    PartyComponent(std::string name, std::string description) : _name(name), _description(description){}
+    virtual ~PartyComponent() = 0;
+private:
+    std::string _name;
+    std::string _description;
+};
+
+PartyComponent::~PartyComponent(){}
+
+class Player : public PartyComponent{
+public:
+    Player(std::string name, std::string description) : PartyComponent(name, description){}
+};
+
+class Party : public PartyComponent{
+public:
+    Party(std::string name, std::string description) : PartyComponent(name, description){}
+
+    void add(PartyComponent* const com) override{
+        _partys.push_back(com);
+    }
+    void remove(PartyComponent* const com) override{
+        for (auto p = _partys.begin(); p != _partys.end(); ++p){
+            if (*p == com){
+                _partys.erase(p);
+                return;
+            }
+        }
+    }
+    PartyComponent* getChild(int i) override{
+        if (_partys.size() - 1 > i && i >= 0){
+            return _partys.at(i);
+        }
+        return nullptr;
+    }
+    void print() override{
+        PartyComponent::print();
+        
+        for (auto it = _partys.begin(); it != _partys.end(); ++it){
+            (*it)->print();
+        }
+    }
+private:
+    vector<PartyComponent*> _partys;
+};
+
+int main(){
+    std::unique_ptr<PartyComponent>rootParty(new Party("ROOT_PARTY", "It take in all party!"));
+    rootParty->add(new Player("PLAYER_1", "first player"));
+    rootParty->add(new Player("PLAYER_2", "second player"));
+
+    PartyComponent* subParty = new Party("DRAGON_DUNGEON_PARTY", "This Party will be going DRAGON DUNGEON!");
+    subParty->add(new Player("DRAGON_PALYER_1", "first dragon player"));
+    subParty->add(new Player("DRAGON_PALYER_2", "second dragon player"));
+
+    rootParty->add(subParty);
+
+    rootParty->print();
+}
+{% endhighlight %}
