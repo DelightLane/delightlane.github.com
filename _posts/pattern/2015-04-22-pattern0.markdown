@@ -25,12 +25,10 @@ tags: [work, pattern]
 
 {% highlight cpp %}
 // 구현을 맡을 추상 클래스
-
 class Behavior{
 public:
        	virtual void action() = 0;
         virtual ~Behavior() = 0;
-
 };
 
 Behavior::~Behavior(){ }
@@ -81,6 +79,5 @@ int main()
         p->action();
 
         return 0;
-
 }
 {% endhighlight %}
