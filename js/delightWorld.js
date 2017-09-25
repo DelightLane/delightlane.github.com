@@ -222,6 +222,8 @@ var imagePreload = function() {
     return i;
 }
 
+var prevNotifiedMapNameTxt;
+
 function notifyMapName(mapName){
 	setUpdateFunc(function(){
 		if(isInit)
@@ -230,6 +232,8 @@ function notifyMapName(mapName){
 			txt.setPosition(canvas.width - txt.getSize().width - 20, canvas.height - txt.getSize().height - 20);
 			txt.setTextFadeOut(1);
 			txt.setWaitRemoveSecond(5);
+
+			prevNotifiedMapNameTxt = txt;
 
 			setUpdateFunc(null);
 		}

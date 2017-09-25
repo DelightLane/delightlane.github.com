@@ -22,28 +22,43 @@ function Drawable(canvas, pathOrText, isText){
 	canvas.drawables.push(this);
 }
 
-Drawable.prototype.removeAllChildren = function(){
+Drawable.prototype.remove = function(conditionFunc){
+	var allDrawables = this.canvas.drawables;
+
 	var removeCount = 0;
 
-	for(var i = 0 ; i < this.canvas.drawables.length ; ++i)
+	for(var i = 0 ; i < allDrawables.length ; ++i)
 	{
-		if(this.canvas.drawables[i].parent && this.canvas.drawables[i].parent == this)
+		if(conditionFunc(allDrawables[i]))
 		{
-			this.canvas.drawables[i] = null;
+			allDrawables[i] = null;
 			++removeCount;
 		}
 	}
 
-	for(var i = 0 ; i < this.canvas.drawables.length ; ++i)
+	for(var i = 0 ; i < allDrawables.length ; ++i)
 	{
-		if(this.canvas.drawables[i] == null && this.canvas.drawables.length > i + 1)
+		if(allDrawables[i] == null && allDrawables.length > i + 1)
 		{
-			this.canvas.drawables[i] = this.canvas.drawables[i+1];
-			this.canvas.drawables[i+1] = null;
+			allDrawables[i] = allDrawables[i+1];
+			allDrawables[i+1] = null;
 		}
 	}
 
-	this.canvas.drawables = this.canvas.drawables.slice(0, this.canvas.drawables.length - removeCount);
+	this.canvas.drawables = allDrawables.slice(0, allDrawables.length - removeCount);
+	this.drawIndex -= removeCount;
+}
+
+Drawable.prototype.destroy = function(){
+	this.remove(function(d){
+		return d == this;
+	});
+}
+
+Drawable.prototype.removeAllChildren = function(){
+	this.remove(function(d){
+		return d.parent && d.parent == this;
+	});
 }
 
 Drawable.prototype.setImage = function(imagePath){
