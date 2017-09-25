@@ -243,18 +243,23 @@ function notifyMapName(mapName){
 
 
 function include(jsname) {
-	document.write("<script src='" + jsname + "'></script>");
+	document.write("<script src='" + SITE_URL + jsname + "'></script>");
 }
 
-include(SITE_URL + "js/object/object.js");
-include(SITE_URL + "js/object/player.js");
-include(SITE_URL + "js/object/placeObject.js");
-include(SITE_URL + "js/object/tile.js");
-include(SITE_URL + "js/object/triggerObject.js");
-include(SITE_URL + "js/object/drawable.js");
 
-include(SITE_URL + "js/map.js");
 
-include(SITE_URL + "js/controller.js");
-include(SITE_URL + "js/draw.js");
-include(SITE_URL + "js/update.js");
+/****************************************************/
+/********* 게임 주요 루프 로직 include를 통한 실행 **********/
+/****************************************************/
+include("js/object/object.js");
+include("js/object/player.js");
+include("js/object/placeObject.js");
+include("js/object/tile.js");
+include("js/object/triggerObject.js");
+include("js/object/drawable.js");
+
+include("js/map.js");
+
+include("js/controller.js");
+include("js/draw.js");
+include("js/update.js");
