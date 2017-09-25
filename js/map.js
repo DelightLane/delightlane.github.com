@@ -85,6 +85,10 @@ function init(mapName) {
         }
 
         isInit = true;
+
+        if(map.mapName && map.mapName.length > 0){
+            notifyMapName(map.mapName);
+        }
     });
 }
 
