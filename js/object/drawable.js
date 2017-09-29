@@ -50,14 +50,18 @@ Drawable.prototype.remove = function(conditionFunc){
 }
 
 Drawable.prototype.destroy = function(){
+	var thisRef = this;
+
 	this.remove(function(d){
-		return d == this;
+		return d == thisRef;
 	});
 }
 
 Drawable.prototype.removeAllChildren = function(){
+	var thisRef = this;
+
 	this.remove(function(d){
-		return d.parent && d.parent == this;
+		return d.parent && d.parent == thisRef;
 	});
 }
 
