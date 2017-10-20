@@ -1,0 +1,32 @@
+{
+    "mapName" : "게임 화면",
+    "cols" : 5,
+    "rows" : 3,
+    "tiles" :
+    [
+        "tile0", "tile0", "tile0", "tile0", "tile0",
+        "tile1", "tile1", "tile1", "tile1", "tile1",
+        "tile0", "tile0", "tile0", "tile0", "tile0"
+    ],
+    "objs" :
+    [
+        {
+            "x" : 1,
+            "y" : 0,
+            "res" : "mariobox",
+            "obstacle" : true
+        },
+        {
+            "x" : 3,
+            "y" : 0,
+            "res" : "mariobox",
+            "obstacle" : true
+        },
+        {
+            "x" : 2,
+            "y" : 2,
+            "res" : "mariopipe",
+            "event" : "window.location.href = '/tags/profile/';"
+        }
+    ]
+}
