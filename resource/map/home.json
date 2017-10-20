@@ -13,7 +13,8 @@
         {
             "x" : 0,
             "y" : 0,
-            "res" : "closet",
+            "res" : "gamemachine",
+            "event" : "setDescription('게임기 설치 중</br>이용 불가');",
             "obstacle" : true
         },
         {
