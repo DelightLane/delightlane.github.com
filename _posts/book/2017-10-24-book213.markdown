@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[책] 게임 프로그래밍의 정석"
+title:  "[책] [재독] 게임 프로그래밍의 정석"
 date:   2017-10-24
 tags: [book]
 ---
