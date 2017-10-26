@@ -40,13 +40,13 @@
         {
             "x" : 7,
             "y" : 3,
-            "res" : "tree0",
+            "res" : "treemaple0",
             "obstacle" : true
         },
         {
             "x" : 4,
             "y" : 0,
-            "res" : "tree0",
+            "res" : "treemaple0",
             "obstacle" : true
         },
 
@@ -74,7 +74,7 @@
         {
             "x" : 6,
             "y" : 4,
-            "res" : "tree0",
+            "res" : "treemaple0",
             "obstacle" : true
         },
         {
