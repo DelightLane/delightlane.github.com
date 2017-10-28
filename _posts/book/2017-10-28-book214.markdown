@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[책] 회사에서 티나게 딴짓하기
+title:  "[책] 회사에서 티나게 딴짓하기"
 date:   2017-10-28
 tags: [book]
 ---
