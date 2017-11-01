@@ -4,11 +4,11 @@
     "rows" : 5,
     "tiles" :
     [
-        "tile", "tile", "tile", "tile", "tile", "tile", "tile", "tile", "tile",
-        "tile", "tile", "road", "tile", "tile", "tile", "road", "tile", "tile",
+        "tile2", "tile2", "tile2", "tile2", "tile2", "tile2", "tile2", "tilemaple1", "tile2",
+        "tile2", "tile2", "road", "tile2", "tile2", "tilemaple1", "road", "tilemaple1", "tile2",
         "road", "road", "road", "road", "road", "road", "road", "road", "road",
-        "tile", "tile", "tile", "tile", "road", "tile", "tile", "tile", "tile",
-        "tile", "tile", "tile", "tile", "tile", "tile", "tile", "tile", "tile"
+        "tile2", "tile2", "tile2", "tile2", "road", "tilemaple1", "tilemaple1", "tile2", "tilemaple1",
+        "tilemaple1", "tilemaple1", "tile2", "tile2", "tile2", "tilemaple1", "tile2", "tile2", "tile2"
     ],
     "objs" :
     [
@@ -53,21 +53,21 @@
         {
             "x" : 8,
             "y" : 3,
-            "res" : "trees0",
+            "res" : "tree3",
             "obstacle" : true
         },
 
         {
             "x" : 7,
             "y" : 4,
-            "res" : "tree2",
+            "res" : "treemaple1",
             "obstacle" : true
         },
 
         {
             "x" : 8,
             "y" : 4,
-            "res" : "tree2",
+            "res" : "treemaple1",
             "obstacle" : true
         },
 
@@ -80,7 +80,7 @@
         {
             "x" : 8,
             "y" : 0,
-            "res" : "trees0",
+            "res" : "tree3",
             "obstacle" : true
         },
         {
