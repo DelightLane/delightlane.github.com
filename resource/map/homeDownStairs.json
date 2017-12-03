@@ -464,14 +464,14 @@
             "x" : 0,
             "y" : 0,
             "res" : "upstair0",
-            "event" : "newGame('home');"
+            "event" : "window.location.href = '/tags/myMemory/';"
         },
 
         {
             "x" : 28,
             "y" : 0,
             "res" : "upstair0",
-            "event" : "newGame('home');"
+            "event" : "window.location.href = '/tags/myMemory/';"
         }
     ]
 }

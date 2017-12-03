@@ -2,7 +2,7 @@
 layout: post
 title:  "현우의 기본 프로필"
 date:   2017-08-14
-tags: [profile]
+tags: [myMemory, profile]
 ---
 
 ![screenshot]({{ site.url }}/resource/post/profileImage.png)

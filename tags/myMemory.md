@@ -1,8 +1,8 @@
 ---
 layout: blog_by_tag
-slug: profile
-permalink: /tags/profile/
+slug: myMemory
+permalink: /tags/myMemory/
 ---
 <script type="text/javascript">
-	newGame('homeDownStairs');
+	newGame("home");
 </script>

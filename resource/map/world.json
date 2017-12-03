@@ -118,13 +118,13 @@
             "x" : 2,
             "y" : 0,
             "res" : "house0",
-            "event" : "window.location.href = '/tags/profile/';"
+            "event" : "window.location.href = '/tags/myMemory/';"
         },
         {
             "x" : 1,
             "y" : 0,
             "res" : "signboardprofile",
-            "event" : "setDescription('자택(#프로필)');",
+            "event" : "setDescription('자택(#신변잡기)');",
             "obstacle" : true
         },
         {

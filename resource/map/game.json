@@ -26,7 +26,7 @@
             "x" : 2,
             "y" : 2,
             "res" : "mariopipe",
-            "event" : "window.location.href = '/tags/profile/';"
+            "event" : "window.location.href = '/tags/myMemory/';"
         }
     ]
 }

@@ -55,7 +55,7 @@
             "x" : 4,
             "y" : 1,
             "res" : "downstair0",
-            "event" : "newGame('homeDownStairs');"
+            "event" : "window.location.href = '/tags/profile/';"
         },
         {
             "x" : 4,
