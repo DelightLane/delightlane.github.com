@@ -6,18 +6,26 @@ tags: [myMemory, game]
 ---
 
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/1.jpg)
+<br/>
 <small>제너럴의 희생</small>
+<br/>
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/2.jpg)
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/3.jpg)
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/4.jpg)
+<br/>
 <small>...대체 어딜 보고 있는걸까 x는. 운전 중 멍 때리기.</small>
+<br/>
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/5.jpg)
+<br/>
 <small>츤데레 제로의 걱정어린 질타.</small>
+<br/>
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/6.jpg)
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/7.jpg)
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/8.jpg)
 ![screenshot]({{ site.url }}/resource/post/171028_rockmanx4/9.jpg)
+<br/>
 <small>드디어.. 스탭롤!</small>
+<br/>
 
 록맨 x4! 컴퓨터 학원에서 도스용으로 컨버팅된 록맨 x를 정말 재밌게 열심히 했었는데, 희한하게도 2와 3를 건너뛰고 나는 바로 4를 시작했다. CD를 우연찮게 입수했기 때문인데, 어린 마음에 정말 그래픽의 진보에 놀라움을 감출 수가 없었다. 록맨 x랑은 차원이 다를 정도로 많은 색깔을 사용하는 록맨 x4!! 게임을 하면서도 입이 다물어지지 않았다. 더군다나 파츠도 안 얻었는데 대쉬가 된다!!
 

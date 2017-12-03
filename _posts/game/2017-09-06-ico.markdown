@@ -9,11 +9,17 @@ tags: [myMemory, game]
 ![screenshot]({{ site.url }}/resource/post/170906_ico/2.jpg)
 ![screenshot]({{ site.url }}/resource/post/170906_ico/3.jpg)
 ![screenshot]({{ site.url }}/resource/post/170906_ico/4.jpg)
+<br/>
 <small>흐헝 ㅠㅅㅠ// 안녀엉</small>
+<br/>
 ![screenshot]({{ site.url }}/resource/post/170906_ico/5.jpg)
+<br/>
 <small>수박..!</small>
+<br/>
 ![screenshot]({{ site.url }}/resource/post/170906_ico/6.jpg)
+<br/>
 <small>수박 엔딩...!!!</small>
+<br/>
 
 이코 2회차를 달성했다!!
 

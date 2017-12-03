@@ -8,11 +8,17 @@ tags: [myMemory, game]
 일주일? 전에 요새 갑자기 물량이 잘 풀리는 슈퍼 패미콤 미니를 충동적으로 드디어 질렀다!
 
 ![screenshot]({{ site.url }}/resource/post/171130_snes/1.jpg)
+<br/>
 오!
+<br/>
 ![screenshot]({{ site.url }}/resource/post/171130_snes/2.jpg)
+<br/>
 <h1>오오!</h1>
+<br/>
 ![screenshot]({{ site.url }}/resource/post/171130_snes/3.jpg)
+<br/>
 <h3>오오오!</h3>
+<br/>
 
 사실 슈퍼 패미콤에 대한 추억이 있는 건 아닌데, 그래도..
 
