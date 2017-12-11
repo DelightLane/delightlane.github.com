@@ -4,11 +4,11 @@
     "rows" : 5,
     "tiles" :
     [
-        "tile2", "tile2", "tile2", "tile2", "tile2", "tile2", "tile2", "tilemaple1", "tile2",
-        "tile2", "tile2", "road", "tile2", "tile2", "tilemaple1", "road", "tilemaple1", "tile2",
+        "tile3", "tile3", "tile3", "tile3", "tile3", "tile3", "tile3", "tileice", "tile3",
+        "tile3", "tile3", "road", "tile3", "tile3", "tileice", "road", "tileice", "tile3",
         "road", "road", "road", "road", "road", "road", "road", "road", "road",
-        "tile2", "tile2", "tile2", "tile2", "road", "tilemaple1", "tilemaple1", "tile2", "tilemaple1",
-        "tilemaple1", "tilemaple1", "tile2", "tile2", "tile2", "tilemaple1", "tile2", "tile2", "tile2"
+        "tile3", "tile3", "tile3", "tile3", "road", "tileice", "tileice", "tile3", "tile3",
+        "tileice", "tileice", "tile3", "tile3", "tile3", "tileice", "tile3", "tile3", "tile3"
     ],
     "objs" :
     [
@@ -40,13 +40,14 @@
         {
             "x" : 7,
             "y" : 3,
-            "res" : "treemaple0",
+            "res" : "snowman",
+            "event" : "setDescription('\\'누가 만든 눈사람일까..\\'');",
             "obstacle" : true
         },
         {
             "x" : 4,
             "y" : 0,
-            "res" : "treemaple0",
+            "res" : "tree3",
             "obstacle" : true
         },
 
@@ -60,21 +61,21 @@
         {
             "x" : 7,
             "y" : 4,
-            "res" : "treemaple1",
+            "res" : "treecutting",
             "obstacle" : true
         },
 
         {
             "x" : 8,
             "y" : 4,
-            "res" : "treemaple1",
+            "res" : "tree3",
             "obstacle" : true
         },
 
         {
             "x" : 6,
             "y" : 4,
-            "res" : "treemaple0",
+            "res" : "tree3",
             "obstacle" : true
         },
         {
