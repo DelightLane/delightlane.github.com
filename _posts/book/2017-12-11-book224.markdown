@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[책] 유배 행성"
+title: "[책] 유배 행성"
 date:   2017-12-11
 tags: [book]
 ---
