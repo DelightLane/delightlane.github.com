@@ -26,7 +26,7 @@ gitlab_username:  hano881112
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 
 paginate: 10
 
