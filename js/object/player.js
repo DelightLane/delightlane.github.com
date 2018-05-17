@@ -59,6 +59,8 @@ Player.prototype.move = function (key){
             }
             break;
     }
+
+    this.setDrawOffset(this.pos.x, this.pos.y);
 }
 
 var checkTime = 0;
@@ -101,6 +103,6 @@ Player.prototype.draw = function (){
         var markWidth = this.talks[this.talkIdx].width * DRAW_SCALE;
         var markHeight = this.talks[this.talkIdx].height * DRAW_SCALE;
 
-        Object.drawImage(this.talks[this.talkIdx], 0, 0, this.talks[this.talkIdx].width, this.talks[this.talkIdx].height, this.calcX, this.calcY - markHeight, markWidth, markHeight);
+        Object.drawImage(this.talks[this.talkIdx], 0, 0, this.talks[this.talkIdx].width, this.talks[this.talkIdx].height, this.calcX - this.offset.x, this.calcY - markHeight - this.offset.y, markWidth, markHeight);
     }
 }
