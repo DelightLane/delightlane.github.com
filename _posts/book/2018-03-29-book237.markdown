@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[책][재독] English for Developers"
+title:  "[책] [재독] English for Developers"
 date:   2018-03-29
 tags: [book]
 ---

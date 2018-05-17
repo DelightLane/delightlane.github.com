@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[책][재독] Effective Morden C++"
+title:  "[책] [재독] Effective Morden C++"
 date:   2018-03-31
 tags: [book]
 ---
