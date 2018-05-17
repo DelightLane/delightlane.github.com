@@ -48,6 +48,7 @@ function init(mapName) {
         }
 
         player = new Player(playerPos, centerPos);
+        player.setDrawOffset(playerPos.x, playerPos.y);
 
 
         // 맵 초기화
@@ -57,6 +58,7 @@ function init(mapName) {
             tiles[y] = [];
             for ( var x = 0; x < COLS; ++x ) {
                 tiles[y][x] = new Tile({x:x, y:y}, player, map.tiles[idx++]);
+                tiles[y][x].setDrawOffset(x, y);
             }
         }
 
@@ -81,7 +83,9 @@ function init(mapName) {
         placeObjects = [];
         for(var i = 0 ; i < map.objs.length ; ++i){
             var objData = map.objs[i];
-            placeObjects.push(new TriggerObject(objData, player, resCreator(objData.res), eventFunc));
+            var obj = new TriggerObject(objData, player, resCreator(objData.res), eventFunc);
+            obj.setDrawOffset(objData.x, objData.y);
+            placeObjects.push(obj);
         }
 
         isInit = true;

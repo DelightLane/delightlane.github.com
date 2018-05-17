@@ -32,7 +32,7 @@ Tile.prototype.setType = function(tileName){
 
 Tile.prototype.draw = function (){   
     this.drawSprite(this.spriteName);
-    ctx.strokeStyle = "#353535";
-    ctx.lineWidth = 1.5;
-    ctx.strokeRect(this.calcX, this.calcY, this.imgWidth, this.imgHeight);
+    //ctx.strokeStyle = "#353535";
+    //ctx.lineWidth = 1.5;
+    //ctx.strokeRect(this.calcX, this.calcY, this.imgWidth, this.imgHeight);
 }

@@ -17,6 +17,8 @@ function Object(){
 	this.img = null;
 
     this.drawPos = { x : 0, y : 0 }
+
+    this.offset = { x : 0, y : 0}
 }
 
 Object.prototype.initAtlasData = function(atlasName){
@@ -51,6 +53,10 @@ Object.drawImage = function(img, offsetX, offsetY, cropWidth, cropHeight, posX, 
 	ctx.drawImage(img, offsetX, offsetY, cropWidth, cropHeight, posX, posY, width, height);
 }
 
+Object.prototype.setDrawOffset = function(offsetx, offsety){
+	this.offset = { x : offsetx, y : offsety}
+}
+
 Object.prototype.drawSprite = function(spriteName){
 	if(!this.img)
 	{
@@ -64,7 +70,7 @@ Object.prototype.drawSprite = function(spriteName){
 
 		if(this.calcCanvasPos())
 		{
-			Object.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
+			Object.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX - this.offset.x, this.calcY - this.offset.y, this.imgWidth, this.imgHeight);
 		}
 	}
 	else
@@ -94,7 +100,7 @@ Object.prototype.drawSprite = function(spriteName){
 
 			if(this.calcCanvasPos())
 			{
-				Object.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX, this.calcY, this.imgWidth, this.imgHeight);
+				Object.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX - this.offset.x, this.calcY - this.offset.y, this.imgWidth, this.imgHeight);
 			}
 		}
 
