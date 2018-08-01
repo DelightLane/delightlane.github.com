@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[책] 웬즈데이"
-date:   2018-07-114
+date:   2018-07-14
 tags: [book]
 ---
 
