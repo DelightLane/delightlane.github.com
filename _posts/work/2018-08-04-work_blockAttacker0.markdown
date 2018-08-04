@@ -6,6 +6,7 @@ tags: [work, blockAttacker]
 ---
 
 ![screenshot]({{ site.url }}/resource/post/blockAttacker/180804_screenshot.png)
+<br>
 <small>BlockAttacker의 현재 버전 스크린샷</small>
 
 ## 시작 글
@@ -16,11 +17,12 @@ tags: [work, blockAttacker]
 
   아무튼 그런 이유로, 지금 개발하고 있는 게임들의 개발일지를 일주일에 한번씩 써보기로 한다.
 
-</br>
+<br>
 
 ## 역사
 
   ![screenshot]({{ site.url }}/resource/post/blockAttacker/180804_history.png)
+  <br>
   <small>시작한 날짜. 생각보다도 오래 됐다.</small>
 
   시작일은 작년 5월 29일로, 처음 시작할 때만 해도 6개월 정도를 생각하고 있었다. 장르는 3-match처럼 블록을 터뜨려서 하는 퍼즐 게임. 뿌요뿌요 던전 같은 형식으로 만들어서 스토리도 조금 가미하면 재미있지 않을까? 하는 가벼운 마음가짐이었다. 하지만 게임 개발이라는 게 늘상 그렇듯이 지금에 와서는 그렇게 간단한 게임이 아니게 되었지만.
@@ -52,7 +54,7 @@ tags: [work, blockAttacker]
 
   다시 한 번 줄여서 말해 보자면 내가 지금 개발하고 있는 게임은 전형적인 JRPG 게임 형식에 단순한 턴제 전투가 아닌 블록을 사용한 턴제 전투를 가미한 방식이다.
 
-</br>
+<br>
 
 ## 맺음 글
 
