@@ -21,3 +21,6 @@
 
 - slug: myMemory
   name: 신변잡기
+
+- slug: blockAttacker
+  name: 블록 어태커
