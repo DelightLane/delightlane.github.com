@@ -66,7 +66,8 @@ tags: [work, blockAttacker]
 
   afterAnim은 animating 후 플레이할 애니 이름이다. 없다면 지금 애니를 유지하도록 했다.
 
-  local animSets =
+```javascript
+local animSets =
 {
     {
         name = "wakeUp",
@@ -77,6 +78,7 @@ tags: [work, blockAttacker]
 };
 
 return animSets;
+```
 <br>
 
 ## 맺음 글
