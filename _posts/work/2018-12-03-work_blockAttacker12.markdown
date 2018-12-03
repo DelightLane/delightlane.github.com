@@ -19,7 +19,7 @@ tags: [work, blockAttacker]
 
 ## 작업
 
-![screenshot]({{ site.url }}/resource/post/blockAttacker/181203_history.png)
+![screenshot]({{ site.url }}/resource/post/blockAttacker/181203_history.PNG)
 <br>
 <small>이번주 작업 분량</small>
 <br>
