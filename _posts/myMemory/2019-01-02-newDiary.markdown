@@ -6,7 +6,7 @@ tags: [myMemory]
 ---
 
 ![screenshot]({{ site.url }}/resource/post/190102_diary/1.jpg)
-<small>새 다이어리도 시바다. 넘나 귀엽다.</small>
+<small>새 다이어리도 시바견이다. 넘나 귀엽다.</small>
 ![screenshot]({{ site.url }}/resource/post/190102_diary/2.jpg)
 <small>또 하나 떠나보내는구나. 박스가 가득 채워져 간다.</small>
 
