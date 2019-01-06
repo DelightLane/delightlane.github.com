@@ -22,7 +22,7 @@ tags: [work, blockAttacker]
 
 ## 작업
 
-![screenshot]({{ site.url }}/resource/post/blockAttacker/190106_history.png)
+![screenshot]({{ site.url }}/resource/post/blockAttacker/190106_history.PNG)
 <br>
 <small>그간 작업 분량</small>
 
@@ -70,6 +70,7 @@ tags: [work, blockAttacker]
 ![screenshot]({{ site.url }}/resource/post/blockAttacker/190106_partner.gif)
 <br>
 <small>이런 기능이다.</small>
+
   동행자가 이제 정말로 생긴 이후의 맵을 작성해야 하는데 자, 이제 동행자의 대사는 어떻게 처리할 것인가. 이것도 두 가지 방안을 생각했따.
 
   1) 동행자가 이벤트 시에만 나온다.
