@@ -12,7 +12,7 @@ tags: [work, blockAttacker]
 
 ## 작업
 
-![screenshot]({{ site.url }}/resource/post/blockAttacker/190211_history.png)
+![screenshot]({{ site.url }}/resource/post/blockAttacker/190211_history.PNG)
 <br>
 <small>그간 작업 분량</small>
 
@@ -28,4 +28,4 @@ tags: [work, blockAttacker]
 
 ## 맺음 글
 
-  언제까지 이렇게 밑바닥 작업을 하게 될까. 설 연휴를 주구장창 쉰 덕에 코딩한 건 거의 없다는 점이 더 가슴 아프다. 다시 열심히 해야지, 하고 마음 먹어본다.
+  언제까지 이렇게 밑바닥 작업을 하게 될까. 설 연휴를 주구장창 쉰 덕에 코딩한 건 거의 없다는 점이 더 가슴 아프다. 다시 열심히 해야지, 하고 마음 먹어본다. 지금쯤에서 끊어서 일지를 올리지 않으면 히스토리가 너무 늘어날 거 같아서 쓸까 말까 고민하다가 결국 글로 옮기고 말았다.
