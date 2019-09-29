@@ -25,7 +25,7 @@
 #descBorder{
 	border: solid 15px;
     border-image: url("../resource/borderImg.png") 11 11 round round;
-    background-color: #fff0f0;
+    background-color: #eaeaea;
     width: 85%;
 	height: 85%;
 	min-height: 27px;
