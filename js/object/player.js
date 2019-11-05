@@ -11,8 +11,7 @@ function Player(pos, drawPos){
     this.spriteNum = 0;
 
     this.talks = {};
-    for(var i = 0 ; i < 3 ; ++i)
-    {
+    for(var i = 0 ; i < 3 ; ++i){
         this.talks[i] = new Image();
         this.talks[i].src = SITE_URL + 'resource/talk' + i +".png";
     }
@@ -60,7 +59,7 @@ Player.prototype.move = function (key){
             break;
     }
 
-    this.setDrawOffset(this.pos.x, this.pos.y);
+    this.setPosition(this.pos.x, this.pos.y);
 }
 
 var checkTime = 0;
@@ -103,6 +102,16 @@ Player.prototype.draw = function (){
         var markWidth = this.talks[this.talkIdx].width * DRAW_SCALE;
         var markHeight = this.talks[this.talkIdx].height * DRAW_SCALE;
 
-        Object.drawImage(this.talks[this.talkIdx], 0, 0, this.talks[this.talkIdx].width, this.talks[this.talkIdx].height, this.calcX - this.offset.x, this.calcY - markHeight - this.offset.y, markWidth, markHeight);
+        Object.drawImage(this.talks[this.talkIdx], 
+            {
+                offsetX: 0, 
+                offsetY: 0,
+                cropWidth: this.talks[this.talkIdx].width,
+                cropHeight: this.talks[this.talkIdx].height,
+                posX: this.calcX - this.offset.x,
+                posY: this.calcY - markHeight - this.offset.y,
+                width: markWidth,
+                height: markHeight
+            });
     }
 }

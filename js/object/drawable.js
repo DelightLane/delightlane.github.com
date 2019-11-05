@@ -5,17 +5,14 @@ function Drawable(canvas, pathOrText, isText){
 	this.canvas = canvas;
 	this.parent = null;
 
-	if(isText == null || !isText)
-	{
+	if(isText == null || !isText){
 		this.setImage(pathOrText);
 	}
-	else
-	{
+	else{
 		this.setText(pathOrText);
 	}
 
-	if(canvas.drawables == null)
-	{
+	if(canvas.drawables == null){
 		canvas.drawables = [];
 	}
 	this.drawIndex = canvas.drawables.length;
@@ -27,19 +24,15 @@ Drawable.prototype.remove = function(conditionFunc){
 
 	var removeCount = 0;
 
-	for(var i = 0 ; i < allDrawables.length ; ++i)
-	{
-		if(conditionFunc(allDrawables[i]))
-		{
+	for(var i = 0 ; i < allDrawables.length ; ++i){
+		if(conditionFunc(allDrawables[i])){
 			allDrawables[i] = null;
 			++removeCount;
 		}
 	}
 
-	for(var i = 0 ; i < allDrawables.length ; ++i)
-	{
-		if(allDrawables[i] == null && allDrawables.length > i + 1)
-		{
+	for(var i = 0 ; i < allDrawables.length ; ++i){
+		if(allDrawables[i] == null && allDrawables.length > i + 1){
 			allDrawables[i] = allDrawables[i+1];
 			allDrawables[i+1] = null;
 		}
@@ -66,10 +59,8 @@ Drawable.prototype.removeAllChildren = function(){
 }
 
 Drawable.prototype.setImage = function(imagePath){
-	if(imagePath && imagePath.length > 0)
-	{
-		if(this.img == null || !this.img.src.includes(imagePath))
-		{
+	if(imagePath && imagePath.length > 0){
+		if(this.img == null || !this.img.src.includes(imagePath)){
 			this.img = new Image();
 			this.img.src = imagePath;
 		}
@@ -77,8 +68,7 @@ Drawable.prototype.setImage = function(imagePath){
 }
 
 Drawable.prototype.setText = function(text){
-	if(text && typeof(text) == 'string' && text.length > 0)
-	{
+	if(text && typeof(text) == 'string' && text.length > 0){
 		this.txt = {};
 		this.txt.text = text;
 		this.txt.fontSize = 60;
@@ -111,8 +101,7 @@ Drawable.prototype.setText = function(text){
 }
 
 Drawable.prototype.setTextFadeOut = function(startTime){
-	if(this.txt)
-	{
+	if(this.txt){
 		this.txt.fadeOutStartTime = startTime;
 	}
 }
@@ -154,56 +143,43 @@ Drawable.prototype.setPosition = function(x, y){
 
 Drawable.prototype.draw = function(){
 	if(!this.img && !this.txt)
-	{
 		return;
-	}
 
 	var flowSecond = 30 / 1000;
 
-	if(this.txt && this.txt.fadeOutStartTime)
-	{
-		if(this.txt.fadeOutStartTime > 0)
-		{
+	if(this.txt && this.txt.fadeOutStartTime){
+		if(this.txt.fadeOutStartTime > 0){
 			this.txt.fadeOutStartTime -= flowSecond;
 		}
-		else
-		{
+		else{
 			this.txt.fadeOutInterval = 0.05;
 		}
 	}
 
-	if(this.waitDrawTime && this.waitDrawTime > 0)
-	{
+	if(this.waitDrawTime && this.waitDrawTime > 0){
 		this.waitDrawTime -= flowSecond;
 		return;
 	}
-	else
-	{
-		if(this.waitDrawTimeCB && typeof(this.waitDrawTimeCB) == 'function')
-		{
+	else{
+		if(this.waitDrawTimeCB && typeof(this.waitDrawTimeCB) == 'function'){
 			this.waitDrawTimeCB();
 			this.waitDrawTime = null;
 			this.waitDrawTimeCB = null;
 		}
 	}
 
-	if(this.waitRemoveSecond)
-	{
-		if(this.waitRemoveSecond > 0)
-		{
+	if(this.waitRemoveSecond){
+		if(this.waitRemoveSecond > 0){
 			this.waitRemoveSecond -= flowSecond;
 		}
-		else
-		{
+		else{
 			this.canvas.drawables.splice(this.drawIndex, 1);
 
-			for(var i = this.drawIndex ; i < this.canvas.drawables.length ; ++i)
-			{
+			for(var i = this.drawIndex ; i < this.canvas.drawables.length ; ++i){
 				this.canvas.drawables[i].drawIndex -= 1;
 			}
 
-			if(this.waitRemoveSecondCB && typeof(this.waitRemoveSecondCB) == 'function')
-			{
+			if(this.waitRemoveSecondCB && typeof(this.waitRemoveSecondCB) == 'function'){
 				this.waitRemoveSecondCB();
 				this.waitRemoveSecond = null;
 				this.waitRemoveSecondCB = null;
@@ -217,44 +193,35 @@ Drawable.prototype.draw = function(){
 	var scale = this.scale || 1;
 
 	var curPos = {x:this.pos.x, y:this.pos.y};
-	if(this.parent != null)
-	{
+	if(this.parent != null){
 		curPos.x += this.parent.pos.x;
 		curPos.y += this.parent.pos.y;
 	}
 
 	var size = this.size;
 
-	if(size == null)
-	{
-		if(this.img)
-		{
+	if(size == null){
+		if(this.img){
 	 		size = { width : this.img.width, height : this.img.height };
 	 	}
-	 	else
-	 	{
+	 	else{
 	 		size = { width : 0, height : 0 };
 	 	}
 	}
 
-	if(this.img)
-	{
-		if(!this.partialTime || this.partialTime <= 0)
-		{
+	if(this.img){
+		if(!this.partialTime || this.partialTime <= 0){
 			ctx.drawImage(this.img, curPos.x, curPos.y, size.width * scale, size.height * scale);
 		}
-		else
-		{
+		else{
 			var drawPercentage = (this.totalPartialTime - this.partialTime) / this.totalPartialTime;
 
-			if(!this.partialUpDown)
-			{
+			if(!this.partialUpDown){
 				var drawWidth = size.width * drawPercentage;
 				var originWidth = this.img.width * drawPercentage;
 				ctx.drawImage(this.img, 0, 0, originWidth, this.img.height, curPos.x, curPos.y, drawWidth * scale, size.height * scale);	
 			}
-			else
-			{
+			else{
 				var drawHeight = size.height * drawPercentage;
 				var originHeight = this.img.height * drawPercentage;
 				ctx.drawImage(this.img, 0, 0, this.img.width, originHeight, curPos.x, curPos.y, size.width * scale, drawHeight * scale);	
@@ -263,8 +230,7 @@ Drawable.prototype.draw = function(){
 			this.partialTime -= flowSecond;
 		}
 	}
-	else
-	{
+	else{
 		this.txt.alpha -= this.txt.fadeOutInterval;
 
 		var savedFont = ctx.font;
@@ -289,13 +255,11 @@ Drawable.prototype.draw = function(){
 Drawable.prototype.getSize = function(){
 	var scale = this.scale || 1;
 
-	if(this.size)
-	{
+	if(this.size){
 		return { width : this.size.width * scale, height : this.size.height * scale };
 	}
 
-	if(this.img)
-	{
+	if(this.img){
 		return { width : this.img.width * scale, height : this.img.height * scale };
 	}
 }
@@ -313,8 +277,7 @@ Drawable.prototype.setTouchEvent = function(event){
 }
 
 Drawable.prototype.runTouchEvent = function(){
-	if(this.touchEvent)
-	{
+	if(this.touchEvent){
 		this.touchEvent();
 	}
 }
@@ -323,8 +286,7 @@ Drawable.prototype.isTouched = function(pos){
 	var size = this.getSize();
 
 	var curPos = {x:this.pos.x, y:this.pos.y};
-	if(this.parent != null)
-	{
+	if(this.parent != null){
 		curPos.x += this.parent.pos.x;
 		curPos.y += this.parent.pos.y;
 	}

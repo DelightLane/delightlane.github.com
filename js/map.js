@@ -6,13 +6,11 @@ var isInit = false;
 
 function init(mapName) {
 
-    getJson(SITE_URL + "resource/map/"+ mapName +".json", function(map)
-    {
+    getJson(SITE_URL + "resource/map/"+ mapName +".json", function(map){
         var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
         initCanvas(canvasWidth, 300);
 
-        if(map.preloadImages)
-        {
+        if(map.preloadImages){
             imagePreload.apply(this, map.preloadImages);
         }
 
@@ -24,31 +22,22 @@ function init(mapName) {
         // 플레이어 초기화
         var playerPos = map.startPos;
         var centerPos = {};
+
         if(COLS % 2 != 0)
-        {
             centerPos.x = (COLS - 1) / 2;
-        }
         else
-        {
             centerPos.x = COLS / 2;
-        }
 
         if(ROWS % 2 != 0)
-        {
             centerPos.y = (ROWS - 1) / 2;
-        }
         else
-        {
             centerPos.y = ROWS / 2;
-        }
 
         if(playerPos == null)
-        {
             playerPos = centerPos;
-        }
 
         player = new Player(playerPos, centerPos);
-        player.setDrawOffset(playerPos.x, playerPos.y);
+        player.setPosition(playerPos.x, playerPos.y);
 
 
         // 맵 초기화
@@ -58,7 +47,7 @@ function init(mapName) {
             tiles[y] = [];
             for ( var x = 0; x < COLS; ++x ) {
                 tiles[y][x] = new Tile({x:x, y:y}, player, map.tiles[idx++]);
-                tiles[y][x].setDrawOffset(x, y);
+                tiles[y][x].setPosition(x, y);
             }
         }
 
@@ -84,7 +73,7 @@ function init(mapName) {
         for(var i = 0 ; i < map.objs.length ; ++i){
             var objData = map.objs[i];
             var obj = new TriggerObject(objData, player, resCreator(objData.res), eventFunc);
-            obj.setDrawOffset(objData.x, objData.y);
+            obj.setPosition(objData.x, objData.y);
             placeObjects.push(obj);
         }
 

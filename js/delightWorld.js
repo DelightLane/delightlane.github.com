@@ -9,10 +9,8 @@ initScreenInfo();
 var COLS;
 var ROWS;
 
-function initGlobal(mapData)
-{
-	if(mapData != null)
-	{
+function initGlobal(mapData){
+	if(mapData != null){
 		COLS = mapData.cols;
 		ROWS = mapData.rows;
 	}
@@ -49,12 +47,10 @@ function initCanvas(width, height){
 
 
 
-if(isMobile())
-{
+if(isMobile()){
 	setDescription("tip : 터치로 이동해 주세요.");
 }
-else
-{
+else{
 	setDescription("tip : 방향키 혹은 마우스 클릭으로 이동해 주세요.");	
 }
 
@@ -69,8 +65,7 @@ function getMouseTouchPos(canvasDom, e) {
 
 var descriptMark = false;
 // 디스크립션 관련
-function setDescription(text)
-{
+function setDescription(text){
 	var border = $("#descBorder");
 
 	if(text.length <= 0)
@@ -94,8 +89,7 @@ function setDescriptionHtml(fileName)
 {
 	var border = $("#descBorder");
 
-	if(fileName != null && fileName.length > 0)
-	{
+	if(fileName != null && fileName.length > 0){
 		$("#descLoading").show();
 
 		descriptMark = true;
@@ -109,10 +103,8 @@ function setDescriptionHtml(fileName)
             }
           });
 	}
-	else
-	{
-		if(loadHtml != null)
-		{
+	else{
+		if(loadHtml != null){
 			loadHtml.abort();
 			loadHtml = null;
 		}
@@ -129,8 +121,7 @@ function setDescriptionHtml(fileName)
 
 
 // 쿠키 관련
-function removeCookie(name)
-{
+function removeCookie(name){
 	var date = new Date();
 	date.setTime(date.getTime() - 1);
 	var path = "path=" + '/';
@@ -181,8 +172,7 @@ function getCookie(name){
 
 // 임시로 지정하는 업데이트 기능 관련
 var settingUpdate = undefined;
-function setUpdateFunc(func)
-{
+function setUpdateFunc(func){
 	if(settingUpdate)
 	{
 		clearInterval(settingUpdate);

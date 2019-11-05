@@ -43,52 +43,56 @@ Object.prototype.calcCanvasPos = function(){
 	return false;
 }
 
-Object.drawImage = function(img, offsetX, offsetY, cropWidth, cropHeight, posX, posY, width, height)
-{
+Object.drawImage = function(img, inits){
+	// inits : offsetX, offsetY, cropWidth, cropHeight, posX, posY, width, height
+
 	// turn off image anti aliasing
 	ctx.msImageSmoothingEnabled = false;
 	ctx.mozImageSmoothingEnabled = false;
 	ctx.webkitImageSmoothingEnabled = false;
 	ctx.imageSmoothingEnabled = false;
-	ctx.drawImage(img, offsetX, offsetY, cropWidth, cropHeight, posX, posY, width, height);
+	ctx.drawImage(img, inits.offsetX, inits.offsetY, inits.cropWidth, inits.cropHeight, inits.posX, inits.posY, inits.width, inits.height);
 }
 
-Object.prototype.setDrawOffset = function(offsetx, offsety){
+Object.prototype.setPosition = function(offsetx, offsety){
 	this.offset = { x : offsetx, y : offsety}
 }
 
 Object.prototype.drawSprite = function(spriteName){
-	if(!this.img)
-	{
+	if(!this.img){
 		return;
 	}
 
-	if(typeof(this.atlasData) == 'undefined')
-	{
+	if(typeof(this.atlasData) == 'undefined'){
 		this.imgWidth = this.img.width * DRAW_SCALE;
 		this.imgHeight = this.img.height * DRAW_SCALE;
 
-		if(this.calcCanvasPos())
-		{
-			Object.drawImage(this.img, 0, 0, this.img.width, this.img.height, this.calcX - this.offset.x, this.calcY - this.offset.y, this.imgWidth, this.imgHeight);
+		if(this.calcCanvasPos()){
+			Object.drawImage(this.img, 
+				{
+					offsetX: 0,
+					offsetY: 0,
+					cropWidth: this.img.width,
+					cropHeight: this.img.height,
+					posX: this.calcX - this.offset.x,
+					posY: this.calcY - this.offset.y,
+					width: this.imgWidth,
+					height: this.imgHeight
+				});
 		}
 	}
-	else
-	{
+	else{
 		var success = false;
 
-		for(var i in this.atlasData.infos)
-		{
-			if(this.atlasData.infos[i].imageName == spriteName)
-			{
+		for(var i in this.atlasData.infos){
+			if(this.atlasData.infos[i].imageName == spriteName){
 				this.lastAtlasInfo = this.atlasData.infos[i];
 				success = true;
 				break;
 			}
 		}
 
-		if(typeof(this.lastAtlasInfo) != 'undefined')
-		{
+		if(typeof(this.lastAtlasInfo) != 'undefined'){
 			var scaleX = this.lastAtlasInfo.scaleX * this.img.width;
 			var scaleY = this.lastAtlasInfo.scaleY * this.img.height;
 
@@ -98,9 +102,18 @@ Object.prototype.drawSprite = function(spriteName){
 			this.imgWidth = scaleX * DRAW_SCALE;
 			this.imgHeight = scaleY * DRAW_SCALE;
 
-			if(this.calcCanvasPos())
-			{
-				Object.drawImage(this.img, offsetX, offsetY, scaleX, scaleY, this.calcX - this.offset.x, this.calcY - this.offset.y, this.imgWidth, this.imgHeight);
+			if(this.calcCanvasPos()){
+				Object.drawImage(this.img, 
+					{
+						offsetX: offsetX,
+						offsetY: offsetY,
+						cropWidth: scaleX, 
+						cropHeight: scaleY, 
+						posX: this.calcX - this.offset.x,
+						posY: this.calcY - this.offset.y, 
+						width: this.imgWidth, 
+						height: this.imgHeight
+					});
 			}
 		}
 
