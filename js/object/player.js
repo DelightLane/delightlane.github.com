@@ -58,23 +58,18 @@ Player.prototype.move = function (key){
             }
             break;
     }
-
-    this.setPosition(this.pos.x, this.pos.y);
 }
 
 var checkTime = 0;
 Player.prototype.update = function(){
-    if(descriptMark)
-    {
+    if(descriptMark){
         checkTime += 1;
 
-        if(checkTime >= 3)
-        {
+        if(checkTime >= 3){
             checkTime = 0;
 
             ++this.talkIdx;
-            if(this.talkIdx >= 3)
-            {
+            if(this.talkIdx >= 3){
                 this.talkIdx = 0;
             }
         }
@@ -88,8 +83,7 @@ Player.prototype.update = function(){
 Player.prototype.draw = function (){   
     var success = this.drawSprite(this.spriteName + this.spriteNum);
 
-    if(!success)
-    {
+    if(!success){
         if(this.spriteNum != 0)
         {
             this.spriteNum = 0;
@@ -97,8 +91,7 @@ Player.prototype.draw = function (){
         }
     }
 
-    if(descriptMark)
-    {
+    if(descriptMark){
         var markWidth = this.talks[this.talkIdx].width * DRAW_SCALE;
         var markHeight = this.talks[this.talkIdx].height * DRAW_SCALE;
 
@@ -108,8 +101,8 @@ Player.prototype.draw = function (){
                 offsetY: 0,
                 cropWidth: this.talks[this.talkIdx].width,
                 cropHeight: this.talks[this.talkIdx].height,
-                posX: this.calcX - this.offset.x,
-                posY: this.calcY - markHeight - this.offset.y,
+                posX: this.calcX,
+                posY: this.calcY - markHeight,
                 width: markWidth,
                 height: markHeight
             });

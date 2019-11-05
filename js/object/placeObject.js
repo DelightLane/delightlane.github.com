@@ -15,10 +15,8 @@ function PlaceObject(pos, player){
 PlaceObject.prototype = new Object();
 
 PlaceObject.prototype.move = function (key, isTrigger){
-    if(isTrigger && this.obstacle)
-    {
-        if(this.triggerEvent != null)
-        {
+    if(isTrigger && this.obstacle){
+        if(this.triggerEvent != null){
             this.triggerEvent();
         }
 

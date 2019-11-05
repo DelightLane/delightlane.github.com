@@ -18,7 +18,7 @@ function Object(){
 
     this.drawPos = { x : 0, y : 0 }
 
-    this.offset = { x : 0, y : 0}
+    this.offset = { x : 2, y : 2 }
 }
 
 Object.prototype.initAtlasData = function(atlasName){
@@ -34,8 +34,8 @@ Object.prototype.calcCanvasPos = function(){
 		WIDTH_MARGIN = (canvas.width - (this.imgWidth * COLS)) / 2;
 		HEIGHT_MARGIN = (canvas.height - (this.imgHeight * ROWS)) / 2;
 
-		this.calcX = this.drawPos.x * this.imgWidth + WIDTH_MARGIN;
-		this.calcY = this.drawPos.y * this.imgHeight + HEIGHT_MARGIN;
+		this.calcX = this.drawPos.x * (this.imgWidth - this.offset.x) + WIDTH_MARGIN;
+		this.calcY = this.drawPos.y * (this.imgHeight - this.offset.y) + HEIGHT_MARGIN;
 
 		return true;
 	}
@@ -54,10 +54,6 @@ Object.drawImage = function(img, inits){
 	ctx.drawImage(img, inits.offsetX, inits.offsetY, inits.cropWidth, inits.cropHeight, inits.posX, inits.posY, inits.width, inits.height);
 }
 
-Object.prototype.setPosition = function(offsetx, offsety){
-	this.offset = { x : offsetx, y : offsety}
-}
-
 Object.prototype.drawSprite = function(spriteName){
 	if(!this.img){
 		return;
@@ -74,8 +70,8 @@ Object.prototype.drawSprite = function(spriteName){
 					offsetY: 0,
 					cropWidth: this.img.width,
 					cropHeight: this.img.height,
-					posX: this.calcX - this.offset.x,
-					posY: this.calcY - this.offset.y,
+					posX: this.calcX,
+					posY: this.calcY,
 					width: this.imgWidth,
 					height: this.imgHeight
 				});
@@ -109,8 +105,8 @@ Object.prototype.drawSprite = function(spriteName){
 						offsetY: offsetY,
 						cropWidth: scaleX, 
 						cropHeight: scaleY, 
-						posX: this.calcX - this.offset.x,
-						posY: this.calcY - this.offset.y, 
+						posX: this.calcX,
+						posY: this.calcY, 
 						width: this.imgWidth, 
 						height: this.imgHeight
 					});

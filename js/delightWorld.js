@@ -9,7 +9,7 @@ initScreenInfo();
 var COLS;
 var ROWS;
 
-function initGlobal(mapData){
+function initGlobalSize(mapData){
 	if(mapData != null){
 		COLS = mapData.cols;
 		ROWS = mapData.rows;
@@ -17,7 +17,7 @@ function initGlobal(mapData){
 }
 
 function initScreenInfo() {
-	initGlobal();
+	initGlobalSize();
 }
 
 function isMobile(){

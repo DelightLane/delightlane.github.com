@@ -210,6 +210,7 @@ Drawable.prototype.draw = function(){
 	}
 
 	if(this.img){
+		// 이미지 draw
 		if(!this.partialTime || this.partialTime <= 0){
 			ctx.drawImage(this.img, curPos.x, curPos.y, size.width * scale, size.height * scale);
 		}
@@ -231,6 +232,7 @@ Drawable.prototype.draw = function(){
 		}
 	}
 	else{
+		// 텍스트 draw
 		this.txt.alpha -= this.txt.fadeOutInterval;
 
 		var savedFont = ctx.font;
