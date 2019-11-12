@@ -1,158 +1,268 @@
-{
-    "mapName" : "월드맵",
-    "cols" : 9,
-    "rows" : 5,
-    "tiles" :
-    [
-        "tile4", "tile4", "tile4", "tile4", "tile4", "tile4", "tile4", "tile4", "tile4",
-        "tile4", "tile4", "road", "tile4", "tile4", "tile4", "road", "tile4", "tile4",
-        "road", "road", "road", "road", "road", "road", "road", "road", "road",
-        "tile4", "tile4", "tile4", "tile4", "road", "tile4", "tile4", "tile4", "tile4",
-        "tile4", "tile4", "tile4", "tile4", "tile4", "tile4", "tile4", "tile4", "tile4"
-    ],
-    "objs" :
-    [
+{ "height":15,
+ "infinite":false,
+ "layers":[
         {
-            "x" : 1,
-            "y" : 3,
-            "res" : "stone0",
-            "obstacle" : true
-        },
+         "data":[13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 29, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 29, 29, 29, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 29, 29, 29, 29, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 29, 29, 29, 29, 13, 29, 29, 29, 29, 29, 29, 13, 13, 13, 13, 13, 13, 29, 29, 29, 29, 29, 29, 13, 29, 29, 29, 13, 13, 13, 13, 13, 29, 13, 13, 29, 29, 29, 13, 29, 29, 29, 13, 13, 13, 13, 29, 29, 13, 13, 29, 29, 29, 29, 29, 29, 29, 13, 13, 13, 29, 29, 29, 13, 29, 13, 29, 13, 29, 29, 29, 29, 13, 13, 13, 29, 29, 29, 29, 13, 13, 13, 13, 13, 29, 13, 13, 13, 13, 13, 29, 29, 29, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 29, 13, 29, 13, 13, 13, 13, 13, 13, 13, 13, 29, 13, 13, 13, 29, 29, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13],
+         "height":15,
+         "id":5,
+         "name":"tiles",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":15,
+         "x":0,
+         "y":0
+        }, 
         {
-            "x" : 8,
-            "y" : 1,
-            "res" : "stone1",
-            "obstacle" : true
-        },
+         "data":[0, 102, 102, 102, 102, 0, 0, 0, 0, 0, 0, 0, 102, 0, 105, 0, 0, 115, 105, 115, 115, 0, 0, 0, 103, 0, 0, 0, 0, 105, 0, 103, 0, 0, 115, 0, 0, 110, 110, 0, 115, 0, 0, 0, 105, 0, 0, 0, 0, 102, 0, 0, 115, 0, 0, 0, 0, 113, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 102, 0, 102, 0, 105, 0, 0, 0, 113, 0, 0, 0, 0, 113, 0, 0, 0, 0, 0, 0, 0, 105, 113, 128, 0, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 0, 0, 0, 118, 0, 0, 0, 0, 0, 0, 0, 0, 0, 115, 0, 0, 0, 0, 0, 0, 0, 127, 0, 105, 105, 105, 0, 0, 0, 0, 0, 0, 0, 0, 105, 0, 128, 0, 128, 0, 102, 105, 128, 0, 128, 0, 0, 0, 0, 105, 0, 0, 0, 0, 0, 105, 0, 0, 0, 127, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 105, 0, 0, 0, 0, 0, 0, 0, 103, 0, 0, 0, 0, 0, 113, 0, 0, 0, 0, 0, 0, 115, 0, 0, 115, 115, 0, 0, 0, 0, 0, 0, 0, 0, 0, 102, 0, 115, 105, 115, 0, 0, 0, 0, 0, 0],
+         "height":15,
+         "id":6,
+         "name":"placeables",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":15,
+         "x":0,
+         "y":0
+        }, 
         {
-            "x" : 0,
-            "y" : 1,
-            "res" : "milestone",
-            "event" : "setDescription('고성으로(구 홈페이지)');",
-            "obstacle" : true
-        },
+         "draworder":"topdown",
+         "id":3,
+         "name":"objects",
+         "objects":[
+                {
+                 "gid":116,
+                 "height":23.2496,
+                 "id":2,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"window.location.href = '\/tags\/work\/';"
+                        }],
+                 "rotation":0,
+                 "type":"object",
+                 "visible":true,
+                 "width":19.7494,
+                 "x":390.27,
+                 "y":380.185
+                }, 
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"bodyalonelyback",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescription('\ub0a8\uc790 : \uac01 \uc9d1\ub9c8\ub2e4 <span style=\"color:red;\">\uace0\uc720\uc758 \ud0dc\uadf8<\/span>\uac00 \uc788\uace0, \ud574\ub2f9 \uc9d1\uc5d0 \ub4e4\uc5b4\uac00\uba74 <span style=\"color:red;\">\uadf8 \ud0dc\uadf8\uc758 \uac8c\uc2dc\ubb3c<\/span>\ub4e4\ub9cc \uac78\ub7ec\uc838\uc11c \ubcf4\uc778\ub2e4\uace0 \ud558\ub124\uc694.<br\/>\uc9c1\uc811 \ud0dc\uadf8 \ub9c1\ud06c\ub97c \ud0c0\uace0 \ub4e4\uc5b4\uac00\ub3c4 \ub41c\ub2e4\ub294 \uac74 \uacf5\uacf5\uc5f0\ud55c \ube44\ubc00\uc774\uc9c0\uc694.');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":205.765444500251,
+                 "y":400.805123053742
+                }, 
+                {
+                 "height":0,
+                 "id":4,
+                 "name":"\ud50c\ub808\uc774\uc5b4",
+                 "rotation":0,
+                 "type":"hero",
+                 "visible":true,
+                 "width":0,
+                 "x":241.08488196886,
+                 "y":274.568893353424
+                }, 
+                {
+                 "height":0,
+                 "id":5,
+                 "name":"house0",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"window.location.href = '\/tags\/myMemory\/';"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":110.497237569061,
+                 "y":174.953959484346
+                }, 
+                {
+                 "height":0,
+                 "id":6,
+                 "name":"house1",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"window.location.href = '\/tags\/book\/';"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":77.850326469111,
+                 "y":368.324125230203
+                }, 
+                {
+                 "height":0,
+                 "id":7,
+                 "name":"house2",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"window.location.href = '\/tags\/work\/';"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":368.324125230203,
+                 "y":272.057592499581
+                }, 
+                {
+                 "height":0,
+                 "id":8,
+                 "name":"signboardbook",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescription('\ub3c4\uc11c\uad00(#\ucc45)');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":46.8776159383894,
+                 "y":302.193202745689
+                }, 
+                {
+                 "height":0,
+                 "id":9,
+                 "name":"signboardprofile",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescription('\uc790\ud0dd(#\uc2e0\ubcc0\uc7a1\uae30)');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":143.144148669011,
+                 "y":236.899380545789
+                }, 
+                {
+                 "height":0,
+                 "id":10,
+                 "name":"signboardwork",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescription('\uc791\uc5c5\uc2e4(#\uc791\uc5c5)');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":399.296835760924,
+                 "y":332.328812991796
+                }, 
+                {
+                 "height":0,
+                 "id":11,
+                 "name":"bodyChild",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescription('\uaf2c\ub9c8 : \uc774 \uc9d1\uc5d0\ub294 \uc9c0\ud558\uc2e4\ub3c4 \uc788\ub294 \ubaa8\uc591\uc774\uc57c!');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":174.953959484346,
+                 "y":205.926670015068
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":7,
+ "nextobjectid":12,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.2.5",
+ "tileheight":32,
+ "tilesets":[
         {
-            "x" : 0,
-            "y" : 2,
-            "res" : "road",
-            "event" : "window.location.href = 'http://a306.cafe24.com/';"
-        },
+         "firstgid":1,
+         "source":"..\/tileset\/tiles.json"
+        }, 
         {
-            "x" : 7,
-            "y" : 3,
-            "res" : "statue0",
-            "event" : "setDescription('\\'눈사람이었지 않나?\\'');",
-            "obstacle" : true
-        },
-        {
-            "x" : 4,
-            "y" : 0,
-            "res" : "tree2",
-            "obstacle" : true
-        },
-
-        {
-            "x" : 8,
-            "y" : 3,
-            "res" : "trees0",
-            "obstacle" : true
-        },
-
-        {
-            "x" : 7,
-            "y" : 4,
-            "res" : "treecutting",
-            "obstacle" : true
-        },
-
-        {
-            "x" : 8,
-            "y" : 4,
-            "res" : "tree0",
-            "obstacle" : true
-        },
-
-        {
-            "x" : 6,
-            "y" : 4,
-            "res" : "trees0",
-            "obstacle" : true
-        },
-        {
-            "x" : 8,
-            "y" : 0,
-            "res" : "tree0",
-            "obstacle" : true
-        },
-        {
-            "x" : 2,
-            "y" : 3,
-            "res" : "bodyalonelyback",
-            "obstacle" : true,
-            "event" : "setDescription('남자 : 각 집마다 <span style=\"color:red;\">고유의 태그</span>가 있고, 해당 집에 들어가면 <span style=\"color:red;\">그 태그의 게시물</span>들만 걸러져서 보인다고 하네요.<br/>직접 태그 링크를 타고 들어가도 된다는 건 공공연한 비밀이지요.');"
-        },
-        {
-            "x" : 4,
-            "y" : 1,
-            "res" : "fountain0",
-            "obstacle" : true
-        },
-        {
-            "x" : 7,
-            "y" : 1,
-            "res" : "bodysoldier2",
-            "obstacle" : true,
-            "event" : "setDescription('병사 : 이 길은 어디로 이어진 걸까?');"
-        },
-        {
-            "x" : 3,
-            "y" : 0,
-            "res" : "bodyChild",
-            "obstacle" : true,
-            "event" : "setDescription('꼬마 : 이 집에는 지하실도 있는 모양이야!');"
-        },
-
-
-
-
-        {
-            "x" : 2,
-            "y" : 0,
-            "res" : "house0",
-            "event" : "window.location.href = '/tags/myMemory/';"
-        },
-        {
-            "x" : 1,
-            "y" : 0,
-            "res" : "signboardprofile",
-            "event" : "setDescription('자택(#신변잡기)');",
-            "obstacle" : true
-        },
-        {
-            "x" : 6,
-            "y" : 0,
-            "res" : "house1",
-            "event" : "window.location.href = '/tags/book/';"
-        },
-        {
-            "x" : 5,
-            "y" : 0,
-            "res" : "signboardbook",
-            "event" : "setDescription('도서관(#책)');",
-            "obstacle" : true
-        },
-        {
-            "x" : 4,
-            "y" : 4,
-            "res" : "house2",
-            "event" : "window.location.href = '/tags/work/';"
-        },
-        {
-            "x" : 3,
-            "y" : 4,
-            "res" : "signboardwork",
-            "event" : "setDescription('작업실(#작업)');",
-            "obstacle" : true
-        }
-    ]
+         "firstgid":101,
+         "source":"..\/tileset\/objects.json"
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":1.2,
+ "width":15
 }

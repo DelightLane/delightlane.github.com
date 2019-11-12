@@ -53,7 +53,7 @@ Tileset.prototype.getDrawInfo = function(x, y, gid){
 
 	return {
 		offsetX: (gid > 0 ? parseInt(gid % this.cols) - 1 : 1) * this.cropWidth,
-		offsetY: gid > 0 ? parseInt(gid / this.cols) - 1 : 1 * this.cropHeight,
+		offsetY: (gid > 0 ? parseInt(gid / this.cols) : 0) * this.cropHeight,
 		cropWidth: this.cropWidth, 
 		cropHeight: this.cropHeight, 
 		posX: x,

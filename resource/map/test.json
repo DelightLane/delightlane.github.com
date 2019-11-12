@@ -43,7 +43,7 @@
                 }, 
                 {
                  "gid":116,
-                 "height":23.2495624781239,
+                 "height":23.2496,
                  "id":2,
                  "name":"",
                  "properties":[
@@ -60,9 +60,31 @@
                  "rotation":0,
                  "type":"object",
                  "visible":true,
-                 "width":19.7493874693735,
-                 "x":390.270213510676,
-                 "y":380.184925912962
+                 "width":19.7494,
+                 "x":390.27,
+                 "y":380.185
+                }, 
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"bodyalonelyback",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescription('\ub0a8\uc790 : \uac01 \uc9d1\ub9c8\ub2e4 <span style=\"color:red;\">\uace0\uc720\uc758 \ud0dc\uadf8<\/span>\uac00 \uc788\uace0, \ud574\ub2f9 \uc9d1\uc5d0 \ub4e4\uc5b4\uac00\uba74 <span style=\"color:red;\">\uadf8 \ud0dc\uadf8\uc758 \uac8c\uc2dc\ubb3c<\/span>\ub4e4\ub9cc \uac78\ub7ec\uc838\uc11c \ubcf4\uc778\ub2e4\uace0 \ud558\ub124\uc694.<br\/>\uc9c1\uc811 \ud0dc\uadf8 \ub9c1\ud06c\ub97c \ud0c0\uace0 \ub4e4\uc5b4\uac00\ub3c4 \ub41c\ub2e4\ub294 \uac74 \uacf5\uacf5\uc5f0\ud55c \ube44\ubc00\uc774\uc9c0\uc694.');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":369,
+                 "y":333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -71,7 +93,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":3,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.2.5",
