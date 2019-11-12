@@ -1,38 +1,44 @@
 var tileType = Math.floor(Math.random() * 10 % 3);
 
-function Tile(pos, player, tileName){
-	PlaceObject.apply(this, arguments);
+function Tile(){
+	var legacyType = function(pos, player, tileName){
+		PlaceObject.apply(this, [ pos, player ]);
 
-	this.img = new Image();
+		this.img = new Image();
 
-	if(tileName != null && tileName.length > 0)
-	{
-		this.setType(tileName);
+		if(tileName != null && tileName.length > 0){
+			this.setType(tileName);
+		}
+		else{
+			this.setType("tile");
+		}
+	};
+
+	var newType = function(pos, player, tileset, gid){
+		console.log("new Tile")
+		PlaceObject.apply(this, arguments);
 	}
-	else
-	{
-		this.setType("tile");
+	////////////////////////////
+
+
+
+	if(arguments.length == 3){
+		legacyType.apply(this, arguments);
+	}
+	else if(arguments.length == 4){
+		newType.apply(this, arguments);
 	}
 }
 
 Tile.prototype = new PlaceObject();
 
 Tile.prototype.setType = function(tileName){
-	if(tileName == "tile")
-	{
+	if(tileName == "tile"){
 		tileName = "tile" + tileType;
 	}
-	else
-	{
+	else{
 		tileName = tileName;
 	}
 
 	this.img.src = SITE_URL + "resource/" + tileName + ".png";
-}
-
-Tile.prototype.draw = function (){   
-    this.drawSprite(this.spriteName);
-    //ctx.strokeStyle = "#353535";
-    //ctx.lineWidth = 1.5;
-    //ctx.strokeRect(this.calcX, this.calcY, this.imgWidth, this.imgHeight);
 }

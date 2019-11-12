@@ -9,10 +9,10 @@ initScreenInfo();
 var COLS;
 var ROWS;
 
-function initGlobalSize(mapData){
-	if(mapData != null){
-		COLS = mapData.cols;
-		ROWS = mapData.rows;
+function initGlobalSize(cols, rows){
+	if(cols != null && rows != null){
+		COLS = cols;
+		ROWS = rows;
 	}
 }
 
@@ -206,6 +206,7 @@ var imagePreload = function() {
     image_cache_array[i - 1].onload = function(){
     	$('loading').fadeOut('', function(){
 			allPage.fadeIn();
+			console.log('preload success')
 		});
     }
 
@@ -247,6 +248,7 @@ include("js/object/placeObject.js");
 include("js/object/tile.js");
 include("js/object/triggerObject.js");
 include("js/object/drawable.js");
+include("js/object/tileset.js");
 
 include("js/map.js");
 

@@ -1,18 +1,68 @@
 var MOVE_SPEED = 1;
 
-function PlaceObject(pos, player){
-    if(pos != null && player != null)
-    {
+function PlaceObject(pos, player, tileset, gid){
+    if(pos != null && player != null){
+        console.log('placeObject init')
     	this.drawPos = { x : pos.x + (player.drawPos.x - player.pos.x), y : pos.y + (player.drawPos.y - player.pos.y)};
     	this.pos = { x : pos.x, y : pos.y };
 
     	this.interval = { x : -player.pos.x, y : -player.pos.y };
     }
 
+    if(tileset != null && gid != null){
+        // 타일셋 셋팅    
+        this.img = new Image();
+        this.imgState = "none";
+        this.tileset = tileset;
+        this.gid = gid - this.tileset.firstGid + 1;
+    }
+
+
     this.triggerEvent = null;
 }
 
 PlaceObject.prototype = new Object();
+
+PlaceObject.prototype.isObstacle = function(){
+    return this.obstacle;
+}
+
+PlaceObject.prototype.isFromTileset = function(){
+    return this.tileset != null;
+}
+
+PlaceObject.prototype.drawFromTileset = function(){
+
+    if(!this.isFromTileset())
+        return false;
+
+    if(this.tileset.imgPath != null && this.imgState == "none"){
+        this.imgState = "loading";
+        console.log('loading : ' + this.tileset.imgPath)
+        this.img.src = this.tileset.imgPath;
+        var thisRef = this;
+        this.img.onload = function(){
+            thisRef.imgState = "loaded"; 
+            console.log('loaded')
+        };
+    }
+
+    this.imgWidth = this.tileset.width;
+    this.imgHeight = this.tileset.height;
+
+    if(this.calcCanvasPos()){
+        Object.drawImage(this.img, this.tileset.getDrawInfo(this.calcX, this.calcY, this.gid));
+    }
+
+    return true;
+}
+
+PlaceObject.prototype.draw = function (){   
+    var isFromTileset = this.drawFromTileset();
+
+    if(!isFromTileset)
+        this.drawSprite(this.spriteName);
+}
 
 PlaceObject.prototype.move = function (key, isTrigger){
     if(isTrigger && this.obstacle){
@@ -50,8 +100,7 @@ PlaceObject.prototype.move = function (key, isTrigger){
             break;
     }
 
-    if(isTrigger && this.triggerEvent != null)
-    {
+    if(isTrigger && this.triggerEvent != null){
         this.triggerEvent();
     }
 }
