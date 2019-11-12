@@ -15,7 +15,6 @@ function Tile(){
 	};
 
 	var newType = function(pos, player, tileset, gid){
-		console.log("new Tile")
 		PlaceObject.apply(this, arguments);
 	}
 	////////////////////////////

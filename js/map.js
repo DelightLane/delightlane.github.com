@@ -48,29 +48,16 @@ function loadLegacy(map){
         }
     }
 
-    // 오브젝트 초기화
-    var resCreator = function(resName){
-        if(resName && resName.length > 0){
-            var img = new Image();
-            img.src = SITE_URL + "/resource/" + resName + ".png";
-            return img;
-        }
-
-        return null;
-    };
-
     placeObjects = [];
     for(var i = 0 ; i < map.objs.length ; ++i){
         var objData = map.objs[i];
         var obj = new PlaceObject(objData, player);
 
-        obj.data = objData;
-        obj.img = resCreator(objData.res);
-        obj.triggerEvent =  function(){
-            if(this.data.event != null){
-                eval(this.data.event);
-            }
-        };
+        obj.img = obj.resCreator(objData.res);
+        if(objData.event != null){
+            obj.event = objData.event;
+            obj.triggerEvent =  function(){ eval(this.event); };
+        }
         obj.obstacle = objData.obstacle;
 
         placeObjects.push(obj);
@@ -181,36 +168,58 @@ function loadFromTiles(map){
             }
 
             for(var i = 0 ; i < objectLayer.objects.length ; ++i){
+                if(objectLayer.objects[i].type == "hero"){
+                    continue;
+                }
 
-            if(objectLayer.objects[i].gid != null){
+
                 var objectParam = objectLayer.objects[i];
-                var gid = objectParam.gid;
+                var pos = TILESET.getMapPos(objectParam.x, objectParam.y);
+
                 var obstacle = false;
                 var event = null;
 
-                for(var j = 0 ; j < objectParam.properties.length ; ++j){
-                    if(objectParam.properties[j].name == "obstacle"){
-                        obstacle = objectParam.properties[j].value;
-                    }
-                    else if(objectParam.properties[j].name == "triggerEvent"){
-                        event = objectParam.properties[j].value;
+                if(objectParam.properties != null){
+                    for(var j = 0 ; j < objectParam.properties.length ; ++j){
+                        if(objectParam.properties[j].name == "obstacle"){
+                            obstacle = objectParam.properties[j].value;
+                        }
+                        else if(objectParam.properties[j].name == "triggerEvent"){
+                            event = objectParam.properties[j].value;
+                        }
                     }
                 }
 
-                var pos = TILESET.getMapPos(objectParam.x, objectParam.y);
+                // gid가 있는 오브젝트
+                if(objectParam.gid != null){
+                    var gid = objectParam.gid;
 
-                var obj = new PlaceObject({ x: pos.x , y: pos.y },
-                                        player,
-                                        OBJECTSET,
-                                        objectLayer.objects[i].gid);
-                obj.obstacle = obstacle;
-                if(event != null){
-                    obj.triggerEvent = function(){ eval(event); }
+                    var obj = new PlaceObject({ x: pos.x , y: pos.y },
+                                            player,
+                                            OBJECTSET,
+                                            objectLayer.objects[i].gid);
+                    obj.obstacle = obstacle;
+                    if(event != null){
+                        obj.event = event;
+                        obj.triggerEvent = function(){ eval(this.event); }
+                    }
+
+                    placeObjects.push(obj);
                 }
+                // gid가 없으면 name을 resource로 판단한다.
+                else{
+                    var obj = new PlaceObject({ x: pos.x , y: pos.y }, player);
 
-                placeObjects.push(obj);
+                    obj.img = obj.resCreator(objectParam.name);
+                    obj.obstacle = obstacle;
+                    if(event != null){
+                        obj.event = event;
+                        obj.triggerEvent = function(){ eval(this.event); }
+                    }
+
+                    placeObjects.push(obj);
+                }
             }
-        }
             
             isNewInit = true;
 
@@ -220,7 +229,7 @@ function loadFromTiles(map){
 
 function init(mapName) {
 
-    getJson(SITE_URL + "resource/map/"+ mapName + ".json", function(map){
+    getJson(SITE_URL + "resource/map/" + mapName + ".json", function(map){
         if(map.cols != null && map.rows != null){
             loadLegacy(map);
         }

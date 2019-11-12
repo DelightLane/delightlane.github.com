@@ -2,7 +2,6 @@ var MOVE_SPEED = 1;
 
 function PlaceObject(pos, player, tileset, gid){
     if(pos != null && player != null){
-        console.log('placeObject init')
     	this.drawPos = { x : pos.x + (player.drawPos.x - player.pos.x), y : pos.y + (player.drawPos.y - player.pos.y)};
     	this.pos = { x : pos.x, y : pos.y };
 
@@ -38,12 +37,10 @@ PlaceObject.prototype.drawFromTileset = function(){
 
     if(this.tileset.imgPath != null && this.imgState == "none"){
         this.imgState = "loading";
-        console.log('loading : ' + this.tileset.imgPath)
         this.img.src = this.tileset.imgPath;
         var thisRef = this;
         this.img.onload = function(){
             thisRef.imgState = "loaded"; 
-            console.log('loaded')
         };
     }
 

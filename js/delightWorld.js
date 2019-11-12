@@ -206,7 +206,6 @@ var imagePreload = function() {
     image_cache_array[i - 1].onload = function(){
     	$('loading').fadeOut('', function(){
 			allPage.fadeIn();
-			console.log('preload success')
 		});
     }
 

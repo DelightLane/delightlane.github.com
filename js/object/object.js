@@ -21,6 +21,16 @@ function Object(){
     this.offset = { x : 2, y : 2 }
 }
 
+Object.prototype.resCreator = function(resName){
+    if(resName && resName.length > 0){
+        var img = new Image();
+        img.src = SITE_URL + "/resource/" + resName + ".png";
+        return img;
+    }
+
+    return null;
+};
+
 Object.prototype.initAtlasData = function(atlasName){
 	var closureThis = this;
 	getJson(atlasName, function(atlasdata){

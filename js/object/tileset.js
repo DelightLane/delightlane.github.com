@@ -64,8 +64,9 @@ Tileset.prototype.getDrawInfo = function(x, y, gid){
 }
 
 Tileset.prototype.getMapPos = function(screenX, screenY){
+
 	return {
-		x: parseInt(screenX / this.width),
-		y: parseInt(screenY / this.height)
+		x: parseInt(screenX / this.cropWidth),
+		y: parseInt(screenY / this.cropHeight)
 	}
 }
