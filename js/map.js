@@ -59,16 +59,20 @@ function loadLegacy(map){
         return null;
     };
 
-    var eventFunc = function(){
-        if(this.data.event != null){
-            eval(this.data.event);
-        }
-    }
-
     placeObjects = [];
     for(var i = 0 ; i < map.objs.length ; ++i){
         var objData = map.objs[i];
-        var obj = new TriggerObject(objData, player, resCreator(objData.res), eventFunc);
+        var obj = new PlaceObject(objData, player);
+
+        obj.data = objData;
+        obj.img = resCreator(objData.res);
+        obj.triggerEvent =  function(){
+            if(this.data.event != null){
+                eval(this.data.event);
+            }
+        };
+        obj.obstacle = objData.obstacle;
+
         placeObjects.push(obj);
     }
 

@@ -246,7 +246,6 @@ include("js/object/object.js");
 include("js/object/player.js");
 include("js/object/placeObject.js");
 include("js/object/tile.js");
-include("js/object/triggerObject.js");
 include("js/object/drawable.js");
 include("js/object/tileset.js");
 
