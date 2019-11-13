@@ -31,50 +31,6 @@
     {% endif %}
   </div>
 
-  <br/>
-
-  <div id="frame">
-      
-      <div><canvas id="gameScene"/></div>
-
-      <div id="gameDescription">
-        <div id="descBorder">
-            <div id="descHtml">
-            </div>
-            <span id="descText"/>
-        </div>
-        <img id="descLoading" style="display: block; margin: auto;" src="{{site.url}}/resource/loading.gif"/>
-      </div>
-  </div>
-
-  <script type="text/javascript">
-     var counter = function(){
-       var url = "{{page.url}}";
-
-       var counter = 0;
-       for(var i = 0 ; i < url.length - 1; ++i)
-       {
-          if(url[i] == '/')
-          {
-            ++counter;
-          }
-       }
-
-       return counter;
-     }();
-     
-     var SITE_URL = "";
-
-     for(var i = 0 ; i < counter ; ++i)
-     {
-        SITE_URL += "../";
-     }
-
-  </script>
-
-  <script type="text/javascript" src='{{site.url}}/js/delightWorld.js'></script>
-
   <script type="text/javascript" src='{{site.url}}/js/bgScrolling.js'></script>
 
-  <br/>
 </header>

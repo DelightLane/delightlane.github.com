@@ -232,3 +232,34 @@ pre {
     padding-top: 5px;
   }
 }
+
+
+/**screen**/
+
+.side1{
+  width: 40%;
+}
+
+.side2{
+  width: 60%;
+  margin-left: 20px;
+}
+
+.left_arrange_inner{
+  display: inline;
+  float: left;
+}
+
+@media (max-width: 768px) {
+    .side1{
+      width: 100%;
+    }
+
+    .side2{
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .left_arrange_inner{
+    }
+}

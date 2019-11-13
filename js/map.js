@@ -5,16 +5,18 @@ var player;
 var isInit = false;
 var isNewInit = false;
 
+function resizeCanvas(){
+    var canvasWidth = $(".side1").width() - 50;
+    initCanvas(canvasWidth, canvasWidth);
+}
+
 function loadLegacy(map){
-    var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
-    initCanvas(canvasWidth, 300);
 
     if(map.preloadImages){
         imagePreload.apply(this, map.preloadImages);
     }
 
-    var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
-    initCanvas(canvasWidth, 300);
+    resizeCanvas();
 
     initGlobalSize(map.cols, map.rows);
 
@@ -74,15 +76,12 @@ function loadLegacy(map){
 var TILESET;
 var OBJECTSET;
 function loadFromTiles(map){
-    var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
-    initCanvas(canvasWidth, 300);
-
+    
     if(map.preloadImages){
         imagePreload.apply(this, map.preloadImages);
     }
 
-    var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
-    initCanvas(canvasWidth, 300);
+    resizeCanvas();
 
     initGlobalSize(map.width, map.height);
 
@@ -241,9 +240,7 @@ function init(mapName) {
 }
 
 function drawTiles(){
-    var canvasWidth = window.innerWidth < 600 ? window.innerWidth : 600;
-
-    initCanvas(canvasWidth, 300);
+    resizeCanvas();
 
     if(tiles.length > 0){
         for ( var y = 0; y < tiles.length; ++y ) {
