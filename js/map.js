@@ -7,7 +7,14 @@ var isNewInit = false;
 
 function resizeCanvas(){
     var canvasWidth = $(".side1").width() - 50;
-    initCanvas(canvasWidth, canvasWidth);
+    var canvasHeight;
+
+    if(window.innerWidth <= 768)
+        canvasHeight = canvasWidth;
+    else
+        canvasHeight = canvasWidth * 2;
+
+    initCanvas(canvasWidth, canvasHeight);
 }
 
 function loadLegacy(map){
