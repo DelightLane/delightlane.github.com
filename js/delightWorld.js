@@ -34,8 +34,7 @@ function isMobile(){
 function initCanvas(width, height){
  	var scale = 1;
 
- 	if(isMobile())
- 	{
+ 	if(isMobile()){
  		scale = window.innerWidth / width;
  	}
 

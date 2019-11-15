@@ -1,8 +1,12 @@
+var OFFSET_FOR_CENTER = { x: 0, y: 0 }; // offset값을 주면서 조금씩 왼쪽 위로 밀린 것을 보정해주기 위한 offset값
+
 function Player(pos, drawPos){
     this.initAtlasData(SITE_URL + "resource/CharAtlas.json");
 
 	this.drawPos = { x : drawPos.x, y : drawPos.y };
     this.pos = { x : pos.x, y : pos.y };
+
+    OFFSET_FOR_CENTER = { x: this.drawPos.x * this.offset.x, y: this.drawPos.y * this.offset.y };
 
     this.img = new Image();
     this.img.src = SITE_URL + 'resource/CharAtlas.png';

@@ -47,6 +47,9 @@ Object.prototype.calcCanvasPos = function(){
 		this.calcX = this.drawPos.x * (this.imgWidth - this.offset.x) + WIDTH_MARGIN;
 		this.calcY = this.drawPos.y * (this.imgHeight - this.offset.y) + HEIGHT_MARGIN;
 
+		this.calcX += OFFSET_FOR_CENTER.x;
+		this.calcY += OFFSET_FOR_CENTER.y;
+
 		return true;
 	}
 
