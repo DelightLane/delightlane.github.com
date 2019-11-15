@@ -250,6 +250,12 @@ pre {
   float: left;
 }
 
+#frame{
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+
 @media (max-width: 768px) {
     .side1{
       width: 100%;
@@ -258,8 +264,17 @@ pre {
     .side2{
       width: 100%;
       margin-top: 20px;
+      margin-left: 0px;
     }
 
     .left_arrange_inner{
+      display: block;
+      float: none;
     }
+
+    #frame{
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
 }

@@ -44,6 +44,9 @@ function loadLegacy(map){
     if(playerPos == null)
         playerPos = centerPos;
 
+    centerPos.x = canvas.width / 2;
+    centerPos.y = canvas.height / 2;
+
     player = new Player(playerPos, centerPos);
 
 
