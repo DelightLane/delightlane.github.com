@@ -49,11 +49,13 @@ function Tileset(tilesetInfos, idx, loadCompleteCB){
 
 Tileset.prototype.getDrawInfo = function(x, y, gid){ 
 
-	// gid는 1부터 시작
+	// gid는 1부터 시작하고, offset은 0부터 시작하므로 -1
+	var gidX = (gid > 0 ? parseInt((gid - 1) % this.cols) : 0);
+	var gidY = (gid > 0 ? parseInt((gid - 1) / this.cols) : 0);
 
 	return {
-		offsetX: (gid > 0 ? parseInt(gid % this.cols) - 1 : 1) * this.cropWidth,
-		offsetY: (gid > 0 ? parseInt(gid / this.cols) : 0) * this.cropHeight,
+		offsetX: gidX * this.cropWidth,
+		offsetY: gidY * this.cropHeight,
 		cropWidth: this.cropWidth, 
 		cropHeight: this.cropHeight, 
 		posX: x,
