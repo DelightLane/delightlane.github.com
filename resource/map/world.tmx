@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.5" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="12">
+<map version="1.2" tiledversion="1.2.5" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="12">
  <tileset firstgid="1" source="../tileset/tiles.json"/>
  <tileset firstgid="101" source="../tileset/objects.json"/>
- <layer id="5" name="tiles" width="15" height="15">
+ <layer id="7" name="tiles" width="15" height="10">
   <data encoding="csv">
-13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
-13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
-13,13,13,13,13,13,13,13,13,13,13,13,29,13,13,
-13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
 13,29,29,29,13,13,13,13,13,13,13,13,13,13,13,
 13,29,29,29,29,13,13,13,13,13,13,13,13,13,13,
 13,29,29,29,29,13,29,29,29,29,29,29,13,13,13,
@@ -17,80 +13,74 @@
 13,29,29,29,13,29,13,29,13,29,29,29,29,13,13,
 13,29,29,29,29,13,13,13,13,13,29,13,13,13,13,
 13,29,29,29,13,13,13,13,13,13,13,13,13,13,13,
-13,29,13,29,13,13,13,13,13,13,13,13,29,13,13,
-13,29,29,13,13,13,13,13,13,13,13,13,13,13,13
+13,29,13,29,13,13,13,13,13,13,13,13,29,13,13
 </data>
  </layer>
- <layer id="6" name="placeables" width="15" height="15">
+ <layer id="8" name="placeables" width="15" height="10">
   <data encoding="csv">
-0,102,102,102,102,0,0,0,0,0,0,0,102,0,105,
-0,0,115,105,115,115,0,0,0,103,0,0,0,0,105,
-0,103,0,0,115,0,0,110,110,0,115,0,0,0,105,
-0,0,0,0,102,0,0,115,0,0,0,0,113,0,0,
-0,0,0,0,0,0,0,0,0,102,0,102,0,105,0,
-0,0,113,0,0,0,0,113,0,0,0,0,0,0,0,
-105,113,128,0,128,0,0,0,0,0,0,0,0,0,0,
-0,115,0,0,0,0,0,118,0,0,0,0,0,0,0,
+102,102,111,0,102,0,0,0,0,102,0,102,0,105,0,
+0,102,113,0,111,0,0,113,0,0,0,0,0,0,0,
+105,113,128,0,128,0,0,0,0,0,111,102,102,0,0,
+0,115,0,0,0,0,0,118,0,0,102,111,0,102,0,
 0,0,115,0,0,0,0,0,0,0,127,0,105,105,105,
 0,0,0,0,0,0,0,0,105,0,128,0,128,0,102,
 105,128,0,128,0,0,0,0,105,0,0,0,0,0,105,
-0,0,0,127,127,0,0,0,0,0,0,0,0,0,105,
-0,0,0,0,0,0,0,103,0,0,0,0,0,113,0,
-0,0,0,0,0,115,0,0,115,115,0,0,0,0,0,
-0,0,0,0,102,0,115,105,115,0,0,0,0,0,0
+102,102,0,127,127,0,0,0,0,0,0,0,0,0,105,
+0,111,102,0,0,0,0,103,0,0,0,0,0,113,0,
+0,102,0,0,0,115,0,0,115,115,0,0,0,0,0
 </data>
  </layer>
  <objectgroup id="3" name="objects">
-  <object id="2" type="object" gid="116" x="390.27" y="380.185" width="19.7494" height="23.2496">
+  <object id="2" type="object" gid="116" x="390.27" y="252.185" width="19.7494" height="23.2496">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
-    <property name="triggerEvent" value="window.location.href = '/tags/work/';"/>
+    <property name="triggerEvent" value="window.location.href = 'http://52.78.47.80:8081/';"/>
    </properties>
   </object>
-  <object id="3" name="bodyalonelyback" type="event" x="205.765" y="400.805">
+  <object id="3" name="bodyalonelyback" type="event" x="205.765" y="272.805">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="setDescription('남자 : 각 집마다 &lt;span style=&quot;color:red;&quot;&gt;고유의 태그&lt;/span&gt;가 있고, 해당 집에 들어가면 &lt;span style=&quot;color:red;&quot;&gt;그 태그의 게시물&lt;/span&gt;들만 걸러져서 보인다고 하네요.&lt;br/&gt;직접 태그 링크를 타고 들어가도 된다는 건 공공연한 비밀이지요.');"/>
    </properties>
   </object>
-  <object id="4" name="플레이어" type="hero" x="241.085" y="274.569"/>
-  <object id="5" name="house0" type="event" x="110.497" y="174.954">
+  <object id="4" name="플레이어" type="hero" x="241.085" y="146.569"/>
+  <object id="5" name="house0" type="event" x="110.497" y="46.954">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="window.location.href = '/tags/myMemory/';"/>
    </properties>
   </object>
-  <object id="6" name="house1" type="event" x="77.8503" y="368.324">
+  <object id="6" name="house1" type="event" x="77.8503" y="240.324">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="window.location.href = '/tags/book/';"/>
    </properties>
   </object>
-  <object id="7" name="house2" type="event" x="368.324" y="272.058">
+  <object id="7" name="house2" type="event" x="368.324" y="144.058">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="window.location.href = '/tags/work/';"/>
    </properties>
   </object>
-  <object id="8" name="signboardbook" type="event" x="46.8776" y="302.193">
+  <object id="8" name="signboardbook" type="event" x="46.8776" y="174.193">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="setDescription('도서관(#책)');"/>
    </properties>
   </object>
-  <object id="9" name="signboardprofile" type="event" x="143.144" y="236.899">
+  <object id="9" name="signboardprofile" type="event" x="143.144" y="108.899">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="setDescription('자택(#신변잡기)');"/>
    </properties>
   </object>
-  <object id="10" name="signboardwork" type="event" x="399.297" y="332.329">
+  <object id="10" name="signboardwork" type="event" x="399.297" y="204.329">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="setDescription('작업실(#작업)');"/>
    </properties>
   </object>
-  <object id="11" name="bodyChild" type="event" x="174.954" y="205.927">
+  <object id="11" name="bodyChild" type="event" x="174.954" y="77.927">
    <properties>
     <property name="obstacle" type="bool" value="true"/>
     <property name="triggerEvent" value="setDescription('꼬마 : 이 집에는 지하실도 있는 모양이야!');"/>

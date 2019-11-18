@@ -2,7 +2,10 @@ var MOVE_SPEED = 1;
 
 function PlaceObject(pos, player, tileset, gid){
     if(pos != null && player != null){
-    	this.drawPos = { x : pos.x + (player.drawPos.x - player.pos.x), y : pos.y + (player.drawPos.y - player.pos.y)};
+    	this.drawPos = { 
+            x : pos.x + (player.drawPos.x - player.pos.x),
+            y : pos.y + (player.drawPos.y - player.pos.y)
+        }
     	this.pos = { x : pos.x, y : pos.y };
 
     	this.interval = { x : -player.pos.x, y : -player.pos.y };

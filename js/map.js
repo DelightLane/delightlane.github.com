@@ -149,7 +149,7 @@ function loadFromTiles(map){
             for ( var y = 0; y < ROWS; ++y ) {
                 tiles[y] = [];
                 for ( var x = 0; x < COLS; ++x ) {
-                    tiles[y][x] = new Tile({ x:x, y:y }, player, TILESET, tileLayer.data[x + y * ROWS]);
+                    tiles[y][x] = new Tile({ x:x, y:y }, player, TILESET, tileLayer.data[x + y * COLS]);
                 }
             }
 
@@ -157,7 +157,7 @@ function loadFromTiles(map){
             placeObjects = [];
             for ( var y = 0; y < ROWS; ++y ) {
                 for ( var x = 0; x < COLS; ++x ) {
-                    var placeableData = placeableLayer.data[x + y * ROWS];
+                    var placeableData = placeableLayer.data[x + y * COLS];
 
                     // 셋팅되지 않은 상태
                     if(placeableData <= 0)
