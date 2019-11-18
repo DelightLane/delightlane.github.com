@@ -44,9 +44,6 @@ function loadLegacy(map){
     if(playerPos == null)
         playerPos = centerPos;
 
-    centerPos.x = canvas.width / 2;
-    centerPos.y = canvas.height / 2;
-
     player = new Player(playerPos, centerPos);
 
 
@@ -127,7 +124,7 @@ function loadFromTiles(map){
         OBJECTSET = new Tileset(map.tilesets, 1, function(){
 
             // 플레이어 초기화
-            var playerPos = { x: 0, y: 0 };
+            var playerPos = null;
             if(playerPosObj != null)
                 playerPos = TILESET.getMapPos(playerPosObj.x, playerPosObj.y);
             var centerPos = {};
