@@ -62,3 +62,14 @@ div {
   	width: 40%;
   	opacity: 0.8;
   }
+
+
+
+@media (max-width: 768px) {
+    .float_right{
+      position: static;
+      top: 0px;
+      left: 0px;
+      width: 90%;
+    }
+}

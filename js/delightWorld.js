@@ -62,10 +62,6 @@ function initDescription(){
 	var desc = $("#gameDescription");
 
 	desc.addClass('float_right')
-	desc.click(function(){
-		setDescription("");
-        setDescriptionHtml();
-	});
 }
 
 var descriptMark = false;
@@ -79,12 +75,20 @@ function setDescription(text){
 		border.hide();
 		description.css("display", "none");
 		descriptMark = false;
+
+		description.off("click");
 	}
 	else
 	{
 		description.css("display", "block");
 		border.show();
 		descriptMark = true;
+
+		// 텍스트만 출력할 시에는 눌러서 끌 수 있게 셋팅
+		description.on("click", function(){
+			setDescription("");
+	        setDescriptionHtml();
+		});
 	}
 
 	var textElem = document.getElementById('descText');
