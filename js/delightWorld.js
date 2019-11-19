@@ -68,14 +68,17 @@ var descriptMark = false;
 // 디스크립션 관련
 function setDescription(text){
 	var border = $("#descBorder");
+	var description = $("#gameDescription");
 
 	if(text.length <= 0)
 	{
 		border.hide();
+		description.css("display", "none");
 		descriptMark = false;
 	}
 	else
 	{
+		description.css("display", "block");
 		border.show();
 		descriptMark = true;
 	}
@@ -89,8 +92,11 @@ var loadHtml = null;
 function setDescriptionHtml(fileName)
 {
 	var border = $("#descBorder");
+	var description = $("#gameDescription");
 
 	if(fileName != null && fileName.length > 0){
+		description.css("display", "block");
+
 		$("#descLoading").show();
 
 		descriptMark = true;
@@ -113,6 +119,7 @@ function setDescriptionHtml(fileName)
 		descriptMark = false;
 
 		border.hide();
+		description.css("display", "none");
 
 		$("#descLoading").hide();
 		$("#descHtml").empty();
