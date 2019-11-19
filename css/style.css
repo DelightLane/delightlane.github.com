@@ -26,8 +26,6 @@
 	border: solid 15px;
     border-image: url("../resource/borderImg.png") 11 11 round round;
     background-color: #eaeaea;
-    width: 85%;
-	height: 85%;
 	min-height: 27px;
 	margin: auto;
 }
@@ -57,3 +55,11 @@ div {
   .post-tag-custom {
   font-size: 12px;
   color: #828282; }
+
+  .float_right {
+  	position: absolute;
+  	top: 20%;
+  	left: 40%;
+  	width: 50%;
+  	opacity: 0.8;
+  }

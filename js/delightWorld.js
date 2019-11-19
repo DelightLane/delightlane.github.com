@@ -58,6 +58,12 @@ function getMouseTouchPos(canvasDom, e) {
 }
 
 
+function initDescription(){
+	var border = $("#descBorder");
+
+	border.addClass('float_right')
+}
+
 var descriptMark = false;
 // 디스크립션 관련
 function setDescription(text){
@@ -248,3 +254,5 @@ include("js/map.js");
 include("js/controller.js");
 include("js/draw.js");
 include("js/update.js");
+
+initDescription();
