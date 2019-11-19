@@ -59,9 +59,13 @@ function getMouseTouchPos(canvasDom, e) {
 
 
 function initDescription(){
-	var border = $("#gameDescription");
+	var desc = $("#gameDescription");
 
-	border.addClass('float_right')
+	desc.addClass('float_right')
+	desc.click(function(){
+		setDescription("");
+        setDescriptionHtml();
+	});
 }
 
 var descriptMark = false;
