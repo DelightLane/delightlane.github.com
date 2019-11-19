@@ -1,477 +1,462 @@
-{
-    "mapName" : "자택 지하실",
-    "cols" : 29,
-    "rows" : 3,
-    "startPos" : { "x" : 0, "y" : 1 },
-    "preloadImages" : ["/resource/img/room.png", "/resource/img/diary.png", "/resource/img/fantasyMake.png", "/resource/img/dfg.png", "/resource/img/FZTactics.png", "/resource/img/blockAttacker.png", "/resource/img/completeProject.png"],
-    "tiles" :
-    [
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
-        "road", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road1", "road",
-        "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road", "road",  "road", "road", "road", "road", "road", "road", "road", "road", "road", "road"
-    ],
-    "objs" :
-    [
-        {
-            "x" : 0,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 1,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 2,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 3,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 4,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 5,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 6,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 7,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 8,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 9,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 10,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 11,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 12,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 12,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 12,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 13,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 14,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 15,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 16,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 17,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 18,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 19,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 20,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 21,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 22,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 23,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 24,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 25,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 26,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 27,
-            "y" : 0,
-            "res" : "wall0"
-        },
-        {
-            "x" : 28,
-            "y" : 0,
-            "res" : "wall0"
-        },
-
-
-        {
-            "x" : 1,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-        {
-            "x" : 4,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 6,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 8,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 10,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 13,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 15,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 18,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 20,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 22,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 24,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 26,
-            "y" : 0,
-            "res" : "fenceLine1",
-            "obstacle" : true
-        },
-        {
-            "x" : 27,
-            "y" : 1,
-            "res" : "fence1",
-            "obstacle" : true
-        },
-
-
-        {
-            "x" : 1,
-            "y" : 0,
-            "res" : "milestone",
-            "obstacle" : true,
-            "event" : "setDescriptionHtml('introduce_headMilestone');"
-        },
-        {
-            "x" : 2,
-            "y" : 0,
-            "res" : "hangBoard0",
-            "obstacle" : true,
-            "event" : "setDescriptionHtml('board_PR');"
-        },
-        {
-            "x" : 3,
-            "y" : 0,
-            "res" : "statue0",
-            "obstacle" : true,
-            "event" : "setDescriptionHtml(); setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 5,
-            "y" : 0,
-            "res" : "statue0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 7,
-            "y" : 0,
-            "res" : "statue0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 9,
-            "y" : 0,
-            "res" : "statue0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 11,
-            "y" : 0,
-            "res" : "hangBoard0",
-            "obstacle" : true,
-            "event" : "setDescriptionHtml('board_ART');"
-        },
-        {
-            "x" : 12,
-            "y" : 0,
-            "res" : "photoframe0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 14,
-            "y" : 0,
-            "res" : "photoframe0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 16,
-            "y" : 0,
-            "res" : "hangBoard0",
-            "obstacle" : true,
-            "event" : "setDescriptionHtml('board_PROJECT');"
-        },
-        {
-            "x" : 17,
-            "y" : 0,
-            "res" : "photoframe0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 19,
-            "y" : 0,
-            "res" : "photoframe0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 21,
-            "y" : 0,
-            "res" : "photoframe0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 23,
-            "y" : 0,
-            "res" : "photoframe0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 25,
-            "y" : 0,
-            "res" : "photoframe0",
-            "obstacle" : true,
-            "event" : "setDescription('주의 : 만지지 마시오.');"
-        },
-        {
-            "x" : 27,
-            "y" : 0,
-            "res" : "milestone",
-            "obstacle" : true
-        },
-
-
-        {
-            "x" : 1,
-            "y" : 2,
-            "res" : "",
-            "event" : "setDescriptionHtml('introduce_headMilestone');"
-        },
-        {
-            "x" : 2,
-            "y" : 2,
-            "res" : "",
-            "event" : "setDescriptionHtml('board_PR');"
-        },
-        {
-            "x" : 3,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_born');"
-        },
-        {
-            "x" : 5,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_college');"
-        },
-        {
-            "x" : 7,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_ability');"
-        },
-        {
-            "x" : 9,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_jobHistory');"
-        },
-        {
-            "x" : 11,
-            "y" : 2,
-            "res" : "",
-            "event" : "setDescriptionHtml('board_ART');"
-        },
-        {
-            "x" : 12,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_workPlace');"
-        },
-        {
-            "x" : 14,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_diary');"
-        },
-        {
-            "x" : 16,
-            "y" : 2,
-            "res" : "",
-            "event" : "setDescriptionHtml('board_PROJECT');"
-        },
-        {
-            "x" : 17,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_fantasyMake');"
-        },
-        {
-            "x" : 19,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_dfg');"
-        },
-        {
-            "x" : 21,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_fzTactics');"
-        },
-        {
-            "x" : 23,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_blockAttacker');"
-        },
-        {
-            "x" : 25,
-            "y" : 2,
-            "res" : "footprint0",
-            "event" : "setDescriptionHtml('introduce_completeProject');"
-        },
-        {
-            "x" : 27,
-            "y" : 2,
-            "res" : "",
-            "event" : "setDescriptionHtml('introduce_tailMilestone');"
-        },
-
-
-        {
-            "x" : 0,
-            "y" : 0,
-            "res" : "upstair0",
-            "event" : "window.location.href = '/tags/myMemory/';"
-        },
-
-        {
-            "x" : 28,
-            "y" : 0,
-            "res" : "upstair0",
-            "event" : "window.location.href = '/tags/myMemory/';"
-        }
-    ]
+{ "height":19,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[2, 32, 32, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 2, 32, 2, 32, 32, 2],
+         "height":19,
+         "id":15,
+         "name":"tiles",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":3,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 112, 0, 0, 0, 0, 0, 189, 189, 0, 0, 0, 0, 189, 189, 0, 0, 0, 0, 0, 0, 0, 189, 189, 0, 0, 0, 0, 0, 0, 0, 189, 189, 0, 0, 0, 0, 189, 189, 0, 0, 0, 0, 189, 189, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":19,
+         "id":16,
+         "name":"placeables",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":3,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":3,
+         "name":"objects",
+         "objects":[
+                {
+                 "gid":196,
+                 "height":21.8973571486301,
+                 "id":12,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"window.location.href = '\/tags\/myMemory\/';"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":18.6645114361917,
+                 "x":70.4786228077265,
+                 "y":26.9108542794795
+                }, 
+                {
+                 "gid":196,
+                 "height":21.8974,
+                 "id":13,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"window.location.href = '\/tags\/myMemory\/';"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":18.6645,
+                 "x":5.8072906426791,
+                 "y":602.391102846665
+                }, 
+                {
+                 "height":0,
+                 "id":14,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_headMilestone');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.8061493288762,
+                 "y":47.4145227460241
+                }, 
+                {
+                 "height":0,
+                 "id":15,
+                 "name":"PR \uc139\uc158",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('board_PR');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":48.3013485477178,
+                 "y":80.070020746888
+                }, 
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"",
+                 "rotation":0,
+                 "type":"hero",
+                 "visible":true,
+                 "width":0,
+                 "x":48.3180879315432,
+                 "y":14.7536146355857
+                }, 
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_born');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.5804071997639,
+                 "y":112.08000333488
+                }, 
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_college');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.5803809279599,
+                 "y":143.738336396142
+                }, 
+                {
+                 "height":0,
+                 "id":19,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_ability');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":48.0077496189296,
+                 "y":176.075900679516
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_jobHistory');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.7228371582831,
+                 "y":207.98609627192
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"ART \uc139\uc158",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('board_ART');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.8652933886064,
+                 "y":239.184010712709
+                }, 
+                {
+                 "height":0,
+                 "id":22,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_workPlace');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":48.5775745402225,
+                 "y":272.946137299315
+                }, 
+                {
+                 "height":0,
+                 "id":23,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_diary');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":48.0077496189296,
+                 "y":303.14685812784
+                }, 
+                {
+                 "height":0,
+                 "id":24,
+                 "name":"PROJECT \uc139\uc158",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('board_PROJECT');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":48.0077496189296,
+                 "y":336.19670356283
+                }, 
+                {
+                 "height":0,
+                 "id":25,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_fantasyMake');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.5803809279599,
+                 "y":368.106899155235
+                }, 
+                {
+                 "height":0,
+                 "id":26,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_dfg');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.4379246976366,
+                 "y":399.589726056669
+                }, 
+                {
+                 "height":0,
+                 "id":27,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_fzTactics');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":46.8680997763437,
+                 "y":432.069746570366
+                }, 
+                {
+                 "height":0,
+                 "id":28,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_fzTactics');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.8652933886064,
+                 "y":463.552573471801
+                }, 
+                {
+                 "height":0,
+                 "id":29,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_blockAttacker');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":46.0133623944043,
+                 "y":495.462769064205
+                }, 
+                {
+                 "height":0,
+                 "id":30,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_completeProject');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.7228371582831,
+                 "y":528.512614499195
+                }, 
+                {
+                 "height":0,
+                 "id":31,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"triggerEvent",
+                         "type":"string",
+                         "value":"setDescriptionHtml('introduce_tailMilestone');"
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":47.2954684673134,
+                 "y":558.998247788367
+                }, 
+                {
+                 "height":0,
+                 "id":32,
+                 "name":"hangBoard0",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":15.0920615756112,
+                 "y":79.233323271959
+                }, 
+                {
+                 "height":0,
+                 "id":33,
+                 "name":"hangBoard0",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":14.3374584968307,
+                 "y":239.963779052219
+                }, 
+                {
+                 "height":0,
+                 "id":34,
+                 "name":"hangBoard0",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":16.6012677331724,
+                 "y":336.17567159674
+                }, 
+                {
+                 "height":0,
+                 "id":35,
+                 "name":"hangBoard0",
+                 "properties":[
+                        {
+                         "name":"obstacle",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"event",
+                 "visible":true,
+                 "width":0,
+                 "x":15.8466646543918,
+                 "y":559.538182915786
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":17,
+ "nextobjectid":36,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.2.5",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"..\/tileset\/tiles.json"
+        }, 
+        {
+         "firstgid":101,
+         "source":"..\/tileset\/objects.json"
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":1.2,
+ "width":3
 }
