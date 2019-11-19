@@ -57,7 +57,7 @@ div {
 
   .float_right {
   	position: absolute;
-  	top: 20%;
+  	top: 110px;
   	left: 45%;
   	width: 40%;
   	opacity: 0.8;
