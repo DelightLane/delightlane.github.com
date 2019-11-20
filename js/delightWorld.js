@@ -62,6 +62,23 @@ function initDescription(){
 	var desc = $("#gameDescription");
 
 	desc.addClass('float_right')
+
+	var floatPosition = parseInt(desc.css('top'));
+
+	$(window).scroll(function() {
+		// 현재 스크롤 위치를 가져온다.
+		var scrollTop = $(window).scrollTop();
+		if(scrollTop < floatPosition)
+			scrollTop = floatPosition;
+
+		var newPosition = scrollTop + "px";
+
+		desc.stop().animate({
+			"top" : newPosition
+		}, 300);
+
+	}).scroll();
+
 }
 
 var descriptMark = false;
