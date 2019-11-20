@@ -58,15 +58,60 @@ function getMouseTouchPos(canvasDom, e) {
 }
 
 
+function initHeader(){
+	var headWrap = $(".head_wrapper");
+	var siteTitle = $(".site-title");
+
+	var maxHeight = window.innerHeight;
+	var titleMargin = (maxHeight * 0.3);
+
+	headWrap.css('margin-top', "0px");
+	headWrap.css('height', maxHeight + "px");
+
+	siteTitle.css('margin-top', titleMargin + "px");
+
+	var lastScrollTop = 0;
+
+	$(window).scroll(function() {
+
+		var scrollTop = $(window).scrollTop();
+
+		if(Math.abs(lastScrollTop - scrollTop) < 10)
+			return;
+
+		lastScrollTop = scrollTop;
+
+		if(scrollTop < maxHeight - 80){
+
+			var topMargin = scrollTop;
+			var height = maxHeight - scrollTop;
+			var calcTitleMargin = titleMargin - scrollTop;
+			if(calcTitleMargin < 0) calcTitleMargin = 0;
+
+			headWrap.stop().animate({
+				"margin-top" : topMargin,
+				"height" : height
+			}, 100);
+
+			siteTitle.stop().animate({
+				"margin-top" : calcTitleMargin,
+			}, 100);
+		}
+	});
+}
+
+
 function initDescription(){
 	var desc = $("#gameDescription");
 
 	desc.addClass('float_right')
 
-	var floatPosition = parseInt(desc.css('top'));
+	var headWrap = $(".head_wrapper");
 
 	$(window).scroll(function() {
-		// 현재 스크롤 위치를 가져온다.
+
+		var floatPosition = parseInt(headWrap.css('height')) + parseInt(headWrap.css('margin-top')) + 20;
+		
 		var scrollTop = $(window).scrollTop();
 		if(scrollTop < floatPosition)
 			scrollTop = floatPosition;
@@ -287,4 +332,5 @@ include("js/controller.js");
 include("js/draw.js");
 include("js/update.js");
 
+initHeader();
 initDescription();
