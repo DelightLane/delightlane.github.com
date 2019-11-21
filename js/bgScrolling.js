@@ -1,5 +1,8 @@
 $(function() {
-	var curPos = $('.site-header-bg').css('background-position-y');
+
+	var bg = $('.site-header-bg');
+
+	var curPos = bg.css('background-position-y');
 	curPos = new Number(curPos.replace("%", ""));
 
 	var prevValue = 0;
@@ -8,7 +11,7 @@ $(function() {
 		var value = $(this).scrollTop();
 	
 		curPos = curPos - (value - prevValue) * 0.2;
-		$('.site-header-bg').css('background-position-y', curPos+'%');
+		bg.css('background-position-y', curPos+'%');
 
 		prevValue = value;
 	});
