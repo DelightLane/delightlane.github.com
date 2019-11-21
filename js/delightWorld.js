@@ -17,6 +17,9 @@ function initGlobalSize(cols, rows){
 }
 
 function initScreenInfo() {
+	if(window.innerWidth > 700)
+		$('.site-header-bg').css("background-size", window.innerWidth + "px");
+	
 	initGlobalSize();
 }
 
