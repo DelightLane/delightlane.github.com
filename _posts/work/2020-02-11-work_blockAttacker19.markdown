@@ -38,7 +38,7 @@ tags: [work, blockAttacker]
 
   참고로 이전의 전투 화면은 다음과 같다.
 
-  ![screenshot]({{ site.url }}/resource/post/blockAttacker/200211_legacyBattle.png)
+  ![screenshot]({{ site.url }}/resource/post/blockAttacker/200211_legacyBattle.PNG)
 
   딱 봐도 어떤 식으로 해야 할지 감이 오지 않는 프레임이다. 
 
