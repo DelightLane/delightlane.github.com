@@ -32,13 +32,13 @@ tags: [work, blockAttacker]
 
   새롭게 만든 전투는 몇몇 옛 동료들의 도움을 받아서 아이디어를 취합했다. 사실, 어느 정도 만들어진 지금도 이게 '와 재미있다!'하는 지는 잘 모르겠지만, 많은 피드백들이 '기존보다는 낫다'는 평이어서 알게 모르게 씁쓸하면서도 미소 지어진다. 복잡미묘하다. 알싸한 웃음이랄까.
 
-  ![screenshot]({{ site.url }}/resource/post/blockAttacker/200211_battle.PNG)
+  ![screenshot]({{ site.url }}/resource/post/blockAttacker/200211_battle.png)
 
   전투는 뭐, 이런 느낌이다. 이전과 비교하면 완전히 다른 전투가 되어버렸다. 일단 전체적으로 의도가 명확해졌다는 부분이 마음에 들고, 가만히 서서 칼만 휘두르던 캐릭터 이미지에서 이제는 앞뒤로 움직이는 역동적인 형상이 되었다는 점도 좋다. 물론 쌓아온 리소스들을 폐기하고 코드를 걷어내야 했지만..
 
   참고로 이전의 전투 화면은 다음과 같다.
 
-  ![screenshot]({{ site.url }}/resource/post/blockAttacker/200211_legacyBattle.PNG)
+  ![screenshot]({{ site.url }}/resource/post/blockAttacker/200211_legacyBattle.png)
 
   딱 봐도 어떤 식으로 해야 할지 감이 오지 않는 프레임이다. 
 
