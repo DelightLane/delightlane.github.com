@@ -73,32 +73,21 @@ function initHeader(){
 
 	siteTitle.css('margin-top', titleMargin + "px");
 
-	var lastScrollTop = 0;
-
 	$(window).scroll(function() {
-
 		var scrollTop = $(window).scrollTop();
-
-		if(Math.abs(lastScrollTop - scrollTop) < 10)
-			return;
-
-		lastScrollTop = scrollTop;
 
 		if(scrollTop < maxHeight - 80){
 
 			var topMargin = scrollTop;
 			var height = maxHeight - scrollTop;
-			var calcTitleMargin = titleMargin - scrollTop;
-			if(calcTitleMargin < 0) calcTitleMargin = 0;
 
-			headWrap.stop().animate({
-				"margin-top" : topMargin,
-				"height" : height
-			}, 100);
+			calcTitleMargin = titleMargin + scrollTop;
+			if(calcTitleMargin >  maxHeight - 120)
+				calcTitleMargin = maxHeight - 120;
 
-			siteTitle.stop().animate({
+			siteTitle.css({
 				"margin-top" : calcTitleMargin,
-			}, 100);
+			})
 		}
 	});
 }
