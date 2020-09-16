@@ -64,6 +64,7 @@ function getMouseTouchPos(canvasDom, e) {
 function initHeader(){
 	var headWrap = $(".head_wrapper");
 	var siteTitle = $(".site-title");
+	var siteNav = $(".site-nav");
 
 	var maxHeight = window.innerHeight;
 	var titleMargin = (maxHeight * 0.3);
@@ -81,12 +82,20 @@ function initHeader(){
 			var topMargin = scrollTop;
 			var height = maxHeight - scrollTop;
 
-			calcTitleMargin = titleMargin + scrollTop;
+			var calcTitleMargin = titleMargin + scrollTop;
+			var calcNavMargin = scrollTop;
 			if(calcTitleMargin >  maxHeight - 120)
 				calcTitleMargin = maxHeight - 120;
 
+			if(calcNavMargin > maxHeight)
+				calcNavMargin = maxHeight;
+
 			siteTitle.css({
 				"margin-top" : calcTitleMargin,
+			})
+
+			siteNav.css({
+				"margin-top" : calcNavMargin,
 			})
 		}
 	});
