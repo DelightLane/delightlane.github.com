@@ -85,7 +85,9 @@ function initHeader(){
 			var calcTitleMargin = titleMargin + scrollTop;
 			var calcNavMargin = scrollTop;
 			if(calcTitleMargin >  maxHeight - 120)
+			{
 				calcTitleMargin = maxHeight - 120;
+			}
 
 			if(calcNavMargin > maxHeight)
 				calcNavMargin = maxHeight;
@@ -97,6 +99,19 @@ function initHeader(){
 			siteNav.css({
 				"margin-top" : calcNavMargin,
 			})
+		}
+		
+		if(window.isInit || window.isNewInit)
+		{
+			setCookie("goToHeight", maxHeight - 100);
+		}
+
+		if(window.isInit || window.isNewInit)
+		{
+			if(scrollTop < 5)
+			{
+				removeCookie("goToHeight")
+			}
 		}
 	});
 }
@@ -219,15 +234,23 @@ function removeCookie(name){
 	}
  }
 
-function setCookie(name, value){
+function setCookie(name, value, expireSec){
+	//console.log("쿠키 set : "+name)
 	var date = new Date();
-	date.setDate(date.getDate() + 1);
+	if (expireSec) {
+		var date = new Date();
+		date.setTime(date.getTime() + (expireSec * 1000));
+	}
+	else{
+		date.setDate(date.getDate() + 1);
+	}
 	var expires = "expires=" + date.toGMTString();
 	var path = "path=" + '/';
 	document.cookie = name + "=" + value + "; " + expires + "; " + path;
 }
 
 function getCookie(name){
+	//console.log("쿠키 get : "+name)
 	name += "=";
 
 	var cookie = document.cookie;
@@ -335,3 +358,23 @@ include("js/update.js");
 
 initHeader();
 initDescription();
+
+
+var goToHeight = getCookie("goToHeight");
+if(goToHeight != null)
+{
+	var loadComp = setInterval(function()
+	{
+		if(window.isInit || window.isNewInit)
+		{
+			setTimeout(function() { 
+				$('html, body').animate({
+			        scrollTop:goToHeight
+			      }, 800);
+			
+			}, 500);
+			
+			clearInterval(loadComp);
+		}
+	}, 30)
+}

@@ -2,8 +2,8 @@ var tiles = [];
 var placeObjects = [];
 var player;
 
-var isInit = false;
-var isNewInit = false;
+window.isInit = false;
+window.isNewInit = false;
 
 function resizeCanvas(){
     var canvasWidth = $(".side1").width() - 50;
@@ -72,7 +72,7 @@ function loadLegacy(map){
         placeObjects.push(obj);
     }
 
-    isInit = true;
+    window.isInit = true;
 
     if(map.mapName && map.mapName.length > 0){
         notifyMapName(map.mapName);
@@ -227,7 +227,7 @@ function loadFromTiles(map){
                 }
             }
             
-            isNewInit = true;
+            window.isNewInit = true;
 
         })
     });
@@ -268,20 +268,20 @@ function drawPlaces()
 }
 
 function updateMap() {
-    if(isInit || isNewInit){
+    if(window.isInit || window.isNewInit){
         player.update();
     }
 }
 
 function drawMap(){
-    if(isNewInit){
+    if(window.isNewInit){
         drawTiles()
         drawPlaces();
 
         player.draw();
     }
 
-    if(isInit){
+    if(window.isInit){
         drawTiles();
         drawPlaces();
 
@@ -296,7 +296,7 @@ function drawMap(){
 }
 
 function onKeyDownMap( key ) {
-    if(!isInit && !isNewInit){
+    if(!window.isInit && !window.isNewInit){
         return;
     }
 
